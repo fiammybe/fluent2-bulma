@@ -20,7 +20,7 @@ npm install @fiammybe/fluent2-bulma bulma
 
 ```sh
 npm ci
-npm run build   # sass -> css/fluent2-bulma.css and css/fluent2-bulma.min.css
+npm run build   # vite (sass) -> css/fluent2-bulma.css and css/fluent2-bulma.min.css
 npm run lint    # stylelint + prettier
 ```
 
