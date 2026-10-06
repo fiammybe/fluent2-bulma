@@ -1,0 +1,63 @@
+{
+  "name": "@fiammybe/fluent2-bulma",
+  "version": "0.0.0",
+  "description": "The unofficial marriage between Bulma and Microsoft's Fluent2 design system",
+  "license": "MIT",
+  "author": "fiammybe",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/fiammybe/fluent2-bulma.git"
+  },
+  "keywords": [
+    "bulma",
+    "fluent",
+    "fluent2",
+    "css",
+    "sass",
+    "theme"
+  ],
+  "sass": "sass/index.scss",
+  "style": "css/fluent2-bulma.css",
+  "main": "css/fluent2-bulma.css",
+  "files": [
+    "css",
+    "sass",
+    "THIRD-PARTY-NOTICES"
+  ],
+  "exports": {
+    ".": {
+      "sass": "./sass/index.scss",
+      "style": "./css/fluent2-bulma.css",
+      "default": "./css/fluent2-bulma.css"
+    },
+    "./css/*": "./css/*",
+    "./sass/*": "./sass/*",
+    "./package.json": "./package.json"
+  },
+  "scripts": {
+    "build": "npm run build-sass && npm run build-min",
+    "build-sass": "sass --no-source-map --load-path=node_modules sass/index.scss css/fluent2-bulma.css",
+    "build-min": "postcss css/fluent2-bulma.css --use cssnano --no-map -o css/fluent2-bulma.min.css",
+    "clean": "node -e \"require('fs').rmSync('css',{recursive:true,force:true})\"",
+    "lint": "npm run lint:css && npm run format:check",
+    "lint:css": "stylelint \"sass/**/*.scss\"",
+    "format": "prettier --write .",
+    "format:check": "prettier --check ."
+  },
+  "peerDependencies": {
+    "bulma": "^1.0.4"
+  },
+  "devDependencies": {
+    "bulma": "^1.0.4",
+    "cssnano": "^9.3.2",
+    "postcss": "^8.5.29",
+    "postcss-cli": "^12.0.0",
+    "prettier": "^3.9.9",
+    "sass": "^1.105.1",
+    "stylelint": "^17.16.0",
+    "stylelint-config-standard-scss": "^17.0.0"
+  },
+  "engines": {
+    "node": ">=18"
+  }
+}
