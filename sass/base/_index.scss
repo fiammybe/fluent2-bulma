@@ -40,7 +40,7 @@
   .button.is-primary {
     border-color: var(--fluent-brand-color);
     background-color: var(--fluent-brand-color);
-    color: #ffffff;
+    color: #fff;
   }
 
   .input,
@@ -65,6 +65,7 @@
 
   .is-comfortable {
     --fluent-control-height: var(--fluent-control-height-comfortable);
+    --bulma-control-height: var(--fluent-control-height) !important;
   }
 
   @media (prefers-reduced-motion: reduce) {

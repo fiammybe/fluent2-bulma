@@ -1,10 +1,15 @@
+@forward 'tokens' hide emit, emit-dark;
 @use 'base';
 @use 'helpers';
 @use 'themes';
 @use 'tokens';
 
 @layer fluent2 {
-  @include tokens.emit;
+  :root,
+  [data-theme='light'] {
+    @include tokens.emit;
+  }
+
   @include themes.emit;
   @include base.emit;
   @include helpers.emit;

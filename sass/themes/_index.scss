@@ -15,8 +15,12 @@
   --bulma-border-weak: var(--fluent-color-neutral-stroke-2) !important;
   --bulma-primary: var(--fluent-brand-color) !important;
   --bulma-primary-h: #{math.round(color.channel(tokens.$fluent-brand-color, 'hue', $space: hsl))} !important;
-  --bulma-primary-s: #{math.round(color.channel(tokens.$fluent-brand-color, 'saturation', $space: hsl))}% !important;
-  --bulma-primary-l: #{math.round(color.channel(tokens.$fluent-brand-color, 'lightness', $space: hsl))}% !important;
+  --bulma-primary-s: #{math.round(
+      color.channel(tokens.$fluent-brand-color, 'saturation', $space: hsl)
+    )} !important;
+  --bulma-primary-l: #{math.round(
+      color.channel(tokens.$fluent-brand-color, 'lightness', $space: hsl)
+    )} !important;
   --bulma-link: var(--fluent-brand-color) !important;
   --bulma-link-h: var(--bulma-primary-h) !important;
   --bulma-link-s: var(--bulma-primary-s) !important;
@@ -48,8 +52,12 @@
   --bulma-border-weak: var(--fluent-color-neutral-stroke-2) !important;
   --bulma-primary: var(--fluent-brand-color) !important;
   --bulma-primary-h: #{math.round(color.channel(tokens.$fluent-brand-color, 'hue', $space: hsl))} !important;
-  --bulma-primary-s: #{math.round(color.channel(tokens.$fluent-brand-color, 'saturation', $space: hsl))}% !important;
-  --bulma-primary-l: #{math.round(color.channel(tokens.$fluent-brand-color, 'lightness', $space: hsl))}% !important;
+  --bulma-primary-s: #{math.round(
+      color.channel(tokens.$fluent-brand-color, 'saturation', $space: hsl)
+    )} !important;
+  --bulma-primary-l: #{math.round(
+      color.channel(tokens.$fluent-brand-color, 'lightness', $space: hsl)
+    )} !important;
   --bulma-link: var(--fluent-brand-color) !important;
   --bulma-link-h: var(--bulma-primary-h) !important;
   --bulma-link-s: var(--bulma-primary-s) !important;
@@ -72,12 +80,15 @@
   :root,
   [data-theme='light'] {
     color-scheme: light;
+
     --fluent-brand-color: #{tokens.$fluent-brand-color};
+
     @include bulma-light-vars;
   }
 
   [data-theme='dark'] {
     color-scheme: dark;
+
     @include tokens.emit-dark;
     @include bulma-dark-vars;
   }
@@ -85,6 +96,7 @@
   @media (prefers-color-scheme: dark) {
     :root:not([data-theme='light']) {
       color-scheme: dark;
+
       @include tokens.emit-dark;
       @include bulma-dark-vars;
     }

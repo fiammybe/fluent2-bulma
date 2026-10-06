@@ -8,7 +8,7 @@ $fluent-bulma-spacing: (
   3: map.get(tokens.$fluent-spacing-scale, 3),
   4: map.get(tokens.$fluent-spacing-scale, 4),
   5: map.get(tokens.$fluent-spacing-scale, 5),
-  6: map.get(tokens.$fluent-spacing-scale, 6)
+  6: map.get(tokens.$fluent-spacing-scale, 6),
 );
 
 @mixin emit {

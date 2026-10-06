@@ -4,6 +4,7 @@
   :root,
   [data-theme='light'] {
     --fluent-brand-color: #{tokens.$fluent-brand-color};
+
     @include tokens.emit;
   }
 
