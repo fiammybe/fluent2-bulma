@@ -1,0 +1,221 @@
+:root {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--fluent-color-neutral-background-2);
+}
+
+.overview-hero {
+  background:
+    radial-gradient(ellipse at 80% 20%, rgb(15 108 189 / 18%), transparent 35%),
+    var(--fluent-color-neutral-background-1);
+  border-bottom: 1px solid var(--fluent-color-neutral-stroke-2);
+}
+
+.overview-brand {
+  font-weight: 700;
+}
+
+.overview-brand span {
+  margin: 0 0.25rem;
+  color: var(--fluent-brand-color);
+}
+
+.overview-hero .hero-body {
+  padding-block: 5rem;
+}
+
+.overview-hero .title {
+  max-width: 14ch;
+  letter-spacing: -0.04em;
+}
+
+.overview-hero .subtitle {
+  max-width: 62ch;
+}
+
+.eyebrow {
+  margin-bottom: 0.75rem;
+  color: var(--fluent-color-neutral-foreground-3);
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+}
+
+.overview-main {
+  max-width: 1120px;
+}
+
+.overview-section {
+  padding-block: 4rem;
+  scroll-margin-top: 1rem;
+  border-bottom: 1px solid var(--fluent-color-neutral-stroke-2);
+}
+
+.section-heading {
+  display: flex;
+  align-items: end;
+  justify-content: space-between;
+  gap: 2rem;
+  margin-bottom: 1.5rem;
+}
+
+.section-heading .subtitle {
+  max-width: 42ch;
+}
+
+.box,
+.card,
+.notification,
+.message,
+.panel,
+.dropdown-content {
+  box-shadow: var(--fluent-shadow-2);
+}
+
+.swatches {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(3.25rem, 1fr));
+  gap: 0.5rem;
+}
+
+.swatches span {
+  display: grid;
+  min-height: 3.5rem;
+  place-items: center;
+  border: 1px solid var(--fluent-color-neutral-stroke-2);
+  border-radius: var(--fluent-radius-small);
+  background: var(--swatch);
+  color: var(--fluent-color-neutral-foreground-1);
+  font-size: 0.75rem;
+  font-weight: 600;
+}
+
+.type-sample {
+  height: 100%;
+}
+
+.table-caption {
+  padding: 0.75rem 0;
+  color: var(--fluent-color-neutral-foreground-3);
+  text-align: left;
+}
+
+.density-toggle {
+  padding: 0.75rem 1rem;
+  border: 1px solid var(--fluent-color-neutral-stroke-2);
+  border-radius: var(--fluent-radius-medium);
+  background: var(--fluent-color-neutral-background-1);
+}
+
+.form-sample {
+  transition: padding var(--fluent-duration-fast) var(--fluent-easing-standard);
+}
+
+.form-sample.is-comfortable {
+  padding: 0.5rem;
+}
+
+.form-sample .input,
+.form-sample .select select {
+  height: auto;
+  min-height: var(--fluent-control-height);
+}
+
+.form-sample .textarea {
+  min-height: 6rem;
+}
+
+.file-name {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.dropdown.is-active {
+  display: inline-block;
+}
+
+.modal-card-preview {
+  position: static;
+  max-height: none;
+  margin: 0;
+  border: 1px solid var(--fluent-color-neutral-stroke-2);
+  border-radius: var(--fluent-radius-medium);
+  box-shadow: none;
+}
+
+.modal-card-preview .modal-card-head,
+.modal-card-preview .modal-card-foot {
+  background: var(--fluent-color-neutral-background-2);
+}
+
+.avatar-placeholder {
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+  background: var(--fluent-color-brand-160);
+  color: var(--fluent-color-brand-50);
+  font-size: 0.875rem;
+  font-weight: 700;
+}
+
+.helper-demo,
+.elevation-demo {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 1rem;
+}
+
+.helper-demo span,
+.elevation-demo div {
+  border: 1px solid var(--fluent-color-neutral-stroke-2);
+  border-radius: var(--fluent-radius-medium);
+  background: var(--fluent-color-neutral-background-1);
+}
+
+.elevation-demo div {
+  padding: 1rem;
+}
+
+.elevation-demo div:nth-child(1) {
+  box-shadow: var(--fluent-shadow-2);
+}
+
+.elevation-demo div:nth-child(2) {
+  box-shadow: var(--fluent-shadow-8);
+}
+
+.elevation-demo div:nth-child(3) {
+  box-shadow: var(--fluent-shadow-16);
+}
+
+.overview-footer {
+  background: var(--fluent-color-neutral-background-1);
+}
+
+@media (max-width: 768px) {
+  .overview-hero .hero-body {
+    padding-block: 3rem;
+  }
+
+  .overview-section {
+    padding-block: 2.75rem;
+  }
+
+  .section-heading {
+    display: block;
+  }
+
+  .section-heading .subtitle {
+    margin-top: 0.5rem;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  :root {
+    scroll-behavior: auto;
+  }
+}
