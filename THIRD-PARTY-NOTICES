@@ -1,0 +1,17 @@
+Third-party notices
+
+This project is an unofficial project and is not affiliated with Microsoft.
+
+1. Fluent UI design tokens and Fluent UI System Icons
+   Copyright (c) Microsoft Corporation. Licensed under the MIT License.
+   https://github.com/microsoft/fluentui
+   https://github.com/microsoft/fluentui-system-icons
+
+2. Bulma (peer dependency, not bundled)
+   Copyright (c) Jeremy Thomas. Licensed under the MIT License.
+   https://github.com/jgthms/bulma
+
+3. Segoe UI
+   Segoe UI is a Microsoft font and is NOT MIT licensed. It is not bundled or
+   distributed with this package; font stacks only reference it by name and
+   fall back to system fonts when it is unavailable.
