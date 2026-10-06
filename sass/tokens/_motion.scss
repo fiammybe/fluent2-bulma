@@ -1,0 +1,28 @@
+$fluent-motion-durations: (
+  ultra-fast: 50ms,
+  faster: 100ms,
+  fast: 150ms,
+  normal: 200ms,
+  slow: 300ms,
+  slower: 400ms
+) !default;
+
+$fluent-motion-easings: (
+  accelerate-max: cubic-bezier(1, 0, 1, 1),
+  accelerate-mid: cubic-bezier(0.7, 0, 1, 0.5),
+  accelerate-min: cubic-bezier(0.8, 0, 0.78, 1),
+  decelerate-max: cubic-bezier(0, 0, 0, 1),
+  decelerate-mid: cubic-bezier(0.1, 0.9, 0.2, 1),
+  decelerate-min: cubic-bezier(0.33, 0, 0.1, 1),
+  standard: cubic-bezier(0.33, 0, 0.67, 1)
+) !default;
+
+@mixin emit {
+  @each $name, $value in $fluent-motion-durations {
+    --fluent-duration-#{$name}: #{$value};
+  }
+
+  @each $name, $value in $fluent-motion-easings {
+    --fluent-easing-#{$name}: #{$value};
+  }
+}

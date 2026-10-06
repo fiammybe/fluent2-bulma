@@ -16,11 +16,47 @@ npm install @fiammybe/fluent2-bulma bulma
 
 `bulma` (`^1.0.4`) is a peer dependency.
 
+## Use
+
+Load Bulma in a lower-priority cascade layer so the Fluent 2 layer can theme its
+components. The theme also works with `data-theme` attributes without JavaScript:
+
+```css
+@layer bulma, fluent2;
+@import url('bulma/css/bulma.css') layer(bulma);
+@import url('@fiammybe/fluent2-bulma/css/fluent2-bulma.css');
+```
+
+The system uses light colors by default, follows `prefers-color-scheme` when no
+theme is selected, and supports explicit `<html data-theme="light">` or
+`<html data-theme="dark">`.
+
+Override the brand color at build time through the Sass entry point, or at runtime
+with the `--fluent-brand-color` custom property:
+
+```scss
+@use '@fiammybe/fluent2-bulma' with (
+  $fluent-brand-color: #0f6cbd
+);
+```
+
+```css
+:root {
+  --fluent-brand-color: #6750a4;
+}
+```
+
+Use `@fiammybe/fluent2-bulma/tokens` for the Sass token maps and
+`@fiammybe/fluent2-bulma/tokens.css` for the tokens-only stylesheet. The default
+compact density uses 2rem controls; add `.is-comfortable` to opt into 2.5rem
+controls. Bulma spacing helpers (`p-1` through `p-6`, `m-1` through `m-6`, and
+their directional variants) use Fluent spacing values.
+
 ## Development
 
 ```sh
 npm ci
-npm run build   # vite (sass) -> css/fluent2-bulma.css and css/fluent2-bulma.min.css
+npm run build   # creates themed CSS and tokens-only CSS in css/
 npm run lint    # stylelint + prettier
 ```
 

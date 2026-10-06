@@ -1,0 +1,29 @@
+@forward 'colors';
+@forward 'density';
+@forward 'elevation';
+@forward 'motion';
+@forward 'shape';
+@forward 'spacing';
+@forward 'typography';
+
+@use 'colors' as colors;
+@use 'density' as density;
+@use 'elevation' as elevation;
+@use 'motion' as motion;
+@use 'shape' as shape;
+@use 'spacing' as spacing;
+@use 'typography' as typography;
+
+@mixin emit {
+  @include colors.emit;
+  @include density.emit;
+  @include elevation.emit;
+  @include motion.emit;
+  @include shape.emit;
+  @include spacing.emit;
+  @include typography.emit;
+}
+
+@mixin emit-dark {
+  @include colors.emit-dark;
+}

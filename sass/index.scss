@@ -1,1 +1,11 @@
-// Entry point. Intentionally empty in Phase 0.
+@use 'base';
+@use 'helpers';
+@use 'themes';
+@use 'tokens';
+
+@layer fluent2 {
+  @include tokens.emit;
+  @include themes.emit;
+  @include base.emit;
+  @include helpers.emit;
+}
