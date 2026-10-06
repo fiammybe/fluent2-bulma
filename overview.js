@@ -1,5 +1,3 @@
-import 'bulma/css/bulma.css';
-import './css/fluent2-bulma.css';
 import './overview.css';
 
 const root = document.documentElement;

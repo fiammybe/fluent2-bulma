@@ -56,13 +56,19 @@ their directional variants) use Fluent spacing values.
 
 ```sh
 npm ci
+npm run dev     # build the CSS package and serve the overview at localhost:5173
 npm run build   # creates themed CSS and tokens-only CSS in css/
 npm run lint    # stylelint + prettier
 ```
 
+The root `index.html` is a single-page gallery of Bulma elements, form controls,
+components, and layout patterns. It includes light/dark/system theme controls and
+a compact/comfortable density toggle.
+
 ## Folder layout
 
 - `sass/` – Sass sources (`base`, `tokens`, `elements`, `components`, `form`, `layout`, `helpers`, `themes`)
+- `index.html`, `overview.*` – local component overview page and its styles/interactions
 - `css/` – build output (not committed)
 - `docs/decisions/` – decision records
 

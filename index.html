@@ -17,17 +17,18 @@
           <div class="container">
             <div class="navbar-brand">
               <a class="navbar-item overview-brand" href="#top">Fluent 2 <span>×</span> Bulma</a>
-              <a
+              <button
                 class="navbar-burger"
-                role="button"
+                type="button"
                 aria-label="Toggle navigation"
                 aria-expanded="false"
+                aria-controls="overview-navigation"
                 data-target="overview-navigation"
               >
                 <span aria-hidden="true"></span>
                 <span aria-hidden="true"></span>
                 <span aria-hidden="true"></span>
-              </a>
+              </button>
             </div>
             <div id="overview-navigation" class="navbar-menu">
               <div class="navbar-end">
@@ -87,7 +88,9 @@
             <p class="eyebrow">FOUNDATION</p>
             <h2 class="title is-3">Color and type</h2>
           </div>
-          <p class="subtitle is-6">Fluent brand, neutral, and semantic tokens adapt to the theme.</p>
+          <p class="subtitle is-6">
+            Fluent brand, neutral, and semantic tokens adapt to the theme.
+          </p>
         </div>
         <div class="columns">
           <div class="column is-two-thirds">
@@ -166,7 +169,9 @@
             <div class="box">
               <h3 class="title is-5">Tags and status</h3>
               <div class="tags">
-                <span class="tag">Default <button class="delete is-small" aria-label="Remove"></button></span>
+                <span class="tag"
+                  >Default <button class="delete is-small" aria-label="Remove"></button
+                ></span>
                 <span class="tag is-info">Information</span>
                 <span class="tag is-success">Success</span>
                 <span class="tag is-warning">Warning</span>
@@ -304,7 +309,11 @@
                 <div class="field">
                   <label class="label" for="message">Message</label>
                   <div class="control">
-                    <textarea id="message" class="textarea" placeholder="Write a message…"></textarea>
+                    <textarea
+                      id="message"
+                      class="textarea"
+                      placeholder="Write a message…"
+                    ></textarea>
                   </div>
                 </div>
               </div>
@@ -349,24 +358,30 @@
                 <ul>
                   <li><a href="#top">Home</a></li>
                   <li><a href="#components">Workspace</a></li>
-                  <li class="is-active"><a href="#components" aria-current="page">Components</a></li>
+                  <li class="is-active">
+                    <a href="#components" aria-current="page">Components</a>
+                  </li>
                 </ul>
               </nav>
               <div class="tabs is-boxed">
                 <ul>
-                  <li class="is-active"><a>Overview</a></li>
-                  <li><a>Activity</a></li>
-                  <li><a>Settings</a></li>
+                  <li class="is-active"><a href="#elements">Overview</a></li>
+                  <li><a href="#forms">Activity</a></li>
+                  <li><a href="#layout">Settings</a></li>
                 </ul>
               </div>
               <nav class="pagination is-small" role="navigation" aria-label="Pagination">
                 <a class="pagination-previous" href="#components">Previous</a>
                 <a class="pagination-next" href="#layout">Next</a>
                 <ul class="pagination-list">
-                  <li><a class="pagination-link is-current" aria-current="page">1</a></li>
-                  <li><a class="pagination-link">2</a></li>
+                  <li>
+                    <a class="pagination-link is-current" href="#components" aria-current="page"
+                      >1</a
+                    >
+                  </li>
+                  <li><a class="pagination-link" href="#layout">2</a></li>
                   <li><span class="pagination-ellipsis">&hellip;</span></li>
-                  <li><a class="pagination-link">8</a></li>
+                  <li><a class="pagination-link" href="#layout">8</a></li>
                 </ul>
               </nav>
             </div>
@@ -459,7 +474,11 @@
             <div class="box">
               <h3 class="title is-5">Dialog preview</h3>
               <p class="mb-4">An inline preview of the modal card pattern.</p>
-              <div class="modal-card modal-card-preview" role="dialog" aria-labelledby="dialog-title">
+              <div
+                class="modal-card modal-card-preview"
+                role="dialog"
+                aria-labelledby="dialog-title"
+              >
                 <header class="modal-card-head">
                   <p id="dialog-title" class="modal-card-title">Save your changes?</p>
                   <button class="delete" aria-label="Close dialog"></button>
@@ -509,15 +528,35 @@
               </article>
             </div>
           </div>
+          <h4 class="title is-6 mt-5">Responsive grid</h4>
+          <div class="grid is-col-min-6">
+            <div class="cell"><div class="notification is-info is-light">Grid cell one</div></div>
+            <div class="cell"><div class="notification is-link is-light">Grid cell two</div></div>
+            <div class="cell">
+              <div class="notification is-success is-light">Grid cell three</div>
+            </div>
+            <div class="cell">
+              <div class="notification is-warning is-light">Grid cell four</div>
+            </div>
+          </div>
           <nav class="level mt-5" aria-label="Workspace summary">
             <div class="level-item has-text-centered">
-              <div><p class="heading">Projects</p><p class="title is-4">12</p></div>
+              <div>
+                <p class="heading">Projects</p>
+                <p class="title is-4">12</p>
+              </div>
             </div>
             <div class="level-item has-text-centered">
-              <div><p class="heading">Members</p><p class="title is-4">08</p></div>
+              <div>
+                <p class="heading">Members</p>
+                <p class="title is-4">08</p>
+              </div>
             </div>
             <div class="level-item has-text-centered">
-              <div><p class="heading">Completion</p><p class="title is-4">68%</p></div>
+              <div>
+                <p class="heading">Completion</p>
+                <p class="title is-4">68%</p>
+              </div>
             </div>
           </nav>
           <article class="media mt-5">
@@ -526,10 +565,15 @@
             </figure>
             <div class="media-content">
               <div class="content">
-                <p><strong>Alex Johnson</strong> <small>@alex</small><br />Shared a new component overview.</p>
+                <p>
+                  <strong>Alex Johnson</strong> <small>@alex</small><br />Shared a new component
+                  overview.
+                </p>
               </div>
             </div>
-            <div class="media-right"><button class="delete" aria-label="Dismiss activity"></button></div>
+            <div class="media-right">
+              <button class="delete" aria-label="Dismiss activity"></button>
+            </div>
           </article>
         </div>
         <div class="columns">

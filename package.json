@@ -41,6 +41,7 @@
     "build-sass": "vite build && sass --no-source-map sass/tokens-only.scss css/fluent2-bulma.tokens.css",
     "build-min": "vite build --mode minify && sass --style=compressed --no-source-map sass/tokens-only.scss css/fluent2-bulma.tokens.min.css",
     "clean": "node -e \"require('fs').rmSync('css',{recursive:true,force:true})\"",
+    "dev": "npm run build && vite",
     "lint": "npm run lint:css && npm run format:check",
     "lint:css": "stylelint \"sass/**/*.scss\"",
     "format": "prettier --write .",

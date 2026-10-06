@@ -1,3 +1,8 @@
+@layer bulma, fluent2;
+
+@import 'bulma/css/bulma.css' layer(bulma);
+@import './css/fluent2-bulma.css';
+
 :root {
   scroll-behavior: smooth;
 }
