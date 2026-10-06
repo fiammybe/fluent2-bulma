@@ -37,7 +37,7 @@
   "scripts": {
     "build": "npm run clean && npm run build-sass && npm run build-min",
     "build-sass": "vite build",
-    "build-min": "MINIFY=true vite build",
+    "build-min": "vite build --mode minify",
     "clean": "node -e \"require('fs').rmSync('css',{recursive:true,force:true})\"",
     "lint": "npm run lint:css && npm run format:check",
     "lint:css": "stylelint \"sass/**/*.scss\"",
