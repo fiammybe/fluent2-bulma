@@ -1,0 +1,631 @@
+@mixin emit {
+  .button {
+    --fluent-button-background: var(--fluent-color-neutral-background-1);
+    --fluent-button-foreground: var(--fluent-color-neutral-foreground-1);
+    --fluent-button-border: var(--fluent-color-neutral-stroke-1);
+    --fluent-button-hover-background: var(--fluent-color-neutral-background-2);
+    --fluent-button-pressed-background: var(--fluent-color-neutral-background-3);
+
+    min-height: var(--fluent-control-height);
+    height: auto;
+    padding-inline: var(--fluent-control-padding-inline);
+    border: var(--fluent-stroke-width-thin) solid var(--fluent-button-border);
+    border-radius: var(--fluent-radius-medium);
+    background: var(--fluent-button-background);
+    box-shadow: var(--fluent-shadow-2);
+    color: var(--fluent-button-foreground);
+    font-family: var(--fluent-font-family);
+    font-weight: 600;
+    transition:
+      background-color var(--fluent-duration-fast) var(--fluent-easing-standard),
+      border-color var(--fluent-duration-fast) var(--fluent-easing-standard),
+      color var(--fluent-duration-fast) var(--fluent-easing-standard),
+      box-shadow var(--fluent-duration-fast) var(--fluent-easing-standard);
+  }
+
+  .button:hover:not(:disabled, .is-disabled) {
+    border-color: var(--fluent-button-border);
+    background: var(--fluent-button-hover-background);
+    color: var(--fluent-button-foreground);
+  }
+
+  .button:active:not(:disabled, .is-disabled) {
+    background: var(--fluent-button-pressed-background);
+  }
+
+  .button:disabled,
+  .button.is-disabled {
+    border-color: transparent;
+    background: var(--fluent-color-neutral-background-3);
+    box-shadow: none;
+    color: var(--fluent-color-neutral-foreground-disabled);
+    opacity: 1;
+  }
+
+  .button.is-primary,
+  .button.is-link,
+  .button.is-accent {
+    --fluent-button-background: var(--fluent-brand-color);
+    --fluent-button-foreground: #fff;
+    --fluent-button-border: var(--fluent-brand-color);
+    --fluent-button-hover-background: var(--fluent-color-brand-70);
+    --fluent-button-pressed-background: var(--fluent-color-brand-50);
+  }
+
+  .button.is-light,
+  .button.is-subtle {
+    --fluent-button-background: var(--fluent-color-neutral-background-2);
+    --fluent-button-foreground: var(--fluent-color-neutral-foreground-1);
+    --fluent-button-border: transparent;
+    --fluent-button-hover-background: var(--fluent-color-neutral-background-3);
+    --fluent-button-pressed-background: var(--fluent-color-neutral-background-4);
+
+    box-shadow: none;
+  }
+
+  .button.is-outline,
+  .button.is-outlined {
+    --fluent-button-background: transparent;
+    --fluent-button-foreground: var(--fluent-brand-color);
+    --fluent-button-border: var(--fluent-color-neutral-stroke-1);
+    --fluent-button-hover-background: var(--fluent-color-neutral-background-2);
+    --fluent-button-pressed-background: var(--fluent-color-neutral-background-3);
+
+    box-shadow: none;
+  }
+
+  .button.is-transparent,
+  .button.is-ghost,
+  .button.is-text {
+    --fluent-button-background: transparent;
+    --fluent-button-foreground: var(--fluent-color-neutral-foreground-1);
+    --fluent-button-border: transparent;
+    --fluent-button-hover-background: var(--fluent-color-neutral-background-2);
+    --fluent-button-pressed-background: var(--fluent-color-neutral-background-3);
+
+    box-shadow: none;
+    text-decoration: none;
+  }
+
+  .button.is-dark {
+    --fluent-button-background: var(--fluent-color-neutral-background-5);
+    --fluent-button-foreground: var(--fluent-color-neutral-foreground-1);
+    --fluent-button-border: transparent;
+    --fluent-button-hover-background: var(--fluent-color-neutral-background-6);
+    --fluent-button-pressed-background: var(--fluent-color-neutral-background-4);
+
+    box-shadow: none;
+  }
+
+  .button.is-info,
+  .button.is-success,
+  .button.is-warning,
+  .button.is-danger {
+    --fluent-button-foreground: #fff;
+    --fluent-button-border: transparent;
+    --fluent-button-hover-background: color-mix(
+      in srgb,
+      var(--fluent-button-background),
+      black 10%
+    );
+    --fluent-button-pressed-background: color-mix(
+      in srgb,
+      var(--fluent-button-background),
+      black 20%
+    );
+  }
+
+  .button.is-info {
+    --fluent-button-background: var(--fluent-color-info);
+  }
+
+  .button.is-success {
+    --fluent-button-background: var(--fluent-color-success);
+  }
+
+  .button.is-warning {
+    --fluent-button-background: var(--fluent-color-warning);
+    --fluent-button-foreground: var(--fluent-color-neutral-foreground-1);
+  }
+
+  .button.is-danger {
+    --fluent-button-background: var(--fluent-color-danger);
+  }
+
+  .button.is-primary.is-light,
+  .button.is-link.is-light,
+  .button.is-primary.is-subtle,
+  .button.is-link.is-subtle {
+    --fluent-button-background: var(--fluent-color-brand-160);
+    --fluent-button-foreground: var(--fluent-color-brand-50);
+    --fluent-button-border: transparent;
+    --fluent-button-hover-background: var(--fluent-color-brand-150);
+    --fluent-button-pressed-background: var(--fluent-color-brand-140);
+  }
+
+  .button.is-info.is-light,
+  .button.is-info.is-subtle {
+    --fluent-button-background: var(--fluent-color-info-background);
+    --fluent-button-foreground: var(--fluent-color-info);
+    --fluent-button-border: transparent;
+    --fluent-button-hover-background: color-mix(
+      in srgb,
+      var(--fluent-color-info-background),
+      black 5%
+    );
+    --fluent-button-pressed-background: color-mix(
+      in srgb,
+      var(--fluent-color-info-background),
+      black 10%
+    );
+  }
+
+  .button.is-success.is-light,
+  .button.is-success.is-subtle {
+    --fluent-button-background: var(--fluent-color-success-background);
+    --fluent-button-foreground: var(--fluent-color-success);
+    --fluent-button-border: transparent;
+    --fluent-button-hover-background: color-mix(
+      in srgb,
+      var(--fluent-color-success-background),
+      black 5%
+    );
+    --fluent-button-pressed-background: color-mix(
+      in srgb,
+      var(--fluent-color-success-background),
+      black 10%
+    );
+  }
+
+  .button.is-warning.is-light,
+  .button.is-warning.is-subtle {
+    --fluent-button-background: var(--fluent-color-warning-background);
+    --fluent-button-foreground: var(--fluent-color-warning);
+    --fluent-button-border: transparent;
+    --fluent-button-hover-background: color-mix(
+      in srgb,
+      var(--fluent-color-warning-background),
+      black 5%
+    );
+    --fluent-button-pressed-background: color-mix(
+      in srgb,
+      var(--fluent-color-warning-background),
+      black 10%
+    );
+  }
+
+  .button.is-danger.is-light,
+  .button.is-danger.is-subtle {
+    --fluent-button-background: var(--fluent-color-danger-background);
+    --fluent-button-foreground: var(--fluent-color-danger);
+    --fluent-button-border: transparent;
+    --fluent-button-hover-background: color-mix(
+      in srgb,
+      var(--fluent-color-danger-background),
+      black 5%
+    );
+    --fluent-button-pressed-background: color-mix(
+      in srgb,
+      var(--fluent-color-danger-background),
+      black 10%
+    );
+  }
+
+  .button.is-primary.is-outline,
+  .button.is-primary.is-outlined,
+  .button.is-link.is-outline,
+  .button.is-link.is-outlined {
+    --fluent-button-background: transparent;
+    --fluent-button-foreground: var(--fluent-brand-color);
+    --fluent-button-border: var(--fluent-brand-color);
+    --fluent-button-hover-background: var(--fluent-color-brand-160);
+    --fluent-button-pressed-background: var(--fluent-color-brand-150);
+  }
+
+  .button.is-info.is-outline,
+  .button.is-info.is-outlined {
+    --fluent-button-background: transparent;
+    --fluent-button-foreground: var(--fluent-color-info);
+    --fluent-button-border: var(--fluent-color-info);
+    --fluent-button-hover-background: var(--fluent-color-info-background);
+    --fluent-button-pressed-background: color-mix(
+      in srgb,
+      var(--fluent-color-info-background),
+      black 10%
+    );
+  }
+
+  .button.is-success.is-outline,
+  .button.is-success.is-outlined {
+    --fluent-button-background: transparent;
+    --fluent-button-foreground: var(--fluent-color-success);
+    --fluent-button-border: var(--fluent-color-success);
+    --fluent-button-hover-background: var(--fluent-color-success-background);
+    --fluent-button-pressed-background: color-mix(
+      in srgb,
+      var(--fluent-color-success-background),
+      black 10%
+    );
+  }
+
+  .button.is-warning.is-outline,
+  .button.is-warning.is-outlined {
+    --fluent-button-background: transparent;
+    --fluent-button-foreground: var(--fluent-color-warning);
+    --fluent-button-border: var(--fluent-color-warning);
+    --fluent-button-hover-background: var(--fluent-color-warning-background);
+    --fluent-button-pressed-background: color-mix(
+      in srgb,
+      var(--fluent-color-warning-background),
+      black 10%
+    );
+  }
+
+  .button.is-danger.is-outline,
+  .button.is-danger.is-outlined {
+    --fluent-button-background: transparent;
+    --fluent-button-foreground: var(--fluent-color-danger);
+    --fluent-button-border: var(--fluent-color-danger);
+    --fluent-button-hover-background: var(--fluent-color-danger-background);
+    --fluent-button-pressed-background: color-mix(
+      in srgb,
+      var(--fluent-color-danger-background),
+      black 10%
+    );
+  }
+
+  .button.is-rounded,
+  .button.is-circular {
+    border-radius: var(--fluent-radius-circular);
+  }
+
+  .button.is-circular {
+    width: var(--fluent-control-height);
+    padding-inline: 0;
+  }
+
+  .button.is-small {
+    min-height: 1.5rem;
+    padding-inline: 0.5rem;
+  }
+
+  .button.is-medium {
+    min-height: 2.5rem;
+  }
+
+  .button.is-large {
+    min-height: 3rem;
+  }
+
+  .buttons {
+    gap: var(--fluent-spacing-2);
+  }
+
+  .buttons .button {
+    margin: 0;
+  }
+
+  .title {
+    color: var(--fluent-color-neutral-foreground-1);
+    font-weight: 600;
+    line-height: 1.25;
+  }
+
+  .title.is-1 {
+    font-size: var(--fluent-font-size-title-1);
+  }
+
+  .title.is-2 {
+    font-size: var(--fluent-font-size-title-2);
+  }
+
+  .title.is-3 {
+    font-size: var(--fluent-font-size-title-3);
+  }
+
+  .title.is-4 {
+    font-size: var(--fluent-font-size-subtitle-1);
+  }
+
+  .title.is-5 {
+    font-size: var(--fluent-font-size-subtitle-2);
+  }
+
+  .title.is-6,
+  .subtitle {
+    font-size: var(--fluent-font-size-body-2);
+    line-height: var(--fluent-line-height-body-1);
+  }
+
+  .subtitle {
+    color: var(--fluent-color-neutral-foreground-2);
+  }
+
+  .content {
+    color: var(--fluent-color-neutral-foreground-1);
+    font-size: var(--fluent-font-size-body-1);
+    line-height: var(--fluent-line-height-body-1);
+  }
+
+  .content strong {
+    color: var(--fluent-color-neutral-foreground-1);
+  }
+
+  .content a {
+    color: var(--fluent-brand-color);
+    text-decoration-thickness: 1px;
+    text-underline-offset: 2px;
+  }
+
+  .delete {
+    flex: none;
+    border-radius: var(--fluent-radius-circular);
+    background: var(--fluent-color-neutral-background-4);
+    transition: background-color var(--fluent-duration-fast) var(--fluent-easing-standard);
+  }
+
+  .delete::before,
+  .delete::after {
+    background-color: var(--fluent-color-neutral-foreground-2);
+  }
+
+  .delete:hover {
+    background: var(--fluent-color-neutral-background-5);
+  }
+
+  .icon {
+    color: var(--fluent-color-neutral-foreground-2);
+  }
+
+  .image img {
+    border-radius: var(--fluent-radius-medium);
+  }
+
+  .image.is-rounded img {
+    border-radius: var(--fluent-radius-circular);
+  }
+
+  .tag {
+    min-height: 1.5rem;
+    padding: 0.125rem 0.5rem;
+    border: 1px solid transparent;
+    border-radius: var(--fluent-radius-small);
+    background: var(--fluent-color-neutral-background-3);
+    color: var(--fluent-color-neutral-foreground-1);
+    font-size: var(--fluent-font-size-caption-1);
+    font-weight: 600;
+  }
+
+  .tag.is-primary,
+  .tag.is-link {
+    background: var(--fluent-brand-color);
+    color: #fff;
+  }
+
+  .tag.is-info {
+    background: var(--fluent-color-info);
+    color: #fff;
+  }
+
+  .tag.is-success {
+    background: var(--fluent-color-success);
+    color: #fff;
+  }
+
+  .tag.is-warning {
+    background: var(--fluent-color-warning);
+    color: var(--fluent-color-neutral-foreground-1);
+  }
+
+  .tag.is-danger {
+    background: var(--fluent-color-danger);
+    color: #fff;
+  }
+
+  .tag.is-light,
+  .tag.is-primary.is-light,
+  .tag.is-link.is-light {
+    background: var(--fluent-color-brand-160);
+    color: var(--fluent-color-brand-50);
+  }
+
+  .tag.is-info.is-light {
+    background: var(--fluent-color-info-background);
+    color: var(--fluent-color-info);
+  }
+
+  .tag.is-success.is-light {
+    background: var(--fluent-color-success-background);
+    color: var(--fluent-color-success);
+  }
+
+  .tag.is-warning.is-light {
+    background: var(--fluent-color-warning-background);
+    color: var(--fluent-color-warning);
+  }
+
+  .tag.is-danger.is-light {
+    background: var(--fluent-color-danger-background);
+    color: var(--fluent-color-danger);
+  }
+
+  .tags.has-addons .tag:not(:last-child) {
+    border-start-end-radius: 0;
+    border-end-end-radius: 0;
+  }
+
+  .tags.has-addons .tag:not(:first-child) {
+    border-start-start-radius: 0;
+    border-end-start-radius: 0;
+  }
+
+  .notification {
+    padding: var(--fluent-spacing-6);
+    border: 1px solid var(--fluent-color-neutral-stroke-2);
+    border-radius: var(--fluent-radius-medium);
+    background: var(--fluent-color-neutral-background-2);
+    color: var(--fluent-color-neutral-foreground-1);
+  }
+
+  .notification.is-primary,
+  .notification.is-link {
+    border-color: var(--fluent-color-brand-130);
+    background: var(--fluent-color-brand-160);
+    color: var(--fluent-color-brand-50);
+  }
+
+  .notification.is-info {
+    border-color: var(--fluent-color-info);
+    background: var(--fluent-color-info-background);
+    color: var(--fluent-color-neutral-foreground-1);
+  }
+
+  .notification.is-success {
+    border-color: var(--fluent-color-success);
+    background: var(--fluent-color-success-background);
+    color: var(--fluent-color-neutral-foreground-1);
+  }
+
+  .notification.is-warning {
+    border-color: var(--fluent-color-warning);
+    background: var(--fluent-color-warning-background);
+    color: var(--fluent-color-neutral-foreground-1);
+  }
+
+  .notification.is-danger {
+    border-color: var(--fluent-color-danger);
+    background: var(--fluent-color-danger-background);
+    color: var(--fluent-color-neutral-foreground-1);
+  }
+
+  .box,
+  .card {
+    border: 1px solid var(--fluent-color-neutral-stroke-2);
+    border-radius: var(--fluent-radius-large);
+    background: var(--fluent-color-neutral-background-1);
+    box-shadow: var(--fluent-shadow-4);
+    color: var(--fluent-color-neutral-foreground-1);
+  }
+
+  .box {
+    padding: var(--fluent-spacing-6);
+  }
+
+  .card-header,
+  .card-footer {
+    background: var(--fluent-color-neutral-background-2);
+    box-shadow: none;
+  }
+
+  .card-header,
+  .card-content,
+  .card-footer {
+    border-color: var(--fluent-color-neutral-stroke-2);
+  }
+
+  .card-header-title,
+  .card-footer-item {
+    color: var(--fluent-color-neutral-foreground-1);
+  }
+
+  .card-header-icon {
+    color: var(--fluent-color-neutral-foreground-2);
+  }
+
+  .table {
+    --fluent-table-cell-padding: var(--fluent-spacing-4) var(--fluent-spacing-5);
+
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0;
+    background: transparent;
+    color: var(--fluent-color-neutral-foreground-1);
+  }
+
+  .table th,
+  .table td {
+    padding: var(--fluent-table-cell-padding);
+    border-color: var(--fluent-color-neutral-stroke-2);
+    vertical-align: middle;
+  }
+
+  .table thead th {
+    background: var(--fluent-color-neutral-background-2);
+    color: var(--fluent-color-neutral-foreground-2);
+    font-weight: 600;
+  }
+
+  .table.is-hoverable tbody tr:not(.is-selected):hover {
+    background: var(--fluent-color-neutral-background-2);
+  }
+
+  .table.is-striped tbody tr:not(.is-selected):nth-child(even) {
+    background: var(--fluent-color-neutral-background-2);
+  }
+
+  .table-caption {
+    color: var(--fluent-color-neutral-foreground-3);
+    font-size: var(--fluent-font-size-caption-1);
+  }
+
+  .progress {
+    height: 0.5rem;
+    border-radius: var(--fluent-radius-circular);
+    background: var(--fluent-color-neutral-background-3);
+  }
+
+  .progress::-webkit-progress-bar {
+    border-radius: inherit;
+    background: var(--fluent-color-neutral-background-3);
+  }
+
+  .progress::-webkit-progress-value {
+    border-radius: inherit;
+    background: var(--fluent-brand-color);
+  }
+
+  .progress::-moz-progress-bar {
+    border-radius: inherit;
+    background: var(--fluent-brand-color);
+  }
+
+  .progress.is-info::-webkit-progress-value,
+  .progress.is-info::-moz-progress-bar {
+    background: var(--fluent-color-info);
+  }
+
+  .progress.is-success::-webkit-progress-value,
+  .progress.is-success::-moz-progress-bar {
+    background: var(--fluent-color-success);
+  }
+
+  .progress.is-warning::-webkit-progress-value,
+  .progress.is-warning::-moz-progress-bar {
+    background: var(--fluent-color-warning);
+  }
+
+  .progress.is-danger::-webkit-progress-value,
+  .progress.is-danger::-moz-progress-bar {
+    background: var(--fluent-color-danger);
+  }
+
+  .is-comfortable .button:not(.is-small, .is-medium, .is-large),
+  .button.is-comfortable:not(.is-small, .is-medium, .is-large) {
+    min-height: var(--fluent-control-height-comfortable);
+  }
+
+  .is-comfortable .tag {
+    min-height: 1.75rem;
+    padding-inline: var(--fluent-spacing-5);
+  }
+
+  .is-comfortable .notification,
+  .is-comfortable .box,
+  .is-comfortable .card-content {
+    padding: var(--fluent-spacing-8);
+  }
+
+  .is-comfortable .table {
+    --fluent-table-cell-padding: var(--fluent-spacing-5) var(--fluent-spacing-6);
+  }
+}

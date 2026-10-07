@@ -37,11 +37,12 @@
     "./package.json": "./package.json"
   },
   "scripts": {
-    "build": "npm run clean && npm run build-sass && npm run build-min",
+    "build": "npm run clean && npm run build-sass && npm run build-min && npm run build-overview",
     "build-sass": "vite build && sass --no-source-map sass/tokens-only.scss css/fluent2-bulma.tokens.css",
     "build-min": "vite build --mode minify && sass --style=compressed --no-source-map sass/tokens-only.scss css/fluent2-bulma.tokens.min.css",
-    "clean": "node -e \"require('fs').rmSync('css',{recursive:true,force:true})\"",
-    "dev": "npm run build && vite",
+    "build-overview": "vite build --mode overview",
+    "clean": "node -e \"for (const path of ['css','dist']) require('fs').rmSync(path,{recursive:true,force:true})\"",
+    "dev": "npm run build && vite --open /overview.html",
     "lint": "npm run lint:css && npm run format:check",
     "lint:css": "stylelint \"sass/**/*.scss\"",
     "format": "prettier --write .",

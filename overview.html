@@ -8,6 +8,7 @@
       content="A single-page overview of Bulma elements styled with Fluent 2."
     />
     <title>Fluent 2 × Bulma — Component overview</title>
+    <link rel="stylesheet" href="./overview.css" />
     <script type="module" src="/overview.js"></script>
   </head>
   <body>
@@ -151,7 +152,13 @@
               <div class="buttons">
                 <button class="button is-primary">Primary action</button>
                 <button class="button">Secondary</button>
-                <button class="button is-light">Subtle</button>
+                <button class="button is-light">Bulma subtle</button>
+                <button class="button is-subtle">Fluent subtle</button>
+                <button class="button is-outlined">Bulma outline</button>
+                <button class="button is-outline">Outline</button>
+                <button class="button is-ghost">Bulma transparent</button>
+                <button class="button is-transparent">Transparent</button>
+                <button class="button is-circular" aria-label="Add item">+</button>
                 <button class="button is-danger is-light">Destructive</button>
                 <button class="button" disabled>Disabled</button>
                 <button class="button is-loading" aria-label="Loading"></button>
@@ -389,10 +396,17 @@
           <div class="column is-half">
             <div class="box">
               <h3 class="title is-5">Dropdown and menu</h3>
-              <div class="dropdown is-active">
+              <div class="dropdown overview-dropdown">
                 <div class="dropdown-trigger">
-                  <button class="button" aria-haspopup="true" aria-controls="sample-dropdown">
-                    <span>Actions</span><span aria-hidden="true">⌄</span>
+                  <button
+                    class="button"
+                    type="button"
+                    aria-haspopup="true"
+                    aria-expanded="false"
+                    aria-controls="sample-dropdown"
+                  >
+                    <span>Actions</span>
+                    <span class="overview-dropdown-chevron" aria-hidden="true"></span>
                   </button>
                 </div>
                 <div id="sample-dropdown" class="dropdown-menu" role="menu">

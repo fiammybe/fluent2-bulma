@@ -138,17 +138,56 @@ body {
   white-space: nowrap;
 }
 
-.dropdown.is-active {
+.overview-dropdown {
   display: inline-block;
+}
+
+.overview-dropdown .button {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.overview-dropdown-chevron {
+  display: inline-block;
+  width: 0.45rem;
+  height: 0.45rem;
+  border-right: 2px solid currentColor;
+  border-bottom: 2px solid currentColor;
+  transform: rotate(45deg);
+  transform-origin: center;
+  transition: transform var(--fluent-duration-fast) var(--fluent-easing-standard);
+}
+
+.overview-dropdown.is-active .overview-dropdown-chevron {
+  transform: rotate(225deg);
 }
 
 .modal-card-preview {
   position: static;
+  display: flex;
+  width: 100%;
+  flex-direction: column;
   max-height: none;
   margin: 0;
+  overflow: hidden;
   border: 1px solid var(--fluent-color-neutral-stroke-2);
   border-radius: var(--fluent-radius-medium);
   box-shadow: none;
+}
+
+.modal-card-preview .modal-card-head {
+  flex: none;
+}
+
+.modal-card-preview .modal-card-body {
+  min-height: 0;
+}
+
+.modal-card-preview .modal-card-foot {
+  flex: none;
+  flex-wrap: wrap;
+  gap: var(--fluent-spacing-2);
 }
 
 .modal-card-preview .modal-card-head,

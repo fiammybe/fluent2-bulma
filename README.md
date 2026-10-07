@@ -59,20 +59,23 @@ their directional variants) use Fluent spacing values.
 
 ```sh
 npm ci
-npm run dev     # build the CSS package and serve the overview at localhost:5173
-npm run build   # creates themed CSS and tokens-only CSS in css/
+npm run dev     # build the CSS package and open the overview at localhost:5173/overview.html
+npm run build   # creates themed CSS in css/ and the self-contained overview site in dist/
 npm run lint    # stylelint + prettier
 ```
 
-The root `index.html` is a single-page gallery of Bulma elements, form controls,
+The root `overview.html` is a single-page gallery of Bulma elements, form controls,
 components, and layout patterns. It includes light/dark/system theme controls and
 a compact/comfortable density toggle.
+The CI `fluent2-bulma-overview` artifact contains `overview.html` and the bundled
+styles, scripts, and font assets needed to view it.
 
 ## Folder layout
 
 - `sass/` – Sass sources (`base`, `tokens`, `elements`, `components`, `form`, `layout`, `helpers`, `themes`)
-- `index.html`, `overview.*` – local component overview page and its styles/interactions
+- `overview.html`, `overview.*` – local component overview page and its styles/interactions
 - `css/` – build output (not committed)
+- `dist/` – self-contained overview site build output (not committed)
 - `docs/decisions/` – decision records
 
 ## Browser support

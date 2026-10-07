@@ -1,5 +1,3 @@
-import './overview.css';
-
 const root = document.documentElement;
 const themeButtons = document.querySelectorAll('[data-theme-choice]');
 const densityToggle = document.querySelector('#comfortable-density');
@@ -8,6 +6,15 @@ const fileInput = document.querySelector('.file-input');
 const fileName = document.querySelector('.file-name');
 const navbarBurger = document.querySelector('.navbar-burger');
 const navbarMenu = document.querySelector(`#${navbarBurger.dataset.target}`);
+const dropdown = document.querySelector('.overview-dropdown');
+const dropdownTrigger = dropdown.querySelector('.dropdown-trigger button');
+let dropdownOpen = false;
+
+const setDropdownOpen = (open) => {
+  dropdownOpen = open;
+  dropdown.classList.toggle('is-active', open);
+  dropdownTrigger.setAttribute('aria-expanded', String(open));
+};
 
 themeButtons.forEach((button) => {
   button.addEventListener('click', () => {
@@ -23,6 +30,29 @@ themeButtons.forEach((button) => {
       themeButton.setAttribute('aria-pressed', String(themeButton === button));
     });
   });
+});
+
+dropdownTrigger.addEventListener('click', () => {
+  setDropdownOpen(!dropdownOpen);
+});
+
+dropdown.addEventListener('click', (event) => {
+  if (event.target.closest('.dropdown-item')) {
+    setDropdownOpen(false);
+  }
+});
+
+document.addEventListener('click', (event) => {
+  if (!dropdown.contains(event.target)) {
+    setDropdownOpen(false);
+  }
+});
+
+document.addEventListener('keydown', (event) => {
+  if (event.key === 'Escape' && dropdownOpen) {
+    setDropdownOpen(false);
+    dropdownTrigger.focus();
+  }
 });
 
 densityToggle.addEventListener('change', () => {
