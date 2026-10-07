@@ -158,6 +158,16 @@
     color: var(--fluent-color-neutral-foreground-3);
   }
 
+  .control.has-icons-left .input,
+  .control.has-icons-left .select select {
+    padding-inline-start: 2.5em;
+  }
+
+  .control.has-icons-right .input,
+  .control.has-icons-right .select select {
+    padding-inline-end: 2.5em;
+  }
+
   .is-comfortable .input,
   .is-comfortable .select select,
   .is-comfortable .file-cta,
