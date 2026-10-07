@@ -14,15 +14,17 @@ export default defineConfig(({ mode }) => {
       rollupOptions: {
         input: overview ? 'overview.html' : 'sass/index.scss',
         output: {
-          assetFileNames: overview
-            ? undefined
-            : (assetInfo) => {
-                if (assetInfo.name?.endsWith('.woff2')) {
-                  return 'fonts/[name][extname]';
-                }
+          assetFileNames: (assetInfo) => {
+            if (overview) {
+              return 'assets/[name]-[hash][extname]';
+            }
 
-                return minify ? 'fluent2-bulma.min.css' : 'fluent2-bulma.css';
-              },
+            if (assetInfo.name?.endsWith('.woff2')) {
+              return 'fonts/[name][extname]';
+            }
+
+            return minify ? 'fluent2-bulma.min.css' : 'fluent2-bulma.css';
+          },
         },
       },
     },
