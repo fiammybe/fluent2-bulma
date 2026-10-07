@@ -142,6 +142,46 @@
     color: var(--fluent-color-neutral-foreground-1);
   }
 
+  .modal-card {
+    overflow: hidden;
+    border: 1px solid var(--fluent-color-neutral-stroke-2);
+    border-radius: var(--fluent-radius-large);
+    background: var(--fluent-color-neutral-background-1);
+    box-shadow: var(--fluent-shadow-16);
+    color: var(--fluent-color-neutral-foreground-1);
+  }
+
+  .modal-card-head,
+  .modal-card-foot {
+    display: flex;
+    align-items: center;
+    gap: var(--fluent-spacing-3);
+    padding: var(--fluent-spacing-5) var(--fluent-spacing-6);
+    border-color: var(--fluent-color-neutral-stroke-2);
+    background: var(--fluent-color-neutral-background-2);
+  }
+
+  .modal-card-head {
+    justify-content: space-between;
+  }
+
+  .modal-card-title {
+    color: var(--fluent-color-neutral-foreground-1);
+    font-size: var(--fluent-font-size-subtitle-1);
+    font-weight: 600;
+  }
+
+  .modal-card-body {
+    padding: var(--fluent-spacing-6);
+    background: var(--fluent-color-neutral-background-1);
+    color: var(--fluent-color-neutral-foreground-1);
+  }
+
+  .modal-card-foot {
+    flex-wrap: wrap;
+    justify-content: flex-start;
+  }
+
   .fluent-dialog {
     width: min(32rem, calc(100vw - 2rem));
     max-height: calc(100dvh - 2rem);
