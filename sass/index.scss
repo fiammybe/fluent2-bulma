@@ -1,1 +1,18 @@
-// Entry point. Intentionally empty in Phase 0.
+@forward 'tokens' hide emit, emit-dark;
+@use 'base';
+@use 'helpers';
+@use 'themes';
+@use 'tokens';
+
+@layer fluent2 {
+  @include tokens.font-face;
+
+  :root,
+  [data-theme='light'] {
+    @include tokens.emit;
+  }
+
+  @include themes.emit;
+  @include base.emit;
+  @include helpers.emit;
+}

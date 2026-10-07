@@ -1,0 +1,21 @@
+$fluent-spacing-scale: (
+  0: 0,
+  1: 0.125rem,
+  2: 0.25rem,
+  3: 0.375rem,
+  4: 0.5rem,
+  5: 0.75rem,
+  6: 1rem,
+  7: 1.25rem,
+  8: 1.5rem,
+  9: 2rem,
+  10: 2.5rem,
+  11: 3rem,
+  12: 4rem,
+) !default;
+
+@mixin emit {
+  @each $step, $value in $fluent-spacing-scale {
+    --fluent-spacing-#{$step}: #{$value};
+  }
+}

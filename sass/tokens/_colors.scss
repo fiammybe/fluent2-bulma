@@ -1,0 +1,129 @@
+$fluent-brand-color: #0f6cbd !default;
+$fluent-brand-ramp: (
+  10: #061724,
+  20: #082338,
+  30: #0a2e4a,
+  40: #0c3b5e,
+  50: #0e4775,
+  60: #0f548c,
+  70: #115ea3,
+  80: $fluent-brand-color,
+  90: #2886de,
+  100: #479ef5,
+  110: #62abf5,
+  120: #77b7f7,
+  130: #96c6fa,
+  140: #b4d6fa,
+  150: #cfe4fa,
+  160: #ebf3fc,
+) !default;
+$fluent-neutral-ramp: (
+  0: #fff,
+  2: #fafafa,
+  4: #f5f5f5,
+  6: #f0f0f0,
+  8: #ebebeb,
+  10: #e6e6e6,
+  12: #e0e0e0,
+  14: #d6d6d6,
+  16: #ccc,
+  18: #c7c7c7,
+  20: #bdbdbd,
+  22: #adadad,
+  24: #a3a3a3,
+  26: #999,
+  28: #8a8a8a,
+  30: #707070,
+  32: #616161,
+  34: #575757,
+  36: #4d4d4d,
+  38: #3d3d3d,
+  40: #383838,
+  42: #292929,
+  44: #1f1f1f,
+  46: #141414,
+  48: #0a0a0a,
+  50: #000,
+) !default;
+$fluent-neutral-colors: (
+  foreground-1: #242424,
+  foreground-2: #424242,
+  foreground-3: #616161,
+  foreground-4: #707070,
+  foreground-disabled: #bdbdbd,
+  background-1: #fff,
+  background-2: #fafafa,
+  background-3: #f5f5f5,
+  background-4: #f0f0f0,
+  background-5: #ebebeb,
+  background-6: #e6e6e6,
+  stroke-1: #d1d1d1,
+  stroke-2: #e0e0e0,
+) !default;
+$fluent-neutral-dark-colors: (
+  foreground-1: #fff,
+  foreground-2: #d6d6d6,
+  foreground-3: #adadad,
+  foreground-4: #999,
+  foreground-disabled: #5c5c5c,
+  background-1: #292929,
+  background-2: #1f1f1f,
+  background-3: #141414,
+  background-4: #0a0a0a,
+  background-5: #333,
+  background-6: #3d3d3d,
+  stroke-1: #666,
+  stroke-2: #525252,
+) !default;
+$fluent-status-colors: (
+  success: #107c10,
+  success-background: #dff6dd,
+  warning: #9d5d00,
+  warning-background: #fff4ce,
+  danger: #d13438,
+  danger-background: #fde7e9,
+  info: #0078d4,
+  info-background: #f0f6ff,
+) !default;
+$fluent-status-dark-colors: (
+  success: #54b054,
+  success-background: #193d19,
+  warning: #fce100,
+  warning-background: #433519,
+  danger: #ff99a4,
+  danger-background: #442726,
+  info: #479ef5,
+  info-background: #142c42,
+) !default;
+
+@mixin emit {
+  @each $step, $value in $fluent-brand-ramp {
+    @if $step == 80 {
+      --fluent-color-brand-#{$step}: var(--fluent-brand-color);
+    } @else {
+      --fluent-color-brand-#{$step}: #{$value};
+    }
+  }
+
+  @each $step, $value in $fluent-neutral-ramp {
+    --fluent-color-neutral-#{$step}: #{$value};
+  }
+
+  @each $name, $value in $fluent-neutral-colors {
+    --fluent-color-neutral-#{$name}: #{$value};
+  }
+
+  @each $name, $value in $fluent-status-colors {
+    --fluent-color-#{$name}: #{$value};
+  }
+}
+
+@mixin emit-dark {
+  @each $name, $value in $fluent-neutral-dark-colors {
+    --fluent-color-neutral-#{$name}: #{$value};
+  }
+
+  @each $name, $value in $fluent-status-dark-colors {
+    --fluent-color-#{$name}: #{$value};
+  }
+}

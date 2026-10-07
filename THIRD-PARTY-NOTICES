@@ -15,3 +15,9 @@ This project is an unofficial project and is not affiliated with Microsoft.
    Segoe UI is a Microsoft font and is NOT MIT licensed. It is not bundled or
    distributed with this package; font stacks only reference it by name and
    fall back to system fonts when it is unavailable.
+
+4. Noto Sans
+   Copyright 2022 The Noto Project Authors. Noto Sans is licensed under the SIL
+   Open Font License, Version 1.1. Its Latin variable-font subsets are included
+   in sass/tokens/fonts/ with the full license in OFL.txt.
+   https://github.com/google/fonts/tree/main/ofl/notosans

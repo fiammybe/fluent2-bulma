@@ -1,0 +1,32 @@
+@forward 'colors' hide emit, emit-dark;
+@forward 'density' hide emit;
+@forward 'elevation' hide emit;
+@forward 'motion' hide emit;
+@forward 'shape' hide emit;
+@forward 'spacing' hide emit;
+@forward 'typography' hide emit, font-face;
+@use 'colors' as colors;
+@use 'density' as density;
+@use 'elevation' as elevation;
+@use 'motion' as motion;
+@use 'shape' as shape;
+@use 'spacing' as spacing;
+@use 'typography' as typography;
+
+@mixin emit {
+  @include colors.emit;
+  @include density.emit;
+  @include elevation.emit;
+  @include motion.emit;
+  @include shape.emit;
+  @include spacing.emit;
+  @include typography.emit;
+}
+
+@mixin emit-dark {
+  @include colors.emit-dark;
+}
+
+@mixin font-face {
+  @include typography.font-face;
+}

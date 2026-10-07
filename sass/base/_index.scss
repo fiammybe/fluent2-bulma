@@ -1,0 +1,95 @@
+@mixin emit {
+  *,
+  *::before,
+  *::after {
+    box-sizing: border-box;
+  }
+
+  html {
+    font-family: var(--fluent-font-family);
+    text-size-adjust: 100%;
+  }
+
+  body {
+    margin: 0;
+    background-color: var(--fluent-color-neutral-background-1);
+    color: var(--fluent-color-neutral-foreground-1);
+    font-family: var(--fluent-font-family);
+    font-size: var(--fluent-font-size-body-1);
+    font-weight: var(--fluent-font-weight-body-1);
+    line-height: var(--fluent-line-height-body-1);
+  }
+
+  :focus-visible {
+    outline: var(--fluent-stroke-width-thick) solid var(--fluent-color-neutral-foreground-1);
+    outline-offset: 2px;
+    box-shadow: 0 0 0 4px var(--fluent-brand-color);
+  }
+
+  .button {
+    min-height: var(--fluent-control-height);
+    border-radius: var(--fluent-radius-medium);
+    font-family: var(--fluent-font-family);
+    font-weight: 600;
+    transition:
+      background-color var(--fluent-duration-fast) var(--fluent-easing-standard),
+      border-color var(--fluent-duration-fast) var(--fluent-easing-standard),
+      color var(--fluent-duration-fast) var(--fluent-easing-standard);
+  }
+
+  .button.is-primary {
+    border-color: var(--fluent-brand-color);
+    background-color: var(--fluent-brand-color);
+    color: #fff;
+  }
+
+  .input,
+  .textarea,
+  .select select {
+    border-radius: var(--fluent-radius-medium);
+    border-width: var(--fluent-stroke-width-thin);
+    font-family: var(--fluent-font-family);
+  }
+
+  .input,
+  .select select {
+    min-height: var(--fluent-control-height);
+  }
+
+  .input:focus,
+  .textarea:focus,
+  .select select:focus {
+    border-color: var(--fluent-brand-color);
+    box-shadow: 0 0 0 1px var(--fluent-brand-color);
+  }
+
+  .is-comfortable {
+    --fluent-control-height: var(--fluent-control-height-comfortable);
+    --bulma-control-height: var(--fluent-control-height) !important;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+      scroll-behavior: auto !important;
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+    }
+  }
+
+  @media (forced-colors: active) {
+    :focus-visible {
+      outline-color: Highlight;
+      box-shadow: none;
+    }
+
+    .button.is-primary {
+      border-color: ButtonText;
+      background-color: ButtonFace;
+      color: ButtonText;
+      forced-color-adjust: auto;
+    }
+  }
+}

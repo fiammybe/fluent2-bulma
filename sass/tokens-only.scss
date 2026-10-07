@@ -1,0 +1,20 @@
+@use 'tokens';
+
+@layer fluent2 {
+  :root,
+  [data-theme='light'] {
+    --fluent-brand-color: #{tokens.$fluent-brand-color};
+
+    @include tokens.emit;
+  }
+
+  [data-theme='dark'] {
+    @include tokens.emit-dark;
+  }
+
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme='light']) {
+      @include tokens.emit-dark;
+    }
+  }
+}

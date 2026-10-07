@@ -1,0 +1,14 @@
+$fluent-elevation: (
+  2: 0 1px 2px rgb(0 0 0 / 14%),
+  4: 0 2px 4px rgb(0 0 0 / 14%),
+  8: 0 4px 8px rgb(0 0 0 / 14%),
+  16: 0 8px 16px rgb(0 0 0 / 14%),
+  28: 0 14px 28px rgb(0 0 0 / 18%),
+  64: 0 32px 64px rgb(0 0 0 / 24%),
+) !default;
+
+@mixin emit {
+  @each $level, $shadow in $fluent-elevation {
+    --fluent-shadow-#{$level}: #{$shadow};
+  }
+}

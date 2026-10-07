@@ -16,17 +16,62 @@ npm install @fiammybe/fluent2-bulma bulma
 
 `bulma` (`^1.0.4`) is a peer dependency.
 
+## Use
+
+Load Bulma in a lower-priority cascade layer so the Fluent 2 layer can theme its
+components. The theme also works with `data-theme` attributes without JavaScript:
+
+```css
+@layer bulma, fluent2;
+@import url('bulma/css/bulma.css') layer(bulma);
+@import url('@fiammybe/fluent2-bulma/css/fluent2-bulma.css');
+```
+
+The system uses light colors by default, follows `prefers-color-scheme` when no
+theme is selected, and supports explicit `<html data-theme="light">` or
+`<html data-theme="dark">`. Its default font stack prefers Segoe UI when
+available, then the locally hosted Noto Sans Latin font, before system fonts.
+Noto Sans is licensed under SIL OFL 1.1; its license is included alongside the
+font files.
+
+Override the brand color at build time through the Sass entry point, or at runtime
+with the `--fluent-brand-color` custom property:
+
+```scss
+@use '@fiammybe/fluent2-bulma' with (
+  $fluent-brand-color: #0f6cbd
+);
+```
+
+```css
+:root {
+  --fluent-brand-color: #6750a4;
+}
+```
+
+Use `@fiammybe/fluent2-bulma/tokens` for the Sass token maps and
+`@fiammybe/fluent2-bulma/tokens.css` for the tokens-only stylesheet. The default
+compact density uses 2rem controls; add `.is-comfortable` to opt into 2.5rem
+controls. Bulma spacing helpers (`p-1` through `p-6`, `m-1` through `m-6`, and
+their directional variants) use Fluent spacing values.
+
 ## Development
 
 ```sh
 npm ci
-npm run build   # vite (sass) -> css/fluent2-bulma.css and css/fluent2-bulma.min.css
+npm run dev     # build the CSS package and serve the overview at localhost:5173
+npm run build   # creates themed CSS and tokens-only CSS in css/
 npm run lint    # stylelint + prettier
 ```
+
+The root `index.html` is a single-page gallery of Bulma elements, form controls,
+components, and layout patterns. It includes light/dark/system theme controls and
+a compact/comfortable density toggle.
 
 ## Folder layout
 
 - `sass/` – Sass sources (`base`, `tokens`, `elements`, `components`, `form`, `layout`, `helpers`, `themes`)
+- `index.html`, `overview.*` – local component overview page and its styles/interactions
 - `css/` – build output (not committed)
 - `docs/decisions/` – decision records
 
