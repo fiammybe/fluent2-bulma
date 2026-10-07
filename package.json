@@ -21,6 +21,7 @@
   "main": "css/fluent2-bulma.css",
   "files": [
     "css",
+    "js",
     "sass",
     "THIRD-PARTY-NOTICES"
   ],
@@ -32,16 +33,18 @@
     },
     "./tokens": "./sass/tokens/_index.scss",
     "./tokens.css": "./css/fluent2-bulma.tokens.css",
+    "./js": "./js/fluent2.js",
     "./css/*": "./css/*",
     "./sass/*": "./sass/*",
     "./package.json": "./package.json"
   },
   "scripts": {
-    "build": "npm run clean && npm run build-sass && npm run build-min && npm run build-overview",
+    "build": "npm run clean && npm run build-sass && npm run build-min && npm run build-js && npm run build-overview",
     "build-sass": "vite build && sass --no-source-map sass/tokens-only.scss css/fluent2-bulma.tokens.css",
     "build-min": "vite build --mode minify && sass --style=compressed --no-source-map sass/tokens-only.scss css/fluent2-bulma.tokens.min.css",
+    "build-js": "vite build --mode library && node -e \"if (require('fs').statSync('js/fluent2.js').size > 10240) process.exitCode = 1\"",
     "build-overview": "vite build --mode overview",
-    "clean": "node -e \"for (const path of ['css','dist']) require('fs').rmSync(path,{recursive:true,force:true})\"",
+    "clean": "node -e \"for (const path of ['css','dist','js']) require('fs').rmSync(path,{recursive:true,force:true})\"",
     "dev": "npm run build && vite --open /overview.html",
     "lint": "npm run lint:css && npm run format:check",
     "lint:css": "stylelint \"sass/**/*.scss\"",

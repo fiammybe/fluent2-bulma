@@ -55,6 +55,43 @@ compact density uses 2rem controls; add `.is-comfortable` to opt into 2.5rem
 controls. Bulma spacing helpers (`p-1` through `p-6`, `m-1` through `m-6`, and
 their directional variants) use Fluent spacing values.
 
+### Navigation and overlay interactions
+
+Interactions are opt-in and dependency-free. Import and initialize the ES module
+only on pages that use the enhanced components:
+
+```js
+import { initFluent2 } from '@fiammybe/fluent2-bulma/js';
+
+const cleanup = initFluent2();
+```
+
+The module enhances elements marked with `data-fluent-*`. Without it, navigation
+links, menu links, pagination, CSS tooltips, and the inline dialog fallback remain
+usable; a native `popover` trigger works without the module in supporting browsers.
+`npm run build` emits `js/fluent2.js` and enforces a 10 KiB size budget.
+
+The components follow these accessibility patterns:
+
+- **Navbar:** a labelled navigation landmark; the mobile toggle is a button with
+  `aria-expanded` and `aria-controls`. Navigation remains visible without JavaScript.
+- **Tabs:** enhanced as an automatic-activation tablist. Arrow keys, Home, and End
+  move between tabs; without JavaScript the links navigate to visible panels.
+- **Menu/dropdown:** the native Popover API is used where available. Its `menu`
+  contains `menuitem` links and supports arrow keys, Home, End, and Escape.
+- **Breadcrumb:** a labelled navigation landmark with `aria-current="page"` on
+  the current location.
+- **Pagination:** a labelled navigation landmark with `aria-current="page"` on
+  the current page; page links work without JavaScript.
+- **Dialog:** a labelled native `<dialog>` opened modally when enhanced. The browser
+  provides modal focus containment and Escape handling; the dialog is inline when
+  JavaScript is unavailable.
+- **Tooltip:** a non-interactive description shown on hover and keyboard focus;
+  the enhanced version uses `role="tooltip"` and `aria-describedby`.
+- **Toast/MessageBar:** notifications use a polite live region (`role="status"`).
+  Static messages remain visible without JavaScript; enhanced toasts stack and
+  dismiss after five seconds.
+
 ## Development
 
 ```sh

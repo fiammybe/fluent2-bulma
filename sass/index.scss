@@ -1,6 +1,7 @@
 @forward 'tokens' hide emit, emit-dark;
 @use 'base';
 @use 'elements';
+@use 'components';
 @use 'form';
 @use 'helpers';
 @use 'themes';
@@ -17,6 +18,7 @@
   @include themes.emit;
   @include base.emit;
   @include elements.emit;
+  @include components.emit;
   @include form.emit;
   @include helpers.emit;
 }

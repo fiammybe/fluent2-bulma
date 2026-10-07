@@ -14,13 +14,14 @@
   <body>
     <header class="hero is-small overview-hero">
       <div class="hero-head">
-        <nav class="navbar" aria-label="Main navigation">
+        <nav class="navbar" aria-label="Main navigation" data-fluent-navbar>
           <div class="container">
             <div class="navbar-brand">
               <a class="navbar-item overview-brand" href="#top">Fluent 2 <span>×</span> Bulma</a>
               <button
                 class="navbar-burger"
                 type="button"
+                data-fluent-navbar-toggle
                 aria-label="Toggle navigation"
                 aria-expanded="false"
                 aria-controls="overview-navigation"
@@ -370,12 +371,21 @@
                   </li>
                 </ul>
               </nav>
-              <div class="tabs is-boxed">
-                <ul>
-                  <li class="is-active"><a href="#elements">Overview</a></li>
-                  <li><a href="#forms">Activity</a></li>
-                  <li><a href="#layout">Settings</a></li>
+              <div class="tabs is-boxed" data-fluent-tabs>
+                <ul data-fluent-tablist aria-label="Workspace views">
+                  <li class="is-active"><a data-fluent-tab href="#overview-panel">Overview</a></li>
+                  <li><a data-fluent-tab href="#activity-panel">Activity</a></li>
+                  <li><a data-fluent-tab href="#settings-panel">Settings</a></li>
                 </ul>
+                <section id="overview-panel" data-fluent-tabpanel>
+                  <p>Overview content. Without JavaScript these links work as page anchors.</p>
+                </section>
+                <section id="activity-panel" data-fluent-tabpanel>
+                  <p>Recent workspace activity.</p>
+                </section>
+                <section id="settings-panel" data-fluent-tabpanel>
+                  <p>Workspace settings.</p>
+                </section>
               </div>
               <nav class="pagination is-small" role="navigation" aria-label="Pagination">
                 <a class="pagination-previous" href="#components">Previous</a>
@@ -404,18 +414,22 @@
                     aria-haspopup="true"
                     aria-expanded="false"
                     aria-controls="sample-dropdown"
+                    popovertarget="sample-dropdown"
                   >
                     <span>Actions</span>
                     <span class="overview-dropdown-chevron" aria-hidden="true"></span>
                   </button>
                 </div>
-                <div id="sample-dropdown" class="dropdown-menu" role="menu">
-                  <div class="dropdown-content">
-                    <a href="#layout" class="dropdown-item">View details</a>
-                    <a href="#forms" class="dropdown-item">Edit settings</a>
-                    <hr class="dropdown-divider" />
-                    <a href="#top" class="dropdown-item">Archive</a>
-                  </div>
+                <div
+                  id="sample-dropdown"
+                  class="fluent-menu"
+                  popover="auto"
+                  role="menu"
+                  data-fluent-menu
+                >
+                  <a href="#layout" role="menuitem">View details</a>
+                  <a href="#forms" role="menuitem">Edit settings</a>
+                  <a href="#top" role="menuitem">Archive</a>
                 </div>
               </div>
               <aside class="menu mt-5">
@@ -458,7 +472,7 @@
               <article class="message is-warning mt-4">
                 <div class="message-header">
                   <p>Heads up</p>
-                  <button class="delete" aria-label="Dismiss message"></button>
+                  <button class="delete" type="button" aria-label="Dismiss message" data-fluent-dismiss></button>
                 </div>
                 <div class="message-body">Review pending changes before publishing.</div>
               </article>
@@ -486,24 +500,42 @@
           </div>
           <div class="column">
             <div class="box">
-              <h3 class="title is-5">Dialog preview</h3>
-              <p class="mb-4">An inline preview of the modal card pattern.</p>
-              <div
-                class="modal-card modal-card-preview"
-                role="dialog"
-                aria-labelledby="dialog-title"
+              <h3 class="title is-5">Dialog and tooltip</h3>
+              <p class="mb-4">The dialog stays visible inline without JavaScript and becomes modal when enhanced.</p>
+              <a class="button is-primary" href="#sample-dialog" data-fluent-dialog-trigger>Open dialog</a>
+              <button
+                class="button mt-3"
+                type="button"
+                data-fluent-tooltip="Tooltips describe controls without taking focus."
               >
-                <header class="modal-card-head">
-                  <p id="dialog-title" class="modal-card-title">Save your changes?</p>
-                  <button class="delete" aria-label="Close dialog"></button>
-                </header>
-                <section class="modal-card-body">
-                  Your updates will be visible to everyone in this workspace.
-                </section>
-                <footer class="modal-card-foot">
-                  <button class="button is-primary">Save changes</button>
-                  <button class="button">Cancel</button>
-                </footer>
+                Hover or focus for a tooltip
+              </button>
+              <dialog id="sample-dialog" class="fluent-dialog" open aria-labelledby="dialog-title">
+                <h4 id="dialog-title" class="title is-5">Save your changes?</h4>
+                <p class="mb-4">Your updates will be visible to everyone in this workspace.</p>
+                <form method="dialog" class="buttons">
+                  <button class="button is-primary" value="save">Save changes</button>
+                  <button class="button" value="cancel" data-fluent-dialog-close>Cancel</button>
+                </form>
+              </dialog>
+              <h4 class="title is-6 mt-5">Toast / message bar</h4>
+              <p class="mb-3">A status message remains available without JavaScript.</p>
+              <button
+                class="button"
+                type="button"
+                data-fluent-toast-trigger
+                data-fluent-toast-message="Your changes have been saved."
+              >
+                Show toast
+              </button>
+              <div
+                class="fluent-toast-region mt-3"
+                data-fluent-toast-region
+                role="status"
+                aria-live="polite"
+                aria-atomic="false"
+              >
+                <div class="notification is-success">Notifications will appear here.</div>
               </div>
             </div>
           </div>
