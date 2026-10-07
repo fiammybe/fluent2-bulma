@@ -3,6 +3,10 @@ import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
+const viewBoxNumber = '\\d+(?:\\.\\d+)?';
+const viewBoxPattern = new RegExp(
+  `^${viewBoxNumber}\\s+${viewBoxNumber}\\s+${viewBoxNumber}\\s+${viewBoxNumber}$`,
+);
 const options = new Map([
   ['--list', path.join(root, 'icons/default.json')],
   ['--icons-dir', path.join(root, 'node_modules/@fluentui/svg-icons/icons')],
@@ -54,9 +58,12 @@ const parsePath = (attributes, body, filename) => {
     throw new Error(`Unsupported path attributes in ${filename}`);
   }
   if (body?.trim()) throw new Error(`Unsupported SVG content in ${filename}`);
-  const hasSupportedPathCharacters = /^[MmZzLlHhVvCcSsQqTtAaEe0-9+.,\s-]+$/.test(parsed.get('d'));
-  if (!hasSupportedPathCharacters) {
-    throw new Error(`Unsupported characters in SVG path data in ${filename}`);
+  const pathData = parsed.get('d');
+  const hasSupportedPathCharacters = /^[MmZzLlHhVvCcSsQqTtAaEe0-9+.,\s-]+$/.test(pathData);
+  if (!hasSupportedPathCharacters || !/^[Mm](?=.*\d)/.test(pathData)) {
+    throw new Error(
+      `SVG path data must use supported characters and start with M or m in ${filename}`,
+    );
   }
   for (const name of ['fill-rule', 'clip-rule']) {
     if (parsed.has(name) && !['nonzero', 'evenodd'].includes(parsed.get(name))) {
@@ -72,10 +79,7 @@ const symbols = await Promise.all(
     const svg = await readFile(filename, 'utf8');
     const rootMatch = svg.match(/^\s*<svg\b([^>]*)>([\s\S]*?)<\/svg>\s*$/);
     const viewBox = rootMatch?.[1].match(/\bviewBox="([^"]+)"/)?.[1];
-    if (
-      !rootMatch ||
-      !/^\d+(?:\.\d+)?\s+\d+(?:\.\d+)?\s+\d+(?:\.\d+)?\s+\d+(?:\.\d+)?$/.test(viewBox ?? '')
-    ) {
+    if (!rootMatch || !viewBoxPattern.test(viewBox ?? '')) {
       throw new Error(`Invalid SVG root or viewBox in ${filename}`);
     }
 
