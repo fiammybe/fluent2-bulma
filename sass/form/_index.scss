@@ -165,6 +165,10 @@
     min-height: var(--fluent-control-height-comfortable);
   }
 
+  .is-comfortable .textarea {
+    padding-block: var(--fluent-spacing-6);
+  }
+
   .is-comfortable .file-name {
     line-height: calc(var(--fluent-control-height-comfortable) - 2px);
   }

@@ -63,7 +63,8 @@
     box-shadow: none;
   }
 
-  .button.is-outline {
+  .button.is-outline,
+  .button.is-outlined {
     --fluent-button-background: transparent;
     --fluent-button-foreground: var(--fluent-brand-color);
     --fluent-button-border: var(--fluent-color-neutral-stroke-1);
@@ -73,14 +74,16 @@
     box-shadow: none;
   }
 
-  .button.is-transparent {
+  .button.is-transparent,
+  .button.is-ghost,
+  .button.is-text {
     --fluent-button-background: transparent;
     --fluent-button-foreground: var(--fluent-color-neutral-foreground-1);
     --fluent-button-border: transparent;
     --fluent-button-hover-background: var(--fluent-color-neutral-background-2);
     --fluent-button-pressed-background: var(--fluent-color-neutral-background-3);
 
-    box-shadow: none;
+    text-decoration: none;
   }
 
   .button.is-dark {
@@ -99,8 +102,16 @@
   .button.is-danger {
     --fluent-button-foreground: #fff;
     --fluent-button-border: transparent;
-    --fluent-button-hover-background: var(--fluent-color-neutral-foreground-1);
-    --fluent-button-pressed-background: var(--fluent-color-neutral-foreground-2);
+    --fluent-button-hover-background: color-mix(
+      in srgb,
+      var(--fluent-button-background),
+      black 10%
+    );
+    --fluent-button-pressed-background: color-mix(
+      in srgb,
+      var(--fluent-button-background),
+      black 20%
+    );
   }
 
   .button.is-info {
@@ -118,6 +129,148 @@
 
   .button.is-danger {
     --fluent-button-background: var(--fluent-color-danger);
+  }
+
+  .button.is-primary.is-light,
+  .button.is-link.is-light,
+  .button.is-primary.is-subtle,
+  .button.is-link.is-subtle {
+    --fluent-button-background: var(--fluent-color-brand-160);
+    --fluent-button-foreground: var(--fluent-color-brand-50);
+    --fluent-button-border: transparent;
+    --fluent-button-hover-background: var(--fluent-color-brand-150);
+    --fluent-button-pressed-background: var(--fluent-color-brand-140);
+  }
+
+  .button.is-info.is-light,
+  .button.is-info.is-subtle {
+    --fluent-button-background: var(--fluent-color-info-background);
+    --fluent-button-foreground: var(--fluent-color-info);
+    --fluent-button-border: transparent;
+    --fluent-button-hover-background: color-mix(
+      in srgb,
+      var(--fluent-color-info-background),
+      black 5%
+    );
+    --fluent-button-pressed-background: color-mix(
+      in srgb,
+      var(--fluent-color-info-background),
+      black 10%
+    );
+  }
+
+  .button.is-success.is-light,
+  .button.is-success.is-subtle {
+    --fluent-button-background: var(--fluent-color-success-background);
+    --fluent-button-foreground: var(--fluent-color-success);
+    --fluent-button-border: transparent;
+    --fluent-button-hover-background: color-mix(
+      in srgb,
+      var(--fluent-color-success-background),
+      black 5%
+    );
+    --fluent-button-pressed-background: color-mix(
+      in srgb,
+      var(--fluent-color-success-background),
+      black 10%
+    );
+  }
+
+  .button.is-warning.is-light,
+  .button.is-warning.is-subtle {
+    --fluent-button-background: var(--fluent-color-warning-background);
+    --fluent-button-foreground: var(--fluent-color-warning);
+    --fluent-button-border: transparent;
+    --fluent-button-hover-background: color-mix(
+      in srgb,
+      var(--fluent-color-warning-background),
+      black 5%
+    );
+    --fluent-button-pressed-background: color-mix(
+      in srgb,
+      var(--fluent-color-warning-background),
+      black 10%
+    );
+  }
+
+  .button.is-danger.is-light,
+  .button.is-danger.is-subtle {
+    --fluent-button-background: var(--fluent-color-danger-background);
+    --fluent-button-foreground: var(--fluent-color-danger);
+    --fluent-button-border: transparent;
+    --fluent-button-hover-background: color-mix(
+      in srgb,
+      var(--fluent-color-danger-background),
+      black 5%
+    );
+    --fluent-button-pressed-background: color-mix(
+      in srgb,
+      var(--fluent-color-danger-background),
+      black 10%
+    );
+  }
+
+  .button.is-primary.is-outline,
+  .button.is-primary.is-outlined,
+  .button.is-link.is-outline,
+  .button.is-link.is-outlined {
+    --fluent-button-background: transparent;
+    --fluent-button-foreground: var(--fluent-brand-color);
+    --fluent-button-border: var(--fluent-brand-color);
+    --fluent-button-hover-background: var(--fluent-color-brand-160);
+    --fluent-button-pressed-background: var(--fluent-color-brand-150);
+  }
+
+  .button.is-info.is-outline,
+  .button.is-info.is-outlined {
+    --fluent-button-background: transparent;
+    --fluent-button-foreground: var(--fluent-color-info);
+    --fluent-button-border: var(--fluent-color-info);
+    --fluent-button-hover-background: var(--fluent-color-info-background);
+    --fluent-button-pressed-background: color-mix(
+      in srgb,
+      var(--fluent-color-info-background),
+      black 10%
+    );
+  }
+
+  .button.is-success.is-outline,
+  .button.is-success.is-outlined {
+    --fluent-button-background: transparent;
+    --fluent-button-foreground: var(--fluent-color-success);
+    --fluent-button-border: var(--fluent-color-success);
+    --fluent-button-hover-background: var(--fluent-color-success-background);
+    --fluent-button-pressed-background: color-mix(
+      in srgb,
+      var(--fluent-color-success-background),
+      black 10%
+    );
+  }
+
+  .button.is-warning.is-outline,
+  .button.is-warning.is-outlined {
+    --fluent-button-background: transparent;
+    --fluent-button-foreground: var(--fluent-color-warning);
+    --fluent-button-border: var(--fluent-color-warning);
+    --fluent-button-hover-background: var(--fluent-color-warning-background);
+    --fluent-button-pressed-background: color-mix(
+      in srgb,
+      var(--fluent-color-warning-background),
+      black 10%
+    );
+  }
+
+  .button.is-danger.is-outline,
+  .button.is-danger.is-outlined {
+    --fluent-button-background: transparent;
+    --fluent-button-foreground: var(--fluent-color-danger);
+    --fluent-button-border: var(--fluent-color-danger);
+    --fluent-button-hover-background: var(--fluent-color-danger-background);
+    --fluent-button-pressed-background: color-mix(
+      in srgb,
+      var(--fluent-color-danger-background),
+      black 10%
+    );
   }
 
   .button.is-rounded,
@@ -378,6 +531,42 @@
     color: var(--fluent-color-neutral-foreground-2);
   }
 
+  .table {
+    --fluent-table-cell-padding: var(--fluent-spacing-4) var(--fluent-spacing-5);
+
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0;
+    background: transparent;
+    color: var(--fluent-color-neutral-foreground-1);
+  }
+
+  .table th,
+  .table td {
+    padding: var(--fluent-table-cell-padding);
+    border-color: var(--fluent-color-neutral-stroke-2);
+    vertical-align: middle;
+  }
+
+  .table thead th {
+    background: var(--fluent-color-neutral-background-2);
+    color: var(--fluent-color-neutral-foreground-2);
+    font-weight: 600;
+  }
+
+  .table.is-hoverable tbody tr:not(.is-selected):hover {
+    background: var(--fluent-color-neutral-background-2);
+  }
+
+  .table.is-striped tbody tr:not(.is-selected):nth-child(even) {
+    background: var(--fluent-color-neutral-background-2);
+  }
+
+  .table-caption {
+    color: var(--fluent-color-neutral-foreground-3);
+    font-size: var(--fluent-font-size-caption-1);
+  }
+
   .progress {
     height: 0.5rem;
     border-radius: var(--fluent-radius-circular);
@@ -433,5 +622,9 @@
   .is-comfortable .box,
   .is-comfortable .card-content {
     padding: var(--fluent-spacing-8);
+  }
+
+  .is-comfortable .table {
+    --fluent-table-cell-padding: var(--fluent-spacing-5) var(--fluent-spacing-6);
   }
 }
