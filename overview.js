@@ -1,5 +1,3 @@
-import './overview.css';
-
 const root = document.documentElement;
 const themeButtons = document.querySelectorAll('[data-theme-choice]');
 const densityToggle = document.querySelector('#comfortable-density');
