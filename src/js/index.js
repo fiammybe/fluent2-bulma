@@ -164,8 +164,8 @@ export const initFluent2 = (root = document) => {
   });
 
   getItems(root, '[data-fluent-accordion]').forEach((accordion) => {
-    const panels = [...accordion.querySelectorAll(':scope > details')];
     if (accordion.getAttribute('data-fluent-accordion') === 'multiple') return;
+    const panels = [...accordion.querySelectorAll(':scope > details')];
     let hasOpenPanel = false;
     panels.forEach((panel) => {
       if (!panel.open) return;

@@ -54,8 +54,9 @@ const parsePath = (attributes, body, filename) => {
     throw new Error(`Unsupported path attributes in ${filename}`);
   }
   if (body?.trim()) throw new Error(`Unsupported SVG content in ${filename}`);
-  if (!/^[MmZzLlHhVvCcSsQqTtAaEe0-9+.,\s-]+$/.test(parsed.get('d'))) {
-    throw new Error(`Invalid path data in ${filename}`);
+  const hasSupportedPathCharacters = /^[MmZzLlHhVvCcSsQqTtAaEe0-9+.,\s-]+$/.test(parsed.get('d'));
+  if (!hasSupportedPathCharacters) {
+    throw new Error(`Unsupported characters in SVG path data in ${filename}`);
   }
   for (const name of ['fill-rule', 'clip-rule']) {
     if (parsed.has(name) && !['nonzero', 'evenodd'].includes(parsed.get(name))) {
