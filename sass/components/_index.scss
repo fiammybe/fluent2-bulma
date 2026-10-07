@@ -1,4 +1,357 @@
 @mixin emit {
+  .fluent-icon {
+    display: inline-block;
+    flex: none;
+    color: currentcolor;
+    fill: currentcolor;
+    vertical-align: middle;
+  }
+
+  .fluent-icon-16 {
+    width: 1rem;
+    height: 1rem;
+  }
+
+  .fluent-icon-20 {
+    width: 1.25rem;
+    height: 1.25rem;
+  }
+
+  .fluent-icon-24 {
+    width: 1.5rem;
+    height: 1.5rem;
+  }
+
+  .fluent-switch {
+    display: inline-flex;
+    min-height: var(--fluent-control-height);
+    align-items: center;
+    gap: var(--fluent-spacing-3);
+    color: var(--fluent-color-neutral-foreground-1);
+    cursor: pointer;
+  }
+
+  .fluent-switch input {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip-path: inset(50%);
+    white-space: nowrap;
+  }
+
+  .fluent-switch-track {
+    position: relative;
+    width: 2.5rem;
+    height: 1.5rem;
+    flex: none;
+    border: 1px solid var(--fluent-color-neutral-stroke-1);
+    border-radius: var(--fluent-radius-circular);
+    background: var(--fluent-color-neutral-background-3);
+    transition:
+      background-color var(--fluent-duration-fast) var(--fluent-easing-standard),
+      border-color var(--fluent-duration-fast) var(--fluent-easing-standard);
+  }
+
+  .fluent-switch-track::after {
+    position: absolute;
+    top: 0.1875rem;
+    left: 0.1875rem;
+    width: 1rem;
+    height: 1rem;
+    border-radius: var(--fluent-radius-circular);
+    background: var(--fluent-color-neutral-foreground-2);
+    content: '';
+    transition:
+      background-color var(--fluent-duration-fast) var(--fluent-easing-standard),
+      transform var(--fluent-duration-fast) var(--fluent-easing-standard);
+  }
+
+  .fluent-switch input:checked + .fluent-switch-track {
+    border-color: var(--fluent-brand-color);
+    background: var(--fluent-brand-color);
+  }
+
+  .fluent-switch input:checked + .fluent-switch-track::after {
+    background: #fff;
+    transform: translateX(1rem);
+  }
+
+  .fluent-switch input:focus-visible + .fluent-switch-track {
+    outline: var(--fluent-stroke-width-thick) solid var(--fluent-color-neutral-foreground-1);
+    outline-offset: 2px;
+    box-shadow: 0 0 0 4px var(--fluent-brand-color);
+  }
+
+  .fluent-switch input:disabled + .fluent-switch-track {
+    border-color: transparent;
+    background: var(--fluent-color-neutral-background-3);
+    cursor: not-allowed;
+    opacity: 0.6;
+  }
+
+  .fluent-switch input:disabled ~ :last-child {
+    color: var(--fluent-color-neutral-foreground-disabled);
+    cursor: not-allowed;
+  }
+
+  .fluent-badge {
+    display: inline-flex;
+    min-height: 1.25rem;
+    align-items: center;
+    gap: var(--fluent-spacing-1);
+    padding: 0 var(--fluent-spacing-2);
+    border: 1px solid transparent;
+    border-radius: var(--fluent-radius-small);
+    background: var(--fluent-color-neutral-background-3);
+    color: var(--fluent-color-neutral-foreground-1);
+    font-size: var(--fluent-font-size-caption-1);
+    font-weight: 600;
+    line-height: 1;
+  }
+
+  .fluent-badge.is-brand {
+    background: var(--fluent-color-brand-160);
+    color: var(--fluent-color-brand-50);
+  }
+
+  .fluent-badge.is-info {
+    background: var(--fluent-color-info-background);
+    color: var(--fluent-color-info);
+  }
+
+  .fluent-badge.is-success {
+    background: var(--fluent-color-success-background);
+    color: var(--fluent-color-success);
+  }
+
+  .fluent-badge.is-warning {
+    background: var(--fluent-color-warning-background);
+    color: var(--fluent-color-warning);
+  }
+
+  .fluent-badge.is-danger {
+    background: var(--fluent-color-danger-background);
+    color: var(--fluent-color-danger);
+  }
+
+  .fluent-avatar {
+    --fluent-avatar-size: 2.5rem;
+
+    display: inline-grid;
+    width: var(--fluent-avatar-size);
+    height: var(--fluent-avatar-size);
+    flex: none;
+    place-items: center;
+    overflow: hidden;
+    border-radius: var(--fluent-radius-circular);
+    background: var(--fluent-color-neutral-background-3);
+    color: var(--fluent-color-neutral-foreground-1);
+    font-size: var(--fluent-font-size-body-2);
+    font-weight: 600;
+    line-height: 1;
+    vertical-align: middle;
+  }
+
+  .fluent-avatar img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .fluent-avatar.is-small {
+    --fluent-avatar-size: 1.5rem;
+
+    font-size: var(--fluent-font-size-caption-1);
+  }
+
+  .fluent-avatar.is-large {
+    --fluent-avatar-size: 3.5rem;
+
+    font-size: var(--fluent-font-size-subtitle-1);
+  }
+
+  .fluent-spinner {
+    --fluent-spinner-size: 1.5rem;
+
+    display: inline-block;
+    width: var(--fluent-spinner-size);
+    height: var(--fluent-spinner-size);
+    border: 2px solid var(--fluent-color-neutral-stroke-2);
+    border-top-color: var(--fluent-brand-color);
+    border-radius: var(--fluent-radius-circular);
+    animation: fluent-spinner-rotate 0.8s linear infinite;
+    vertical-align: middle;
+  }
+
+  .fluent-spinner.is-small {
+    --fluent-spinner-size: 1rem;
+  }
+
+  .fluent-spinner.is-large {
+    --fluent-spinner-size: 2rem;
+
+    border-width: 3px;
+  }
+
+  @keyframes fluent-spinner-rotate {
+    to {
+      transform: rotate(1turn);
+    }
+  }
+
+  .fluent-skeleton {
+    display: block;
+    min-height: 1em;
+    border-radius: var(--fluent-radius-small);
+    background: linear-gradient(
+      90deg,
+      var(--fluent-color-neutral-background-3),
+      var(--fluent-color-neutral-background-2),
+      var(--fluent-color-neutral-background-3)
+    );
+    background-size: 200% 100%;
+    animation: fluent-skeleton-shimmer 1.5s ease-in-out infinite;
+  }
+
+  .fluent-skeleton.is-circle {
+    width: 2.5rem;
+    height: 2.5rem;
+    border-radius: var(--fluent-radius-circular);
+  }
+
+  @keyframes fluent-skeleton-shimmer {
+    to {
+      background-position-x: -200%;
+    }
+  }
+
+  .fluent-divider {
+    width: 100%;
+    margin: var(--fluent-spacing-4) 0;
+    border: 0;
+    border-top: 1px solid var(--fluent-color-neutral-stroke-2);
+  }
+
+  .fluent-divider.is-vertical {
+    display: inline-block;
+    width: 1px;
+    height: 1.5em;
+    margin: 0 var(--fluent-spacing-3);
+    border-top: 0;
+    border-inline-start: 1px solid var(--fluent-color-neutral-stroke-2);
+    vertical-align: middle;
+  }
+
+  .fluent-accordion {
+    overflow: hidden;
+    border: 1px solid var(--fluent-color-neutral-stroke-2);
+    border-radius: var(--fluent-radius-medium);
+    background: var(--fluent-color-neutral-background-1);
+  }
+
+  .fluent-accordion > details + details {
+    border-top: 1px solid var(--fluent-color-neutral-stroke-2);
+  }
+
+  .fluent-accordion summary {
+    display: flex;
+    min-height: var(--fluent-control-height);
+    align-items: center;
+    justify-content: space-between;
+    gap: var(--fluent-spacing-4);
+    padding: var(--fluent-spacing-3) var(--fluent-spacing-5);
+    color: var(--fluent-color-neutral-foreground-1);
+    cursor: pointer;
+    font-weight: 600;
+    list-style: none;
+  }
+
+  .fluent-accordion summary::-webkit-details-marker {
+    display: none;
+  }
+
+  .fluent-accordion summary::after {
+    width: 0.5rem;
+    height: 0.5rem;
+    flex: none;
+    transform: rotate(45deg);
+    border-inline-end: 2px solid currentcolor;
+    border-block-end: 2px solid currentcolor;
+    content: '';
+    transition: transform var(--fluent-duration-fast) var(--fluent-easing-standard);
+  }
+
+  .fluent-accordion details[open] summary::after {
+    transform: rotate(225deg);
+  }
+
+  .fluent-accordion details[open] summary {
+    background: var(--fluent-color-neutral-background-2);
+  }
+
+  .fluent-accordion-content {
+    padding: var(--fluent-spacing-4) var(--fluent-spacing-5);
+    color: var(--fluent-color-neutral-foreground-2);
+  }
+
+  .fluent-slider {
+    width: 100%;
+    min-height: var(--fluent-control-height);
+    margin: 0;
+    accent-color: var(--fluent-brand-color);
+    cursor: pointer;
+  }
+
+  .fluent-slider:disabled {
+    cursor: not-allowed;
+    opacity: 0.6;
+  }
+
+  .is-comfortable .fluent-switch,
+  .is-comfortable .fluent-accordion summary,
+  .is-comfortable .fluent-slider {
+    min-height: var(--fluent-control-height-comfortable);
+  }
+
+  .is-comfortable .fluent-badge {
+    min-height: 1.5rem;
+    padding-inline: var(--fluent-spacing-3);
+  }
+
+  .is-comfortable .fluent-avatar {
+    --fluent-avatar-size: 3rem;
+  }
+
+  .is-comfortable .fluent-avatar.is-small {
+    --fluent-avatar-size: 1.75rem;
+  }
+
+  .is-comfortable .fluent-avatar.is-large {
+    --fluent-avatar-size: 4rem;
+  }
+
+  .is-comfortable .fluent-spinner:not(.is-small, .is-large) {
+    --fluent-spinner-size: 1.75rem;
+  }
+
+  .is-comfortable .fluent-skeleton.is-circle {
+    width: 3rem;
+    height: 3rem;
+  }
+
+  .is-comfortable .fluent-skeleton:not(.is-circle) {
+    min-height: 1.25em;
+  }
+
+  .is-comfortable .fluent-divider {
+    margin-block: var(--fluent-spacing-6);
+  }
+
+  .is-comfortable .fluent-divider.is-vertical {
+    margin-inline: var(--fluent-spacing-4);
+  }
+
   .navbar,
   .navbar-menu {
     background: var(--fluent-color-neutral-background-1);
