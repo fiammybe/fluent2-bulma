@@ -101,7 +101,8 @@ The components follow these accessibility patterns:
   `.fluent-divider`, and `.fluent-slider` classes. Give loading indicators an
   accessible name and hide decorative skeletons from assistive technology.
 
-All eight components use Fluent theme tokens and support `.is-comfortable` density.
+These components use Fluent theme tokens; `.is-comfortable` adjusts their sizing
+and spacing.
 The SVG icon sprite is built from Fluent System Icons at build time. Use a symbol
 with an external sprite URL (adjust the URL to where your bundler serves the
 package asset):
@@ -117,8 +118,9 @@ size. The default sprite list is in `icons/default.json`; generate a custom spri
 with `npm run build-icons -- --list path/to/icons.json`. Each list item names an
 SVG from the `@fluentui/svg-icons` package's `icons/` directory, such as
 `search_24_regular`. The default build writes the sprite as
-`public/fluent-icons.svg` during generation, then copies it to
-`css/fluent-icons.svg` and into the overview build.
+`public/fluent-icons.svg` during generation. Vite copies that public asset into
+the active build output: `css/fluent-icons.svg` for the package stylesheet and
+`dist/fluent-icons.svg` for the overview.
 
 ## Development
 
