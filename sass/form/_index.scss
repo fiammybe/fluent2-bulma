@@ -1,0 +1,181 @@
+@mixin emit {
+  .field:not(:last-child) {
+    margin-bottom: var(--fluent-spacing-6);
+  }
+
+  .label,
+  legend.label {
+    margin-bottom: var(--fluent-spacing-2);
+    color: var(--fluent-color-neutral-foreground-1);
+    font-size: var(--fluent-font-size-body-2);
+    font-weight: 600;
+  }
+
+  .help {
+    color: var(--fluent-color-neutral-foreground-3);
+    font-size: var(--fluent-font-size-caption-1);
+  }
+
+  .input,
+  .textarea,
+  .select select {
+    border: var(--fluent-stroke-width-thin) solid var(--fluent-color-neutral-stroke-1);
+    border-radius: var(--fluent-radius-medium);
+    background-color: var(--fluent-color-neutral-background-1);
+    color: var(--fluent-color-neutral-foreground-1);
+    font-family: var(--fluent-font-family);
+    font-size: var(--fluent-font-size-body-1);
+    transition:
+      border-color var(--fluent-duration-fast) var(--fluent-easing-standard),
+      box-shadow var(--fluent-duration-fast) var(--fluent-easing-standard);
+  }
+
+  .input,
+  .select select {
+    min-height: var(--fluent-control-height);
+    padding-inline: var(--fluent-control-padding-inline);
+  }
+
+  .textarea {
+    min-height: 6rem;
+    padding: var(--fluent-spacing-5) var(--fluent-control-padding-inline);
+  }
+
+  .input::placeholder,
+  .textarea::placeholder {
+    color: var(--fluent-color-neutral-foreground-3);
+    opacity: 1;
+  }
+
+  .input:hover,
+  .textarea:hover,
+  .select select:hover {
+    border-color: var(--fluent-color-neutral-foreground-2);
+  }
+
+  .input:focus,
+  .textarea:focus,
+  .select select:focus {
+    border-color: var(--fluent-color-neutral-stroke-1);
+    outline: none;
+    box-shadow: inset 0 -2px 0 var(--fluent-brand-color);
+  }
+
+  .input:disabled,
+  .textarea:disabled,
+  .select select:disabled {
+    border-color: var(--fluent-color-neutral-stroke-2);
+    background: var(--fluent-color-neutral-background-3);
+    color: var(--fluent-color-neutral-foreground-disabled);
+    opacity: 1;
+  }
+
+  .input.is-danger,
+  .textarea.is-danger,
+  .select.is-danger select {
+    border-color: var(--fluent-color-danger);
+  }
+
+  .input.is-danger:focus,
+  .textarea.is-danger:focus,
+  .select.is-danger select:focus {
+    box-shadow: inset 0 -2px 0 var(--fluent-color-danger);
+  }
+
+  .input.is-success,
+  .textarea.is-success,
+  .select.is-success select {
+    border-color: var(--fluent-color-success);
+  }
+
+  .input.is-success:focus,
+  .textarea.is-success:focus,
+  .select.is-success select:focus {
+    box-shadow: inset 0 -2px 0 var(--fluent-color-success);
+  }
+
+  .select:not(.is-multiple, .is-loading)::after {
+    border-color: var(--fluent-color-neutral-foreground-2);
+  }
+
+  .select select {
+    padding-inline-end: 2.5em;
+  }
+
+  .checkbox,
+  .radio {
+    color: var(--fluent-color-neutral-foreground-1);
+    font-size: var(--fluent-font-size-body-1);
+  }
+
+  .checkbox input,
+  .radio input {
+    width: 1rem;
+    height: 1rem;
+    margin-inline-end: var(--fluent-spacing-2);
+    accent-color: var(--fluent-brand-color);
+    vertical-align: -0.125em;
+  }
+
+  .checkbox input:disabled,
+  .radio input:disabled {
+    accent-color: var(--fluent-color-neutral-foreground-disabled);
+  }
+
+  .file-label {
+    color: var(--fluent-color-neutral-foreground-1);
+  }
+
+  .file-cta,
+  .file-name {
+    min-height: var(--fluent-control-height);
+    border-color: var(--fluent-color-neutral-stroke-1);
+    background: var(--fluent-color-neutral-background-1);
+    color: var(--fluent-color-neutral-foreground-1);
+  }
+
+  .file-cta {
+    border-radius: var(--fluent-radius-medium) 0 0 var(--fluent-radius-medium);
+    background: var(--fluent-color-neutral-background-2);
+  }
+
+  .file-name {
+    border-radius: 0 var(--fluent-radius-medium) var(--fluent-radius-medium) 0;
+    line-height: calc(var(--fluent-control-height) - 2px);
+  }
+
+  .file-cta:hover {
+    background: var(--fluent-color-neutral-background-3);
+  }
+
+  .file-input:focus-visible + .file-cta {
+    outline: var(--fluent-stroke-width-thick) solid var(--fluent-brand-color);
+    outline-offset: 2px;
+  }
+
+  .control.has-icons-left .icon,
+  .control.has-icons-right .icon {
+    color: var(--fluent-color-neutral-foreground-3);
+  }
+
+  .is-comfortable .input,
+  .is-comfortable .select select,
+  .is-comfortable .file-cta,
+  .is-comfortable .file-name {
+    min-height: var(--fluent-control-height-comfortable);
+  }
+
+  .is-comfortable .file-name {
+    line-height: calc(var(--fluent-control-height-comfortable) - 2px);
+  }
+
+  .is-comfortable .checkbox input,
+  .is-comfortable .radio input {
+    width: 1.125rem;
+    height: 1.125rem;
+  }
+
+  .is-comfortable .field:not(:last-child) {
+    margin-bottom: var(--fluent-spacing-8);
+  }
+}
