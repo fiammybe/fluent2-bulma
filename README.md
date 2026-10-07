@@ -130,6 +130,8 @@ npm run dev     # build the CSS package and open the overview at localhost:5173/
 npm run build   # creates themed CSS, icon sprite, and overview site
 npm run build-icons # regenerates the default SVG icon sprite
 npm run lint    # stylelint + prettier
+npx playwright install chromium # first-time browser setup for end-to-end tests
+npm run test:e2e # axe accessibility, keyboard, motion, forced-colors, and visual checks
 ```
 
 The root `overview.html` is a single-page gallery of Bulma elements, form controls,
