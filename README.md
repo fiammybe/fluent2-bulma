@@ -117,7 +117,8 @@ size. The default sprite list is in `icons/default.json`; generate a custom spri
 with `npm run build-icons -- --list path/to/icons.json`. Each list item names an
 SVG from the `@fluentui/svg-icons` package's `icons/` directory, such as
 `search_24_regular`. The default build writes the sprite as
-`css/fluent-icons.svg`; Vite also copies it into the overview build.
+`public/fluent-icons.svg` during generation, then copies it to
+`css/fluent-icons.svg` and into the overview build.
 
 ## Development
 

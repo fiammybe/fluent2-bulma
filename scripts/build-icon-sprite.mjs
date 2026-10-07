@@ -35,6 +35,36 @@ if (new Set(iconList).size !== iconList.length) {
   throw new Error('The icon list must not contain duplicate names.');
 }
 
+const parsePath = (attributes, body, filename) => {
+  const parsed = new Map();
+  const attributePattern = /\s+([\w:-]+)="([^"]*)"/g;
+  let lastIndex = 0;
+  for (const match of attributes.matchAll(attributePattern)) {
+    if (attributes.slice(lastIndex, match.index).trim()) {
+      throw new Error(`Unsupported path attributes in ${filename}`);
+    }
+    const [, name, value] = match;
+    if (!['d', 'fill-rule', 'clip-rule'].includes(name) || parsed.has(name)) {
+      throw new Error(`Unsupported path attributes in ${filename}`);
+    }
+    parsed.set(name, value);
+    lastIndex = match.index + match[0].length;
+  }
+  if (attributes.slice(lastIndex).trim() || !parsed.has('d')) {
+    throw new Error(`Unsupported path attributes in ${filename}`);
+  }
+  if (body?.trim()) throw new Error(`Unsupported SVG content in ${filename}`);
+  if (!/^[MmZzLlHhVvCcSsQqTtAaEe0-9+.,\s-]+$/.test(parsed.get('d'))) {
+    throw new Error(`Invalid path data in ${filename}`);
+  }
+  for (const name of ['fill-rule', 'clip-rule']) {
+    if (parsed.has(name) && !['nonzero', 'evenodd'].includes(parsed.get(name))) {
+      throw new Error(`Invalid ${name} in ${filename}`);
+    }
+  }
+  return `    <path ${[...parsed].map(([name, value]) => `${name}="${value}"`).join(' ')}/>`;
+};
+
 const symbols = await Promise.all(
   iconList.map(async (name) => {
     const filename = path.join(options.get('--icons-dir'), `${name}.svg`);
@@ -49,12 +79,10 @@ const symbols = await Promise.all(
     }
 
     const content = rootMatch[2];
-    const paths = [...content.matchAll(/<path\b([^>]*)\/>/g)].map((match) => {
-      const data = match[1].match(/^\s*d="([^"]+)"\s*$/)?.[1];
-      if (!data) throw new Error(`Unsupported path attributes in ${filename}`);
-      return `    <path d="${data}"/>`;
-    });
-    if (!paths.length || content.replace(/<path\b[^>]*\/>/g, '').trim()) {
+    const pathPattern = /<path\b([^>]*?)(?:\/>|>([\s\S]*?)<\/path\s*>)/g;
+    const matches = [...content.matchAll(pathPattern)];
+    const paths = matches.map((match) => parsePath(match[1], match[2], filename));
+    if (!paths.length || content.replace(pathPattern, '').trim()) {
       throw new Error(`Unsupported SVG content in ${filename}; only path elements are accepted.`);
     }
 
