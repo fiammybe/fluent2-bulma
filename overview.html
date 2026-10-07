@@ -37,6 +37,7 @@
                 <a class="navbar-item" href="#elements">Elements</a>
                 <a class="navbar-item" href="#forms">Forms</a>
                 <a class="navbar-item" href="#components">Components</a>
+                <a class="navbar-item" href="#advanced">Advanced</a>
                 <a class="navbar-item" href="#layout">Layout</a>
                 <div class="navbar-item">
                   <div class="buttons are-small" aria-label="Color theme">
@@ -699,10 +700,275 @@
         </div>
       </section>
 
+      <section id="advanced" class="section overview-section">
+        <div class="section-heading">
+          <div>
+            <p class="eyebrow">04 · ADVANCED COMPONENTS</p>
+            <h2 class="title is-3">Advanced component patterns</h2>
+          </div>
+          <p class="subtitle is-6">
+            Native HTML patterns keep these examples usable without JavaScript and expose familiar
+            keyboard behavior.
+          </p>
+        </div>
+        <div class="columns is-multiline">
+          <div class="column is-half">
+            <div class="box">
+              <h3 class="title is-5">Combobox and listbox</h3>
+              <div class="field">
+                <label class="label" for="sample-combobox">Assign to</label>
+                <div class="control">
+                  <input
+                    id="sample-combobox"
+                    class="input"
+                    type="text"
+                    list="sample-people"
+                    placeholder="Choose a person"
+                  />
+                  <datalist id="sample-people">
+                    <option value="Alex Johnson"></option>
+                    <option value="Sam Lee"></option>
+                    <option value="Taylor Morgan"></option>
+                  </datalist>
+                </div>
+                <p class="help">Combobox: type to filter; use arrow keys, Enter, or Escape.</p>
+              </div>
+              <div class="field">
+                <label class="label" for="sample-listbox">Teams</label>
+                <div class="control">
+                  <select id="sample-listbox" class="input" multiple size="3">
+                    <option>Design</option>
+                    <option>Engineering</option>
+                    <option>Product</option>
+                  </select>
+                </div>
+                <p class="help">Listbox: use arrow keys; Ctrl/Command+Space toggles selections.</p>
+              </div>
+            </div>
+          </div>
+          <div class="column is-half">
+            <div class="box">
+              <h3 class="title is-5">Tree navigation</h3>
+              <nav aria-label="Project files">
+                <ul>
+                  <li>
+                    <details>
+                      <summary>Workspace</summary>
+                      <ul>
+                        <li><a href="#tokens">Design tokens</a></li>
+                        <li><a href="#components">Components</a></li>
+                      </ul>
+                    </details>
+                  </li>
+                  <li><a href="#layout">Project settings</a></li>
+                </ul>
+              </nav>
+              <p class="help">
+                Nested navigation tree: Tab moves through links; Space or Enter expands a folder.
+              </p>
+            </div>
+          </div>
+          <div class="column is-half">
+            <div class="box">
+              <h3 class="title is-5">Drawer</h3>
+              <details>
+                <summary class="mb-3">Open workspace drawer</summary>
+                <aside aria-label="Workspace drawer">
+                  <p class="mb-3">Workspace navigation and contextual actions.</p>
+                  <a href="#components">View components</a>
+                </aside>
+              </details>
+              <p class="help">Disclosure pattern: Space or Enter opens and closes the drawer.</p>
+            </div>
+          </div>
+          <div class="column is-half">
+            <div class="box">
+              <h3 class="title is-5">Persona</h3>
+              <div class="media" role="group" aria-label="Persona: Alex Johnson">
+                <div class="media-left">
+                  <span class="fluent-avatar" aria-hidden="true">AJ</span>
+                </div>
+                <div class="media-content">
+                  <p><strong>Alex Johnson</strong><br /><span>Product designer</span></p>
+                </div>
+                <div class="media-right">
+                  <button class="button is-small" type="button">Message</button>
+                </div>
+              </div>
+              <p class="help">
+                A labelled group combines the person’s identity and available action.
+              </p>
+            </div>
+          </div>
+          <div class="column is-half">
+            <div class="box">
+              <h3 class="title is-5">SpinButton</h3>
+              <div class="field">
+                <label class="label" for="sample-spinbutton">Quantity</label>
+                <div class="control">
+                  <input
+                    id="sample-spinbutton"
+                    class="input"
+                    type="number"
+                    min="1"
+                    max="20"
+                    value="3"
+                    aria-describedby="spinbutton-help"
+                  />
+                </div>
+                <p id="spinbutton-help" class="help">
+                  Native spinbutton: use arrow keys to change the value.
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="column is-half">
+            <div class="box">
+              <h3 class="title is-5">Rating</h3>
+              <fieldset class="field">
+                <legend class="label">Rate this experience</legend>
+                <label class="radio mr-3"
+                  ><input type="radio" name="sample-rating" value="1" />1</label
+                >
+                <label class="radio mr-3"
+                  ><input type="radio" name="sample-rating" value="2" />2</label
+                >
+                <label class="radio mr-3"
+                  ><input type="radio" name="sample-rating" value="3" checked />3</label
+                >
+                <label class="radio mr-3"
+                  ><input type="radio" name="sample-rating" value="4" />4</label
+                >
+                <label class="radio"><input type="radio" name="sample-rating" value="5" />5</label>
+                <p class="help">Radio group: use arrow keys to select a rating.</p>
+              </fieldset>
+            </div>
+          </div>
+          <div class="column is-half">
+            <div class="box">
+              <h3 class="title is-5">TagPicker</h3>
+              <fieldset class="field">
+                <legend class="label">Filter by tag</legend>
+                <label class="checkbox mr-4"><input type="checkbox" checked /> Design</label>
+                <label class="checkbox mr-4"><input type="checkbox" /> Research</label>
+                <label class="checkbox"><input type="checkbox" /> Planning</label>
+                <div class="tags mt-3" role="group" aria-label="Selected tags">
+                  <span class="tag is-primary is-light">Design</span>
+                </div>
+                <p class="help">Checkbox group: Tab moves between tags; Space toggles a tag.</p>
+              </fieldset>
+            </div>
+          </div>
+          <div class="column is-half">
+            <div class="box">
+              <h3 class="title is-5">Navigation rail</h3>
+              <nav class="menu" aria-label="Workspace navigation">
+                <p class="menu-label">Workspace</p>
+                <ul class="menu-list">
+                  <li><a class="is-active" href="#advanced" aria-current="page">Overview</a></li>
+                  <li><a href="#components">Members</a></li>
+                  <li><a href="#layout">Settings</a></li>
+                </ul>
+              </nav>
+              <p class="help">
+                Navigation landmark: Tab moves between links; Enter follows a link.
+              </p>
+            </div>
+          </div>
+          <div class="column is-half">
+            <div class="box">
+              <h3 class="title is-5">Command bar</h3>
+              <div class="buttons" role="group" aria-label="Document commands">
+                <button class="button" type="button">New</button>
+                <button class="button" type="button">Share</button>
+                <button class="button" type="button">More</button>
+              </div>
+              <p class="help">
+                Button group: Tab moves between commands; Enter or Space activates one.
+              </p>
+            </div>
+          </div>
+          <div class="column is-half">
+            <div class="box">
+              <h3 class="title is-5">DataGrid</h3>
+              <table class="table is-fullwidth">
+                <caption class="table-caption">
+                  Project status
+                </caption>
+                <thead>
+                  <tr>
+                    <th scope="col">Project</th>
+                    <th scope="col">Owner</th>
+                    <th scope="col">Status</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <th scope="row"><a href="#components">Design system</a></th>
+                    <td>Alex</td>
+                    <td>Review</td>
+                  </tr>
+                  <tr>
+                    <th scope="row"><a href="#layout">Website refresh</a></th>
+                    <td>Sam</td>
+                    <td>Active</td>
+                  </tr>
+                </tbody>
+              </table>
+              <p class="help">
+                Table pattern: screen readers navigate by row and column; Tab reaches project links.
+              </p>
+            </div>
+          </div>
+          <div class="column is-half">
+            <div class="box">
+              <h3 class="title is-5">DatePicker / Calendar</h3>
+              <div class="field">
+                <label class="label" for="sample-date">Due date</label>
+                <div class="control">
+                  <input id="sample-date" class="input" type="date" value="2026-10-07" />
+                </div>
+                <p class="help">
+                  Native date picker: use the browser’s calendar and keyboard controls.
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="column is-half">
+            <div class="box">
+              <h3 class="title is-5">Carousel</h3>
+              <div
+                class="is-flex"
+                style="gap: 1rem; overflow-x: auto"
+                tabindex="0"
+                role="region"
+                aria-label="Featured projects carousel"
+              >
+                <article class="notification is-info is-light" style="min-width: 12rem">
+                  <h4 class="title is-6">Design system</h4>
+                  <p>Shared tokens and components.</p>
+                </article>
+                <article class="notification is-link is-light" style="min-width: 12rem">
+                  <h4 class="title is-6">Website refresh</h4>
+                  <p>A more accessible experience.</p>
+                </article>
+                <article class="notification is-success is-light" style="min-width: 12rem">
+                  <h4 class="title is-6">Mobile app</h4>
+                  <p>Tools for teams on the move.</p>
+                </article>
+              </div>
+              <p class="help">
+                Scrollable carousel: focus the region, then use horizontal arrow keys.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
       <section id="layout" class="section overview-section">
         <div class="section-heading">
           <div>
-            <p class="eyebrow">04 · LAYOUT</p>
+            <p class="eyebrow">05 · LAYOUT</p>
             <h2 class="title is-3">Composition and helpers</h2>
           </div>
           <p class="subtitle is-6">Columns, levels, media, spacing helpers, and page structure.</p>
