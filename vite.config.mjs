@@ -11,7 +11,7 @@ export default defineConfig(({ mode }) => {
       outDir: overview ? 'dist' : library ? 'js' : 'css',
       emptyOutDir: overview || library,
       cssMinify: minify,
-      minify: false,
+      minify: library ? 'oxc' : false,
       ...(library
         ? {
             lib: {

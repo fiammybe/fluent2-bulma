@@ -224,7 +224,7 @@
     box-shadow: var(--fluent-shadow-8);
   }
 
-  @media (max-width: 768px) {
+  @media (width <= 768px) {
     .navbar-menu {
       display: block;
       border-top: 1px solid var(--fluent-color-neutral-stroke-2);

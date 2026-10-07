@@ -69,7 +69,7 @@ const cleanup = initFluent2();
 The module enhances elements marked with `data-fluent-*`. Without it, navigation
 links, menu links, pagination, CSS tooltips, and the inline dialog fallback remain
 usable; a native `popover` trigger works without the module in supporting browsers.
-`npm run build` emits `js/fluent2.js` and enforces a 10 KiB size budget.
+`npm run build` emits `js/fluent2.mjs` and enforces a 10 KiB size budget.
 
 The components follow these accessibility patterns:
 

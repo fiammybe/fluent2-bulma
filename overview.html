@@ -472,7 +472,12 @@
               <article class="message is-warning mt-4">
                 <div class="message-header">
                   <p>Heads up</p>
-                  <button class="delete" type="button" aria-label="Dismiss message" data-fluent-dismiss></button>
+                  <button
+                    class="delete"
+                    type="button"
+                    aria-label="Dismiss message"
+                    data-fluent-dismiss
+                  ></button>
                 </div>
                 <div class="message-body">Review pending changes before publishing.</div>
               </article>
@@ -501,15 +506,23 @@
           <div class="column">
             <div class="box">
               <h3 class="title is-5">Dialog and tooltip</h3>
-              <p class="mb-4">The dialog stays visible inline without JavaScript and becomes modal when enhanced.</p>
-              <a class="button is-primary" href="#sample-dialog" data-fluent-dialog-trigger>Open dialog</a>
+              <p class="mb-4">
+                The dialog stays visible inline without JavaScript and becomes modal when enhanced.
+              </p>
+              <a class="button is-primary" href="#sample-dialog" data-fluent-dialog-trigger
+                >Open dialog</a
+              >
               <button
                 class="button mt-3"
                 type="button"
                 data-fluent-tooltip="Tooltips describe controls without taking focus."
+                aria-describedby="tooltip-description"
               >
                 Hover or focus for a tooltip
               </button>
+              <span id="tooltip-description" class="is-sr-only">
+                Tooltips describe controls without taking focus.
+              </span>
               <dialog id="sample-dialog" class="fluent-dialog" open aria-labelledby="dialog-title">
                 <h4 id="dialog-title" class="title is-5">Save your changes?</h4>
                 <p class="mb-4">Your updates will be visible to everyone in this workspace.</p>
