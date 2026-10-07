@@ -9,9 +9,9 @@ const navbarMenu = document.querySelector(`#${navbarBurger.dataset.target}`);
 const dropdown = document.querySelector('.overview-dropdown');
 const dropdownTrigger = dropdown.querySelector('.dropdown-trigger button');
 
-const closeDropdown = () => {
-  dropdown.classList.remove('is-active');
-  dropdownTrigger.setAttribute('aria-expanded', 'false');
+const setDropdownOpen = (open) => {
+  dropdown.classList.toggle('is-active', open);
+  dropdownTrigger.setAttribute('aria-expanded', String(open));
 };
 
 themeButtons.forEach((button) => {
@@ -31,26 +31,25 @@ themeButtons.forEach((button) => {
 });
 
 dropdownTrigger.addEventListener('click', () => {
-  const expanded = dropdownTrigger.getAttribute('aria-expanded') === 'true';
-  dropdown.classList.toggle('is-active', !expanded);
-  dropdownTrigger.setAttribute('aria-expanded', String(!expanded));
+  const open = dropdownTrigger.getAttribute('aria-expanded') !== 'true';
+  setDropdownOpen(open);
 });
 
 dropdown.addEventListener('click', (event) => {
   if (event.target.closest('.dropdown-item')) {
-    closeDropdown();
+    setDropdownOpen(false);
   }
 });
 
 document.addEventListener('click', (event) => {
   if (!dropdown.contains(event.target)) {
-    closeDropdown();
+    setDropdownOpen(false);
   }
 });
 
 document.addEventListener('keydown', (event) => {
-  if (event.key === 'Escape' && dropdown.classList.contains('is-active')) {
-    closeDropdown();
+  if (event.key === 'Escape' && dropdownTrigger.getAttribute('aria-expanded') === 'true') {
+    setDropdownOpen(false);
     dropdownTrigger.focus();
   }
 });

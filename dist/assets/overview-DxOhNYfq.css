@@ -23102,17 +23102,17 @@ body {
 }
 
 .overview-dropdown-chevron {
+  display: inline-block;
   width: 0.45rem;
   height: 0.45rem;
-  margin-top: -0.2rem;
   border-right: 2px solid currentColor;
   border-bottom: 2px solid currentColor;
   transform: rotate(45deg);
+  transform-origin: center;
   transition: transform var(--fluent-duration-fast) var(--fluent-easing-standard);
 }
 
 .overview-dropdown.is-active .overview-dropdown-chevron {
-  margin-top: 0.25rem;
   transform: rotate(225deg);
 }
 

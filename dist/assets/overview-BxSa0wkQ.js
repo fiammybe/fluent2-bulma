@@ -40,9 +40,9 @@ var navbarBurger = document.querySelector(".navbar-burger");
 var navbarMenu = document.querySelector(`#${navbarBurger.dataset.target}`);
 var dropdown = document.querySelector(".overview-dropdown");
 var dropdownTrigger = dropdown.querySelector(".dropdown-trigger button");
-var closeDropdown = () => {
-	dropdown.classList.remove("is-active");
-	dropdownTrigger.setAttribute("aria-expanded", "false");
+var setDropdownOpen = (open) => {
+	dropdown.classList.toggle("is-active", open);
+	dropdownTrigger.setAttribute("aria-expanded", String(open));
 };
 themeButtons.forEach((button) => {
 	button.addEventListener("click", () => {
@@ -55,19 +55,17 @@ themeButtons.forEach((button) => {
 	});
 });
 dropdownTrigger.addEventListener("click", () => {
-	const expanded = dropdownTrigger.getAttribute("aria-expanded") === "true";
-	dropdown.classList.toggle("is-active", !expanded);
-	dropdownTrigger.setAttribute("aria-expanded", String(!expanded));
+	setDropdownOpen(dropdownTrigger.getAttribute("aria-expanded") !== "true");
 });
 dropdown.addEventListener("click", (event) => {
-	if (event.target.closest(".dropdown-item")) closeDropdown();
+	if (event.target.closest(".dropdown-item")) setDropdownOpen(false);
 });
 document.addEventListener("click", (event) => {
-	if (!dropdown.contains(event.target)) closeDropdown();
+	if (!dropdown.contains(event.target)) setDropdownOpen(false);
 });
 document.addEventListener("keydown", (event) => {
-	if (event.key === "Escape" && dropdown.classList.contains("is-active")) {
-		closeDropdown();
+	if (event.key === "Escape" && dropdownTrigger.getAttribute("aria-expanded") === "true") {
+		setDropdownOpen(false);
 		dropdownTrigger.focus();
 	}
 });
