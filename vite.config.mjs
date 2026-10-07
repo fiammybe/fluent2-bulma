@@ -17,11 +17,11 @@ export default defineConfig(({ mode }) => {
           assetFileNames: overview
             ? undefined
             : (assetInfo) => {
-            if (assetInfo.name?.endsWith('.woff2')) {
-              return 'fonts/[name][extname]';
-            }
+                if (assetInfo.name?.endsWith('.woff2')) {
+                  return 'fonts/[name][extname]';
+                }
 
-            return minify ? 'fluent2-bulma.min.css' : 'fluent2-bulma.css';
+                return minify ? 'fluent2-bulma.min.css' : 'fluent2-bulma.css';
               },
         },
       },
