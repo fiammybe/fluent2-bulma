@@ -5,6 +5,8 @@
 @use 'tokens';
 
 @layer fluent2 {
+  @include tokens.font-face;
+
   :root,
   [data-theme='light'] {
     @include tokens.emit;

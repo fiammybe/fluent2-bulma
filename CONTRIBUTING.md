@@ -8,4 +8,5 @@ Thanks for helping! This is an unofficial project bridging Bulma and Fluent 2.
 4. Open a pull request using the template and link the related issue.
 
 Record significant design decisions as a new file in `docs/decisions/`.
-Do not copy Segoe UI or other non-MIT assets into the repository.
+Do not copy Segoe UI or other assets without a compatible license into the
+repository. Include license notices for any third-party assets that are added.

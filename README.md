@@ -29,7 +29,10 @@ components. The theme also works with `data-theme` attributes without JavaScript
 
 The system uses light colors by default, follows `prefers-color-scheme` when no
 theme is selected, and supports explicit `<html data-theme="light">` or
-`<html data-theme="dark">`.
+`<html data-theme="dark">`. Its default font stack prefers Segoe UI when
+available, then the locally hosted Noto Sans Latin font, before system fonts.
+Noto Sans is licensed under SIL OFL 1.1; its license is included alongside the
+font files.
 
 Override the brand color at build time through the Sass entry point, or at runtime
 with the `--fluent-brand-color` custom property:
