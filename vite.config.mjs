@@ -3,6 +3,7 @@ import { defineConfig } from 'vite';
 export default defineConfig(({ mode }) => {
   const minify = mode === 'minify';
   return {
+    base: './',
     logLevel: 'warn',
     build: {
       outDir: 'css',
@@ -12,7 +13,13 @@ export default defineConfig(({ mode }) => {
       rollupOptions: {
         input: 'sass/index.scss',
         output: {
-          assetFileNames: minify ? 'fluent2-bulma.min.css' : 'fluent2-bulma.css',
+          assetFileNames: (assetInfo) => {
+            if (assetInfo.name?.endsWith('.woff2')) {
+              return 'fonts/[name][extname]';
+            }
+
+            return minify ? 'fluent2-bulma.min.css' : 'fluent2-bulma.css';
+          },
         },
       },
     },
