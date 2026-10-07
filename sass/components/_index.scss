@@ -1,0 +1,277 @@
+@mixin emit {
+  .navbar,
+  .navbar-menu {
+    background: var(--fluent-color-neutral-background-1);
+  }
+
+  .navbar {
+    border-bottom: 1px solid var(--fluent-color-neutral-stroke-2);
+  }
+
+  .navbar-item,
+  .navbar-link {
+    color: var(--fluent-color-neutral-foreground-1);
+  }
+
+  .navbar-item:hover,
+  .navbar-link:hover {
+    background: var(--fluent-color-neutral-background-2);
+    color: var(--fluent-color-neutral-foreground-1);
+  }
+
+  .navbar-burger {
+    color: var(--fluent-color-neutral-foreground-1);
+  }
+
+  .navbar-burger:hover {
+    background: var(--fluent-color-neutral-background-2);
+  }
+
+  .tabs a,
+  .tabs li.is-active a {
+    border-bottom-color: var(--fluent-color-neutral-stroke-2);
+    color: var(--fluent-color-neutral-foreground-2);
+  }
+
+  .tabs li.is-active a,
+  .tabs [role='tab'][aria-selected='true'] {
+    border-bottom-color: var(--fluent-brand-color);
+    color: var(--fluent-brand-color);
+  }
+
+  .tabs.is-boxed li.is-active a,
+  .tabs.is-toggle li.is-active a {
+    border-color: var(--fluent-color-neutral-stroke-2);
+    background: var(--fluent-color-neutral-background-1);
+    color: var(--fluent-brand-color);
+  }
+
+  .tabs a:hover {
+    border-bottom-color: var(--fluent-color-neutral-foreground-2);
+    color: var(--fluent-color-neutral-foreground-1);
+  }
+
+  .breadcrumb a,
+  .pagination a {
+    color: var(--fluent-color-neutral-foreground-2);
+  }
+
+  .breadcrumb a:hover,
+  .pagination a:hover {
+    color: var(--fluent-brand-color);
+  }
+
+  .breadcrumb li.is-active a,
+  .pagination-link.is-current {
+    color: var(--fluent-brand-color);
+  }
+
+  .pagination-link,
+  .pagination-previous,
+  .pagination-next {
+    border-color: var(--fluent-color-neutral-stroke-2);
+    border-radius: var(--fluent-radius-small);
+  }
+
+  .pagination-link.is-current {
+    border-color: var(--fluent-brand-color);
+    background: var(--fluent-brand-color);
+    color: #fff;
+  }
+
+  .menu-label {
+    color: var(--fluent-color-neutral-foreground-3);
+  }
+
+  .menu-list a {
+    border-radius: var(--fluent-radius-small);
+    color: var(--fluent-color-neutral-foreground-1);
+  }
+
+  .menu-list a:hover,
+  .menu-list a.is-active {
+    background: var(--fluent-color-neutral-background-2);
+    color: var(--fluent-brand-color);
+  }
+
+  [popover].fluent-menu {
+    position: fixed;
+    inset: auto;
+    width: max-content;
+    min-width: 12rem;
+    max-width: min(24rem, calc(100vw - 2rem));
+    margin: 0.25rem 0 0;
+    padding: var(--fluent-spacing-1);
+    overflow: auto;
+    border: 1px solid var(--fluent-color-neutral-stroke-2);
+    border-radius: var(--fluent-radius-medium);
+    background: var(--fluent-color-neutral-background-1);
+    box-shadow: var(--fluent-shadow-8);
+    color: var(--fluent-color-neutral-foreground-1);
+  }
+
+  .fluent-menu [role='menuitem'] {
+    display: flex;
+    min-height: var(--fluent-control-height);
+    align-items: center;
+    padding: var(--fluent-spacing-2) var(--fluent-spacing-4);
+    border-radius: var(--fluent-radius-small);
+    color: inherit;
+    text-decoration: none;
+  }
+
+  .fluent-menu [role='menuitem']:hover,
+  .fluent-menu [role='menuitem']:focus-visible {
+    background: var(--fluent-color-neutral-background-2);
+    color: var(--fluent-color-neutral-foreground-1);
+  }
+
+  .message {
+    border-radius: var(--fluent-radius-medium);
+    background: var(--fluent-color-neutral-background-1);
+    box-shadow: var(--fluent-shadow-2);
+  }
+
+  .message-header {
+    border-radius: var(--fluent-radius-medium) var(--fluent-radius-medium) 0 0;
+  }
+
+  .message-body {
+    border-color: var(--fluent-color-neutral-stroke-2);
+    border-radius: 0 0 var(--fluent-radius-medium) var(--fluent-radius-medium);
+    color: var(--fluent-color-neutral-foreground-1);
+  }
+
+  .modal-card {
+    overflow: hidden;
+    border: 1px solid var(--fluent-color-neutral-stroke-2);
+    border-radius: var(--fluent-radius-large);
+    background: var(--fluent-color-neutral-background-1);
+    box-shadow: var(--fluent-shadow-16);
+    color: var(--fluent-color-neutral-foreground-1);
+  }
+
+  .modal-card-head,
+  .modal-card-foot {
+    display: flex;
+    align-items: center;
+    gap: var(--fluent-spacing-3);
+    padding: var(--fluent-spacing-5) var(--fluent-spacing-6);
+    border-color: var(--fluent-color-neutral-stroke-2);
+    background: var(--fluent-color-neutral-background-2);
+  }
+
+  .modal-card-head {
+    justify-content: space-between;
+  }
+
+  .modal-card-title {
+    color: var(--fluent-color-neutral-foreground-1);
+    font-size: var(--fluent-font-size-subtitle-1);
+    font-weight: 600;
+  }
+
+  .modal-card-body {
+    padding: var(--fluent-spacing-6);
+    background: var(--fluent-color-neutral-background-1);
+    color: var(--fluent-color-neutral-foreground-1);
+  }
+
+  .modal-card-foot {
+    flex-wrap: wrap;
+    justify-content: flex-start;
+  }
+
+  .fluent-dialog {
+    width: min(32rem, calc(100vw - 2rem));
+    max-height: calc(100dvh - 2rem);
+    padding: var(--fluent-spacing-6);
+    border: 1px solid var(--fluent-color-neutral-stroke-2);
+    border-radius: var(--fluent-radius-large);
+    background: var(--fluent-color-neutral-background-1);
+    box-shadow: var(--fluent-shadow-16);
+    color: var(--fluent-color-neutral-foreground-1);
+  }
+
+  .fluent-dialog[open]:not(.is-modal) {
+    position: static;
+    display: block;
+    max-height: none;
+    margin: var(--fluent-spacing-4) 0;
+  }
+
+  .fluent-dialog::backdrop {
+    background: rgb(0 0 0 / 45%);
+    backdrop-filter: blur(2px);
+  }
+
+  [data-fluent-tooltip] {
+    position: relative;
+  }
+
+  [data-fluent-tooltip]::after {
+    position: absolute;
+    z-index: 20;
+    bottom: calc(100% + 0.5rem);
+    left: 50%;
+    width: max-content;
+    max-width: min(20rem, calc(100vw - 2rem));
+    padding: var(--fluent-spacing-2) var(--fluent-spacing-3);
+    transform: translateX(-50%);
+    border-radius: var(--fluent-radius-small);
+    background: var(--fluent-color-neutral-background-5);
+    color: var(--fluent-color-neutral-foreground-1);
+    content: attr(data-fluent-tooltip);
+    font-size: var(--fluent-font-size-caption-1);
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity var(--fluent-duration-fast) var(--fluent-easing-standard);
+  }
+
+  [data-fluent-tooltip]:hover::after,
+  [data-fluent-tooltip]:focus-visible::after {
+    opacity: 1;
+  }
+
+  [data-fluent-js] [data-fluent-tooltip]::after {
+    display: none;
+  }
+
+  [data-fluent-tooltip-node] {
+    position: fixed;
+    z-index: 1000;
+    max-width: min(20rem, calc(100vw - 2rem));
+    padding: var(--fluent-spacing-2) var(--fluent-spacing-3);
+    border-radius: var(--fluent-radius-small);
+    background: var(--fluent-color-neutral-background-5);
+    box-shadow: var(--fluent-shadow-8);
+    color: var(--fluent-color-neutral-foreground-1);
+    font-size: var(--fluent-font-size-caption-1);
+    pointer-events: none;
+  }
+
+  [data-fluent-toast-region] {
+    position: fixed;
+    z-index: 1000;
+    inset: auto var(--fluent-spacing-6) var(--fluent-spacing-6) auto;
+    display: grid;
+    width: min(24rem, calc(100vw - 2rem));
+    gap: var(--fluent-spacing-3);
+  }
+
+  [data-fluent-toast-region] .notification {
+    margin: 0;
+    box-shadow: var(--fluent-shadow-8);
+  }
+
+  @media (width <= 768px) {
+    .navbar-menu {
+      display: block;
+      border-top: 1px solid var(--fluent-color-neutral-stroke-2);
+    }
+
+    [data-fluent-js] .navbar-menu[hidden] {
+      display: none;
+    }
+  }
+}
