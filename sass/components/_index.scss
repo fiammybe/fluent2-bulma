@@ -404,6 +404,10 @@
     color: var(--fluent-color-neutral-foreground-1);
   }
 
+  .tabs [data-fluent-tabpanel][hidden] {
+    display: none;
+  }
+
   .breadcrumb a,
   .pagination a {
     color: var(--fluent-color-neutral-foreground-2);
