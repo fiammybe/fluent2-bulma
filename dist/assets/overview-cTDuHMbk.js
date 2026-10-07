@@ -40,7 +40,9 @@ var navbarBurger = document.querySelector(".navbar-burger");
 var navbarMenu = document.querySelector(`#${navbarBurger.dataset.target}`);
 var dropdown = document.querySelector(".overview-dropdown");
 var dropdownTrigger = dropdown.querySelector(".dropdown-trigger button");
+var dropdownOpen = false;
 var setDropdownOpen = (open) => {
+	dropdownOpen = open;
 	dropdown.classList.toggle("is-active", open);
 	dropdownTrigger.setAttribute("aria-expanded", String(open));
 };
@@ -55,7 +57,7 @@ themeButtons.forEach((button) => {
 	});
 });
 dropdownTrigger.addEventListener("click", () => {
-	setDropdownOpen(dropdownTrigger.getAttribute("aria-expanded") !== "true");
+	setDropdownOpen(!dropdownOpen);
 });
 dropdown.addEventListener("click", (event) => {
 	if (event.target.closest(".dropdown-item")) setDropdownOpen(false);
@@ -64,7 +66,7 @@ document.addEventListener("click", (event) => {
 	if (!dropdown.contains(event.target)) setDropdownOpen(false);
 });
 document.addEventListener("keydown", (event) => {
-	if (event.key === "Escape" && dropdownTrigger.getAttribute("aria-expanded") === "true") {
+	if (event.key === "Escape" && dropdownOpen) {
 		setDropdownOpen(false);
 		dropdownTrigger.focus();
 	}

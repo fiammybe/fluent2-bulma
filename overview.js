@@ -8,8 +8,10 @@ const navbarBurger = document.querySelector('.navbar-burger');
 const navbarMenu = document.querySelector(`#${navbarBurger.dataset.target}`);
 const dropdown = document.querySelector('.overview-dropdown');
 const dropdownTrigger = dropdown.querySelector('.dropdown-trigger button');
+let dropdownOpen = false;
 
 const setDropdownOpen = (open) => {
+  dropdownOpen = open;
   dropdown.classList.toggle('is-active', open);
   dropdownTrigger.setAttribute('aria-expanded', String(open));
 };
@@ -31,8 +33,7 @@ themeButtons.forEach((button) => {
 });
 
 dropdownTrigger.addEventListener('click', () => {
-  const open = dropdownTrigger.getAttribute('aria-expanded') !== 'true';
-  setDropdownOpen(open);
+  setDropdownOpen(!dropdownOpen);
 });
 
 dropdown.addEventListener('click', (event) => {
@@ -48,7 +49,7 @@ document.addEventListener('click', (event) => {
 });
 
 document.addEventListener('keydown', (event) => {
-  if (event.key === 'Escape' && dropdownTrigger.getAttribute('aria-expanded') === 'true') {
+  if (event.key === 'Escape' && dropdownOpen) {
     setDropdownOpen(false);
     dropdownTrigger.focus();
   }
