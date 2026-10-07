@@ -91,13 +91,44 @@ The components follow these accessibility patterns:
 - **Toast/MessageBar:** notifications use a polite live region (`role="status"`).
   Static messages remain visible without JavaScript; enhanced toasts stack and
   dismiss after five seconds.
+- **Accordion:** use native `<details>` and `<summary>` inside `.fluent-accordion`.
+  They work without JavaScript; add `data-fluent-accordion` to close other panels
+  when a panel opens, or set it to `multiple` to allow more than one open panel.
+- **Switch:** use a labelled native checkbox inside `.fluent-switch`, followed by
+  a `.fluent-switch-track` span.
+- **Badge, Avatar, Spinner, Skeleton, Divider, and Slider:** use the
+  `.fluent-badge`, `.fluent-avatar`, `.fluent-spinner`, `.fluent-skeleton`,
+  `.fluent-divider`, and `.fluent-slider` classes. Give loading indicators an
+  accessible name and hide decorative skeletons from assistive technology.
+
+These components use Fluent theme tokens; `.is-comfortable` adjusts their sizing
+and spacing.
+The SVG icon sprite is built from Fluent System Icons at build time. Use a symbol
+with an external sprite URL (adjust the URL to where your bundler serves the
+package asset):
+
+```html
+<svg class="fluent-icon fluent-icon-24" aria-hidden="true">
+  <use href="/assets/fluent-icons.svg#search_24_regular"></use>
+</svg>
+```
+
+The `.fluent-icon-16`, `.fluent-icon-20`, and `.fluent-icon-24` classes set icon
+size. The default sprite list is in `icons/default.json`; generate a custom sprite
+with `npm run build-icons -- --list path/to/icons.json`. Each list item names an
+SVG from the `@fluentui/svg-icons` package's `icons/` directory, such as
+`search_24_regular`. The default build writes the sprite as
+`public/fluent-icons.svg` during generation. Vite copies that public asset into
+the active build output: `css/fluent-icons.svg` for the package stylesheet and
+`dist/fluent-icons.svg` for the overview.
 
 ## Development
 
 ```sh
 npm ci
 npm run dev     # build the CSS package and open the overview at localhost:5173/overview.html
-npm run build   # creates themed CSS in css/ and the self-contained overview site in dist/
+npm run build   # creates themed CSS, icon sprite, and overview site
+npm run build-icons # regenerates the default SVG icon sprite
 npm run lint    # stylelint + prettier
 ```
 
@@ -110,6 +141,7 @@ styles, scripts, and font assets needed to view it.
 ## Folder layout
 
 - `sass/` – Sass sources (`base`, `tokens`, `elements`, `components`, `form`, `layout`, `helpers`, `themes`)
+- `icons/default.json` and `scripts/` – curated icon list and dev-time sprite generator
 - `overview.html`, `overview.*` – local component overview page and its styles/interactions
 - `css/` – build output (not committed)
 - `dist/` – self-contained overview site build output (not committed)

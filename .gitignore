@@ -2,3 +2,5 @@ node_modules/
 css/
 /js/
 *.log
+/public/fluent-icons.svg
+/dist/

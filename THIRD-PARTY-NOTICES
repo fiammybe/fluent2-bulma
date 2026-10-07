@@ -6,6 +6,8 @@ This project is an unofficial project and is not affiliated with Microsoft.
    Copyright (c) Microsoft Corporation. Licensed under the MIT License.
    https://github.com/microsoft/fluentui
    https://github.com/microsoft/fluentui-system-icons
+   The generated icon sprite uses assets from @fluentui/svg-icons 1.1.343,
+   distributed under the MIT License.
 
 2. Bulma (peer dependency, not bundled)
    Copyright (c) Jeremy Thomas. Licensed under the MIT License.

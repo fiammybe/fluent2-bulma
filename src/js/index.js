@@ -163,6 +163,25 @@ export const initFluent2 = (root = document) => {
     });
   });
 
+  getItems(root, '[data-fluent-accordion]').forEach((accordion) => {
+    if (accordion.getAttribute('data-fluent-accordion') === 'multiple') return;
+    const panels = [...accordion.querySelectorAll(':scope > details')];
+    let hasOpenPanel = false;
+    panels.forEach((panel) => {
+      if (!panel.open) return;
+      if (hasOpenPanel) panel.open = false;
+      else hasOpenPanel = true;
+    });
+    panels.forEach((panel) => {
+      listen(panel, 'toggle', () => {
+        if (!panel.open) return;
+        panels.forEach((sibling) => {
+          if (sibling !== panel) sibling.open = false;
+        });
+      });
+    });
+  });
+
   getItems(root, '[data-fluent-menu][popover]').forEach((menu) => {
     const items = getItems(menu, '[role="menuitem"]');
     const getTrigger = () =>

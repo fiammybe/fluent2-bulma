@@ -354,9 +354,11 @@
         <div class="section-heading">
           <div>
             <p class="eyebrow">03 · COMPONENTS</p>
-            <h2 class="title is-3">Navigation and surfaces</h2>
+            <h2 class="title is-3">Components and icon sprite</h2>
           </div>
-          <p class="subtitle is-6">Common application patterns assembled from Bulma components.</p>
+          <p class="subtitle is-6">
+            Common application patterns plus Fluent components and SVG system icons.
+          </p>
         </div>
         <div class="columns is-multiline">
           <div class="column is-half">
@@ -549,6 +551,148 @@
                 aria-atomic="false"
               >
                 <div class="notification is-success">Notifications will appear here.</div>
+              </div>
+            </div>
+          </div>
+          <div class="column">
+            <div class="box">
+              <h3 class="title is-5">Everyday controls</h3>
+              <div class="is-flex is-align-items-center is-flex-wrap-wrap" style="gap: 1rem">
+                <svg class="fluent-icon fluent-icon-24" aria-hidden="true">
+                  <use href="./fluent-icons.svg#search_24_regular"></use>
+                </svg>
+                <label class="fluent-switch">
+                  <input type="checkbox" checked />
+                  <span class="fluent-switch-track" aria-hidden="true"></span>
+                  <span>Notifications</span>
+                </label>
+                <span class="fluent-badge is-brand">New</span>
+                <span class="fluent-badge is-info">In progress</span>
+                <span class="fluent-badge is-success">Available</span>
+                <span class="fluent-avatar" role="img" aria-label="Alex Johnson">AJ</span>
+                <span class="fluent-avatar is-small" role="img" aria-label="Sam Lee">SL</span>
+                <span class="fluent-avatar is-large" role="img" aria-label="Taylor Morgan">TM</span>
+                <span class="fluent-spinner" role="status" aria-label="Loading"></span>
+              </div>
+              <div class="mt-5" aria-hidden="true">
+                <span class="fluent-skeleton" style="width: 72%; height: 1rem"></span>
+                <span class="fluent-skeleton mt-3" style="width: 48%; height: 1rem"></span>
+              </div>
+              <hr class="fluent-divider" />
+              <div class="is-flex is-align-items-center">
+                <span>Horizontal divider</span>
+                <hr
+                  class="fluent-divider is-vertical"
+                  role="separator"
+                  aria-orientation="vertical"
+                />
+                <span>Vertical divider</span>
+              </div>
+              <label class="label" for="sample-slider">Volume</label>
+              <input
+                id="sample-slider"
+                class="fluent-slider"
+                type="range"
+                min="0"
+                max="100"
+                value="65"
+              />
+              <div class="fluent-accordion mt-5" data-fluent-accordion>
+                <details>
+                  <summary>What is Fluent 2?</summary>
+                  <div class="fluent-accordion-content">
+                    Fluent 2 is Microsoft’s design system for creating inclusive experiences.
+                  </div>
+                </details>
+                <details>
+                  <summary>Does the accordion need JavaScript?</summary>
+                  <div class="fluent-accordion-content">
+                    No. Native details elements work without JavaScript; enhancement keeps one panel
+                    open at a time.
+                  </div>
+                </details>
+              </div>
+            </div>
+          </div>
+          <div class="column">
+            <div class="box">
+              <h3 class="title is-5">Fluent System icons</h3>
+              <p class="mb-4">
+                Sprite symbols inherit the current text color; choose a 16, 20, or 24 size class.
+              </p>
+              <div class="is-flex is-align-items-center is-flex-wrap-wrap" style="gap: 1rem">
+                <span class="is-flex is-align-items-center" style="gap: 0.5rem">
+                  <svg class="fluent-icon fluent-icon-16" aria-hidden="true">
+                    <use href="./fluent-icons.svg#add_16_regular"></use>
+                  </svg>
+                  Add · 16
+                </span>
+                <span class="is-flex is-align-items-center" style="gap: 0.5rem">
+                  <svg class="fluent-icon fluent-icon-20" aria-hidden="true">
+                    <use href="./fluent-icons.svg#add_20_regular"></use>
+                  </svg>
+                  Add · 20
+                </span>
+                <span class="is-flex is-align-items-center" style="gap: 0.5rem">
+                  <svg class="fluent-icon fluent-icon-24" aria-hidden="true">
+                    <use href="./fluent-icons.svg#add_24_regular"></use>
+                  </svg>
+                  Add · 24
+                </span>
+                <span class="is-flex is-align-items-center" style="gap: 0.5rem">
+                  <svg class="fluent-icon fluent-icon-24" aria-hidden="true">
+                    <use href="./fluent-icons.svg#checkmark_24_regular"></use>
+                  </svg>
+                  Checkmark
+                </span>
+                <span class="is-flex is-align-items-center" style="gap: 0.5rem">
+                  <svg class="fluent-icon fluent-icon-24" aria-hidden="true">
+                    <use href="./fluent-icons.svg#delete_24_regular"></use>
+                  </svg>
+                  Delete
+                </span>
+                <span class="is-flex is-align-items-center" style="gap: 0.5rem">
+                  <svg class="fluent-icon fluent-icon-24" aria-hidden="true">
+                    <use href="./fluent-icons.svg#dismiss_24_regular"></use>
+                  </svg>
+                  Dismiss
+                </span>
+                <span class="is-flex is-align-items-center" style="gap: 0.5rem">
+                  <svg class="fluent-icon fluent-icon-24" aria-hidden="true">
+                    <use href="./fluent-icons.svg#home_24_regular"></use>
+                  </svg>
+                  Home
+                </span>
+                <span class="is-flex is-align-items-center" style="gap: 0.5rem">
+                  <svg class="fluent-icon fluent-icon-24" aria-hidden="true">
+                    <use href="./fluent-icons.svg#info_24_regular"></use>
+                  </svg>
+                  Info
+                </span>
+                <span class="is-flex is-align-items-center" style="gap: 0.5rem">
+                  <svg class="fluent-icon fluent-icon-24" aria-hidden="true">
+                    <use href="./fluent-icons.svg#person_24_regular"></use>
+                  </svg>
+                  Person
+                </span>
+                <span class="is-flex is-align-items-center" style="gap: 0.5rem">
+                  <svg class="fluent-icon fluent-icon-24" aria-hidden="true">
+                    <use href="./fluent-icons.svg#search_24_regular"></use>
+                  </svg>
+                  Search
+                </span>
+                <span class="is-flex is-align-items-center" style="gap: 0.5rem">
+                  <svg class="fluent-icon fluent-icon-24" aria-hidden="true">
+                    <use href="./fluent-icons.svg#settings_24_regular"></use>
+                  </svg>
+                  Settings
+                </span>
+                <span class="is-flex is-align-items-center" style="gap: 0.5rem">
+                  <svg class="fluent-icon fluent-icon-24" aria-hidden="true">
+                    <use href="./fluent-icons.svg#warning_24_regular"></use>
+                  </svg>
+                  Warning
+                </span>
               </div>
             </div>
           </div>
