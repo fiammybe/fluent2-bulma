@@ -79,7 +79,7 @@ const symbols = await Promise.all(
     }
 
     const content = rootMatch[2];
-    const pathPattern = /<path\b([^>]*?)(?:\/>|>([\s\S]*?)<\/path\s*>)/g;
+    const pathPattern = /<path\b([^>]*?)(?:\s*\/>|>([\s\S]*?)<\/path\s*>)/g;
     const matches = [...content.matchAll(pathPattern)];
     const paths = matches.map((match) => parsePath(match[1], match[2], filename));
     if (!paths.length || content.replace(pathPattern, '').trim()) {
