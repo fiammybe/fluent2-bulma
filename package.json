@@ -45,6 +45,7 @@
     "build-min": "vite build --mode minify && sass --style=compressed --no-source-map sass/tokens-only.scss css/fluent2-bulma.tokens.min.css",
     "build-js": "vite build --mode library && node -e \"const size=require('fs').statSync('js/fluent2.mjs').size;if(size>10240){console.error('JavaScript bundle exceeds 10 KiB');process.exitCode=1}\"",
     "build-overview": "vite build --mode overview",
+    "test:e2e": "playwright test",
     "clean": "node -e \"for (const path of ['css','dist','js','public/fluent-icons.svg']) require('fs').rmSync(path,{recursive:true,force:true})\"",
     "dev": "npm run build && vite --open /overview.html",
     "lint": "npm run lint:css && npm run format:check",
@@ -56,7 +57,9 @@
     "bulma": "^1.0.4"
   },
   "devDependencies": {
+    "@axe-core/playwright": "^4.13.0",
     "@fluentui/svg-icons": "1.1.343",
+    "@playwright/test": "^1.63.0",
     "bulma": "^1.0.4",
     "prettier": "^3.9.9",
     "sass": "^1.105.1",

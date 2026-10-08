@@ -48,6 +48,10 @@ body {
   letter-spacing: 0.1em;
 }
 
+.fluent-muted-text {
+  color: var(--fluent-color-neutral-foreground-3);
+}
+
 .overview-main {
   max-width: 1120px;
 }
@@ -92,7 +96,7 @@ body {
   border: 1px solid var(--fluent-color-neutral-stroke-2);
   border-radius: var(--fluent-radius-small);
   background: var(--swatch);
-  color: var(--fluent-color-neutral-foreground-1);
+  color: var(--swatch-foreground, var(--fluent-color-neutral-foreground-1));
   font-size: 0.75rem;
   font-weight: 600;
 }

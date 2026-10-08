@@ -66,7 +66,7 @@
   .button.is-outline,
   .button.is-outlined {
     --fluent-button-background: transparent;
-    --fluent-button-foreground: var(--fluent-brand-color);
+    --fluent-button-foreground: var(--fluent-color-brand-foreground);
     --fluent-button-border: var(--fluent-color-neutral-stroke-1);
     --fluent-button-hover-background: var(--fluent-color-neutral-background-2);
     --fluent-button-pressed-background: var(--fluent-color-neutral-background-3);
@@ -101,7 +101,7 @@
   .button.is-success,
   .button.is-warning,
   .button.is-danger {
-    --fluent-button-foreground: #fff;
+    --fluent-button-foreground: var(--fluent-color-status-foreground);
     --fluent-button-border: transparent;
     --fluent-button-hover-background: color-mix(
       in srgb,
@@ -125,7 +125,7 @@
 
   .button.is-warning {
     --fluent-button-background: var(--fluent-color-warning);
-    --fluent-button-foreground: var(--fluent-color-neutral-foreground-1);
+    --fluent-button-foreground: var(--fluent-color-status-foreground);
   }
 
   .button.is-danger {
@@ -216,7 +216,7 @@
   .button.is-link.is-outline,
   .button.is-link.is-outlined {
     --fluent-button-background: transparent;
-    --fluent-button-foreground: var(--fluent-brand-color);
+    --fluent-button-foreground: var(--fluent-color-brand-foreground);
     --fluent-button-border: var(--fluent-brand-color);
     --fluent-button-hover-background: var(--fluent-color-brand-160);
     --fluent-button-pressed-background: var(--fluent-color-brand-150);
@@ -352,9 +352,13 @@
   }
 
   .content a {
-    color: var(--fluent-brand-color);
+    color: var(--fluent-color-brand-foreground);
     text-decoration-thickness: 1px;
     text-underline-offset: 2px;
+  }
+
+  a:not(.button) {
+    color: var(--fluent-color-brand-foreground);
   }
 
   .delete {
@@ -404,22 +408,22 @@
 
   .tag.is-info {
     background: var(--fluent-color-info);
-    color: #fff;
+    color: var(--fluent-color-status-foreground);
   }
 
   .tag.is-success {
     background: var(--fluent-color-success);
-    color: #fff;
+    color: var(--fluent-color-status-foreground);
   }
 
   .tag.is-warning {
     background: var(--fluent-color-warning);
-    color: var(--fluent-color-neutral-foreground-1);
+    color: var(--fluent-color-status-foreground);
   }
 
   .tag.is-danger {
     background: var(--fluent-color-danger);
-    color: #fff;
+    color: var(--fluent-color-status-foreground);
   }
 
   .tag.is-light,
@@ -471,6 +475,11 @@
   .notification.is-link {
     border-color: var(--fluent-color-brand-130);
     background: var(--fluent-color-brand-160);
+    color: var(--fluent-color-brand-50);
+  }
+
+  .notification.is-primary .title,
+  .notification.is-link .title {
     color: var(--fluent-color-brand-50);
   }
 

@@ -389,14 +389,14 @@
   .tabs li.is-active a,
   .tabs [role='tab'][aria-selected='true'] {
     border-bottom-color: var(--fluent-brand-color);
-    color: var(--fluent-brand-color);
+    color: var(--fluent-color-brand-foreground);
   }
 
   .tabs.is-boxed li.is-active a,
   .tabs.is-toggle li.is-active a {
     border-color: var(--fluent-color-neutral-stroke-2);
     background: var(--fluent-color-neutral-background-1);
-    color: var(--fluent-brand-color);
+    color: var(--fluent-color-brand-foreground);
   }
 
   .tabs a:hover {
@@ -415,12 +415,12 @@
 
   .breadcrumb a:hover,
   .pagination a:hover {
-    color: var(--fluent-brand-color);
+    color: var(--fluent-color-brand-foreground);
   }
 
   .breadcrumb li.is-active a,
   .pagination-link.is-current {
-    color: var(--fluent-brand-color);
+    color: var(--fluent-color-brand-foreground);
   }
 
   .pagination-link,
@@ -448,7 +448,7 @@
   .menu-list a:hover,
   .menu-list a.is-active {
     background: var(--fluent-color-neutral-background-2);
-    color: var(--fluent-brand-color);
+    color: var(--fluent-color-brand-foreground);
   }
 
   [popover].fluent-menu {
@@ -480,6 +480,17 @@
   .fluent-menu [role='menuitem']:hover,
   .fluent-menu [role='menuitem']:focus-visible {
     background: var(--fluent-color-neutral-background-2);
+    color: var(--fluent-color-neutral-foreground-1);
+  }
+
+  .panel-heading {
+    border-color: var(--fluent-color-neutral-stroke-2);
+    background: var(--fluent-color-neutral-background-2);
+    color: var(--fluent-color-neutral-foreground-1);
+  }
+
+  .panel-block {
+    border-color: var(--fluent-color-neutral-stroke-2);
     color: var(--fluent-color-neutral-foreground-1);
   }
 

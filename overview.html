@@ -100,24 +100,78 @@
             <div class="box">
               <h3 class="title is-5">Brand ramp</h3>
               <div class="swatches" aria-label="Brand color ramp">
-                <span style="--swatch: var(--fluent-color-brand-10)">10</span>
-                <span style="--swatch: var(--fluent-color-brand-30)">30</span>
-                <span style="--swatch: var(--fluent-color-brand-50)">50</span>
-                <span style="--swatch: var(--fluent-color-brand-70)">70</span>
-                <span style="--swatch: var(--fluent-color-brand-80)">80</span>
-                <span style="--swatch: var(--fluent-color-brand-90)">90</span>
-                <span style="--swatch: var(--fluent-color-brand-110)">110</span>
-                <span style="--swatch: var(--fluent-color-brand-130)">130</span>
-                <span style="--swatch: var(--fluent-color-brand-160)">160</span>
+                <span style="--swatch: var(--fluent-color-brand-10); --swatch-foreground: #fff"
+                  >10</span
+                >
+                <span style="--swatch: var(--fluent-color-brand-30); --swatch-foreground: #fff"
+                  >30</span
+                >
+                <span style="--swatch: var(--fluent-color-brand-50); --swatch-foreground: #fff"
+                  >50</span
+                >
+                <span style="--swatch: var(--fluent-color-brand-70); --swatch-foreground: #fff"
+                  >70</span
+                >
+                <span style="--swatch: var(--fluent-color-brand-80); --swatch-foreground: #fff"
+                  >80</span
+                >
+                <span style="--swatch: var(--fluent-color-brand-90); --swatch-foreground: #000"
+                  >90</span
+                >
+                <span style="--swatch: var(--fluent-color-brand-110); --swatch-foreground: #000"
+                  >110</span
+                >
+                <span style="--swatch: var(--fluent-color-brand-130); --swatch-foreground: #000"
+                  >130</span
+                >
+                <span style="--swatch: var(--fluent-color-brand-160); --swatch-foreground: #000"
+                  >160</span
+                >
               </div>
               <h3 class="title is-6 mt-5">Neutral backgrounds</h3>
               <div class="swatches" aria-label="Neutral background colors">
-                <span style="--swatch: var(--fluent-color-neutral-background-1)">1</span>
-                <span style="--swatch: var(--fluent-color-neutral-background-2)">2</span>
-                <span style="--swatch: var(--fluent-color-neutral-background-3)">3</span>
-                <span style="--swatch: var(--fluent-color-neutral-background-4)">4</span>
-                <span style="--swatch: var(--fluent-color-neutral-background-5)">5</span>
-                <span style="--swatch: var(--fluent-color-neutral-background-6)">6</span>
+                <span
+                  style="
+                    --swatch: var(--fluent-color-neutral-background-1);
+                    --swatch-foreground: #000;
+                  "
+                  >1</span
+                >
+                <span
+                  style="
+                    --swatch: var(--fluent-color-neutral-background-2);
+                    --swatch-foreground: #000;
+                  "
+                  >2</span
+                >
+                <span
+                  style="
+                    --swatch: var(--fluent-color-neutral-background-3);
+                    --swatch-foreground: #000;
+                  "
+                  >3</span
+                >
+                <span
+                  style="
+                    --swatch: var(--fluent-color-neutral-background-4);
+                    --swatch-foreground: #000;
+                  "
+                  >4</span
+                >
+                <span
+                  style="
+                    --swatch: var(--fluent-color-neutral-background-5);
+                    --swatch-foreground: #000;
+                  "
+                  >5</span
+                >
+                <span
+                  style="
+                    --swatch: var(--fluent-color-neutral-background-6);
+                    --swatch-foreground: #000;
+                  "
+                  >6</span
+                >
               </div>
             </div>
           </div>
@@ -132,7 +186,7 @@
               </p>
               <p class="mt-4">
                 <a href="#forms">Links use the brand color</a>
-                <span class="has-text-grey"> · Muted helper text</span>
+                <span class="fluent-muted-text"> · Muted helper text</span>
               </p>
             </div>
           </div>
@@ -376,9 +430,15 @@
               </nav>
               <div class="tabs is-boxed" data-fluent-tabs>
                 <ul data-fluent-tablist aria-label="Workspace views">
-                  <li class="is-active"><a data-fluent-tab href="#overview-panel">Overview</a></li>
-                  <li><a data-fluent-tab href="#activity-panel">Activity</a></li>
-                  <li><a data-fluent-tab href="#settings-panel">Settings</a></li>
+                  <li class="is-active" role="presentation">
+                    <a data-fluent-tab href="#overview-panel">Overview</a>
+                  </li>
+                  <li role="presentation">
+                    <a data-fluent-tab href="#activity-panel">Activity</a>
+                  </li>
+                  <li role="presentation">
+                    <a data-fluent-tab href="#settings-panel">Settings</a>
+                  </li>
                 </ul>
                 <section id="overview-panel" data-fluent-tabpanel>
                   <p>Overview content. Without JavaScript these links work as page anchors.</p>
