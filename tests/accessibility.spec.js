@@ -103,8 +103,14 @@ for (const theme of ['light', 'dark']) {
         await page.locator('#comfortable-density').check();
         await expect(page.locator('#sample-form')).toHaveClass(/is-comfortable/);
       }
-      await expect(page).toHaveScreenshot(`${theme}-${density}.png`, {
-        fullPage: true,
+      await expect(page).toHaveScreenshot(`${theme}-${density}-overview.png`, {
+        animations: 'disabled',
+      });
+      await page.evaluate(() => {
+        const forms = document.querySelector('#forms');
+        window.scrollTo(0, Math.round(forms.getBoundingClientRect().top + window.scrollY));
+      });
+      await expect(page).toHaveScreenshot(`${theme}-${density}-forms.png`, {
         animations: 'disabled',
       });
     });
