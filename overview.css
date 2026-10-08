@@ -118,6 +118,23 @@ body {
   background: var(--fluent-color-neutral-background-1);
 }
 
+.code-sample {
+  max-width: 100%;
+  padding: 1rem;
+  overflow-x: auto;
+  border: 1px solid var(--fluent-color-neutral-stroke-2);
+  border-radius: var(--fluent-radius-medium);
+  background: var(--fluent-color-neutral-background-2);
+  color: var(--fluent-color-neutral-foreground-1);
+}
+
+.code-sample code {
+  padding: 0;
+  background: transparent;
+  color: inherit;
+  white-space: pre;
+}
+
 .form-sample {
   transition: padding var(--fluent-duration-fast) var(--fluent-easing-standard);
 }

@@ -1,6 +1,6 @@
 {
   "name": "@fiammybe/fluent2-bulma",
-  "version": "0.0.0",
+  "version": "0.1.0",
   "description": "The unofficial marriage between Bulma and Microsoft's Fluent2 design system",
   "license": "MIT",
   "author": "fiammybe",

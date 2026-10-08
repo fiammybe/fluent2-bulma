@@ -4,6 +4,8 @@
 
 A Fluent 2 theme for [Bulma](https://bulma.io) CSS.
 
+**Documentation:** [Getting started, migration, theming, and release guides](https://fiammybe.github.io/fluent2-bulma/).
+
 **Disclaimer:** this is an unofficial, community project. It is not affiliated with, endorsed by,
 or sponsored by Microsoft or the Bulma project. "Fluent", "Segoe UI" and "Microsoft" are trademarks
 of their respective owners.
@@ -148,6 +150,7 @@ styles, scripts, and font assets needed to view it.
 - `css/` – build output (not committed)
 - `dist/` – self-contained overview site build output (not committed)
 - `docs/decisions/` – decision records
+- `docs/` – static documentation published on GitHub Pages
 
 ## Browser support
 
