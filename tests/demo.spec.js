@@ -9,6 +9,7 @@ const demoPages = [
   ['forum', 'forum.html'],
   ['thread', 'thread.html'],
   ['profile', 'profile.html'],
+  ['store', 'store.html'],
 ];
 
 for (const [name, path] of demoPages) {
@@ -57,4 +58,33 @@ test('demo sign-in does not submit credentials', async ({ page }) => {
   expect(page.url()).toContain('/demo/login.html');
   expect(page.url()).not.toContain('member@example.com');
   expect(page.url()).not.toContain('not-a-real-password');
+});
+
+test('store product details, reviews, and shopping cart are interactive', async ({ page }) => {
+  await page.goto('/demo/store.html');
+  await expect(page.getByRole('heading', { name: 'Focus Planner' }).first()).toBeVisible();
+  await expect(page.getByText('4.8 out of 5 · 126 ratings')).toBeVisible();
+  await expect(page.getByText(/Just enough structure/)).toBeVisible();
+
+  await page.getByRole('button', { name: 'Add to cart' }).first().click();
+  await page.getByRole('button', { name: 'Add to cart' }).first().click();
+  await page.getByRole('button', { name: 'Add to cart' }).nth(1).click();
+  await expect(page.locator('#store-cart-count')).toHaveText('3');
+  await expect(page.locator('#store-cart-total')).toHaveText('$68.00');
+
+  await page.getByRole('button', { name: 'Remove Focus Planner from cart' }).click();
+  await expect(page.locator('#store-cart-count')).toHaveText('1');
+  await expect(page.locator('#store-cart-total')).toHaveText('$32.00');
+
+  await page.getByRole('button', { name: 'Details' }).nth(1).click();
+  await expect(page.locator('#store-detail-name')).toHaveText('Desk Timer');
+  await expect(page.getByText(/A small change that made my focus blocks/)).toBeVisible();
+
+  await page.getByLabel('Your name').fill('Avery');
+  await page.getByLabel('Your rating').selectOption('4');
+  await page.getByLabel('Comment').fill('This timer helps me settle into a task.');
+  await page.getByRole('button', { name: 'Post review' }).click();
+  await expect(page.getByText('Avery', { exact: true })).toBeVisible();
+  await expect(page.getByText('This timer helps me settle into a task.')).toBeVisible();
+  await expect(page.locator('#store-rating-summary')).toHaveText('4.6 out of 5 · 85 ratings');
 });

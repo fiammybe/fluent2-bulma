@@ -140,7 +140,11 @@ if (store) {
     for (const review of product.reviews) {
       const article = makeElement('article', 'store-review');
       const heading = makeElement('h4', 'title is-6 mb-2', review.name);
-      const rating = makeElement('p', 'store-rating mb-2', `${'★'.repeat(review.rating)}${'☆'.repeat(5 - review.rating)} ${review.rating} out of 5`);
+      const rating = makeElement(
+        'p',
+        'store-rating mb-2',
+        `${'★'.repeat(review.rating)}${'☆'.repeat(5 - review.rating)} ${review.rating} out of 5`,
+      );
       rating.setAttribute('aria-label', `${review.rating} out of 5 stars`);
       const comment = makeElement('p', '', review.text);
       article.append(heading, rating, comment);
@@ -183,13 +187,16 @@ if (store) {
     event.preventDefault();
     const formData = new FormData(reviewForm);
     const rating = Number(formData.get('rating'));
-    products[selectedProduct].reviews.unshift({
+    const product = products[selectedProduct];
+    product.rating = (product.rating * product.ratingCount + rating) / (product.ratingCount + 1);
+    product.ratingCount += 1;
+    product.reviews.unshift({
       name: formData.get('reviewer').trim(),
       rating,
       text: formData.get('comment').trim(),
     });
-    renderReviews(products[selectedProduct]);
-    status.textContent = `Your ${rating}-star review for ${products[selectedProduct].name} was added.`;
+    renderReviews(product);
+    status.textContent = `Your ${rating}-star review for ${product.name} was added.`;
     reviewForm.reset();
   });
 
