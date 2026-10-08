@@ -139,6 +139,10 @@ npm run test:e2e # axe accessibility, keyboard, motion, forced-colors, and visua
 The root `overview.html` is a single-page gallery of Bulma elements, form controls,
 components, and layout patterns. It includes light/dark/system theme controls and
 a compact/comfortable density toggle.
+
+The `demo/` directory contains a multi-page Northstar community site showcasing
+the theme in a realistic CMS-style interface. Run `npm run dev:demo` to open it
+locally; `npm run build` also generates its pages under `dist/demo/`.
 The CI `fluent2-bulma-overview` artifact contains `overview.html` and the bundled
 styles, scripts, and font assets needed to view it.
 

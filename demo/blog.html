@@ -1,0 +1,185 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Ideas and field notes from the Northstar community." />
+    <title>Journal — Northstar</title>
+    <link rel="stylesheet" href="./demo.css" />
+    <script type="module" src="./demo.js"></script>
+  </head>
+  <body>
+    <header class="cms-header">
+      <nav class="navbar cms-navbar" aria-label="Main navigation" data-fluent-navbar>
+        <div class="container is-fluid">
+          <div class="navbar-brand">
+            <a class="navbar-item cms-brand" href="./index.html" aria-label="Northstar home"
+              ><span class="cms-brand-mark" aria-hidden="true">N</span> Northstar</a
+            ><button
+              class="navbar-burger"
+              type="button"
+              data-fluent-navbar-toggle
+              aria-label="Toggle navigation"
+              aria-expanded="false"
+              aria-controls="site-navigation"
+              data-target="site-navigation"
+            >
+              <span aria-hidden="true"></span><span aria-hidden="true"></span
+              ><span aria-hidden="true"></span>
+            </button>
+          </div>
+          <div id="site-navigation" class="navbar-menu">
+            <div class="navbar-start">
+              <a class="navbar-item" href="./index.html">Home</a
+              ><a class="navbar-item" href="./blog.html" aria-current="page">Journal</a
+              ><a class="navbar-item" href="./forum.html">Community</a
+              ><a class="navbar-item" href="./dashboard.html">Dashboard</a
+              ><a class="navbar-item" href="./store.html">Store</a>
+            </div>
+            <div class="navbar-end">
+              <div class="navbar-item cms-language">
+                <label class="is-sr-only" for="language">Language</label>
+                <div class="select is-small">
+                  <select id="language" name="language">
+                    <option>English</option>
+                    <option>Français</option>
+                    <option>Deutsch</option>
+                  </select>
+                </div>
+              </div>
+              <div class="navbar-item">
+                <details class="cms-user-menu">
+                  <summary>
+                    <span class="cms-avatar" aria-hidden="true">AM</span><span>Alex Morgan</span>
+                  </summary>
+                  <div class="cms-user-links">
+                    <a href="./profile.html">Your profile</a><a href="./login.html">Sign out</a>
+                  </div>
+                </details>
+              </div>
+              <div class="navbar-item">
+                <a class="button is-primary is-small" href="./assets/focus-checklist.txt" download
+                  >Download focus kit</a
+                >
+              </div>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+    <main class="cms-main">
+      <section class="cms-section">
+        <div class="cms-page-heading">
+          <div>
+            <p class="cms-eyebrow">Northstar journal</p>
+            <h1 class="title is-2">Ideas for a more intentional day.</h1>
+            <p class="cms-lead mt-3">
+              Stories, practices, and perspectives from people finding their own way forward.
+            </p>
+          </div>
+          <a class="button is-primary" href="./login.html">Share your story</a>
+        </div>
+        <div class="columns is-multiline">
+          <div class="column is-6">
+            <article class="cms-card">
+              <div class="cms-card-content">
+                <span class="tag is-info is-light">Better habits</span>
+                <p class="cms-meta mt-4">8 min read · Taylor Reed · October 7, 2026</p>
+                <h2 class="title is-3 mt-2">
+                  <a href="#story-rhythm">Build a rhythm that works for you</a>
+                </h2>
+                <p>
+                  Forget the perfect morning routine. Start with the smallest promise you can keep,
+                  and let a little consistency do its work.
+                </p>
+                <a href="#story-rhythm" class="mt-4 is-inline-block"
+                  >Read the story <span aria-hidden="true">→</span></a
+                >
+              </div>
+            </article>
+          </div>
+          <div class="column is-6">
+            <article class="cms-card">
+              <div class="cms-card-content">
+                <span class="tag is-success is-light">Field notes</span>
+                <p class="cms-meta mt-4">6 min read · Jordan Lee · October 3, 2026</p>
+                <h2 class="title is-3 mt-2">
+                  <a href="#story-digital">A more intentional digital day</a>
+                </h2>
+                <p>
+                  Simple, kind ways to protect your attention without disappearing from the people
+                  who need you.
+                </p>
+                <a href="#story-digital" class="mt-4 is-inline-block"
+                  >Read the story <span aria-hidden="true">→</span></a
+                >
+              </div>
+            </article>
+          </div>
+          <div class="column is-4">
+            <article class="cms-card">
+              <div class="cms-card-content">
+                <span class="tag is-warning is-light">Creativity</span>
+                <p class="cms-meta mt-4">4 min read · Morgan Bell</p>
+                <h2 class="title is-4 mt-2">
+                  <a href="#story-notes">Keep a notebook for the in-between</a>
+                </h2>
+                <p>There’s value in catching an idea before you know what to do with it.</p>
+              </div>
+            </article>
+          </div>
+          <div class="column is-4">
+            <article class="cms-card">
+              <div class="cms-card-content">
+                <span class="tag">Community</span>
+                <p class="cms-meta mt-4">5 min read · Casey Kim</p>
+                <h2 class="title is-4 mt-2">
+                  <a href="./forum.html">The case for asking better questions</a>
+                </h2>
+                <p>Good questions make generous spaces for other people to think out loud.</p>
+              </div>
+            </article>
+          </div>
+          <div class="column is-4">
+            <article class="cms-card">
+              <div class="cms-card-content">
+                <span class="tag is-info is-light">Focus</span>
+                <p class="cms-meta mt-4">3 min read · Sam Patel</p>
+                <h2 class="title is-4 mt-2">
+                  <a href="#story-breaks">Rest is part of the plan</a>
+                </h2>
+                <p>Why the pause between efforts can be the most productive part of the day.</p>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+      <section class="cms-section" aria-labelledby="featured-story">
+        <article id="story-rhythm">
+          <p class="cms-eyebrow">From the journal</p>
+          <h2 id="featured-story" class="title is-3">Build a rhythm that works for you</h2>
+          <p class="cms-lead">The best routine is the one that meets you where you are.</p>
+          <p class="mt-4">
+            Start with one moment in your day that already has a natural pause. Take a breath, write
+            down what matters next, and begin. It doesn’t need to be a grand gesture; the point is
+            to make it easy enough to return to tomorrow.
+          </p>
+          <p class="mt-4">
+            Over time, those small moments add up to a rhythm that feels like yours. Borrow ideas
+            from others, keep what helps, and let the rest go.
+          </p>
+          <p class="cms-meta mt-5">Taylor Reed · Northstar contributor</p>
+        </article>
+      </section>
+    </main>
+    <footer class="cms-footer">
+      <div class="cms-main cms-footer-inner">
+        <span>© 2026 Northstar Community</span>
+        <nav class="cms-footer-links" aria-label="Footer">
+          <a href="./blog.html">Journal</a><a href="./forum.html">Community guidelines</a
+          ><a href="./login.html">Sign in</a>
+        </nav>
+      </div>
+    </footer>
+  </body>
+</html>

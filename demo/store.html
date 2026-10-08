@@ -1,0 +1,347 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Shop thoughtful tools for focus, creativity, and everyday reflection."
+    />
+    <title>Northstar Shop — Tools for thoughtful work</title>
+    <link rel="stylesheet" href="./demo.css" />
+    <script type="module" src="./demo.js"></script>
+  </head>
+  <body>
+    <header class="cms-header">
+      <nav class="navbar cms-navbar" aria-label="Main navigation" data-fluent-navbar>
+        <div class="container is-fluid">
+          <div class="navbar-brand">
+            <a class="navbar-item cms-brand" href="./index.html" aria-label="Northstar home">
+              <span class="cms-brand-mark" aria-hidden="true">N</span> Northstar
+            </a>
+            <button
+              class="navbar-burger"
+              type="button"
+              data-fluent-navbar-toggle
+              aria-label="Toggle navigation"
+              aria-expanded="false"
+              aria-controls="site-navigation"
+              data-target="site-navigation"
+            >
+              <span aria-hidden="true"></span><span aria-hidden="true"></span
+              ><span aria-hidden="true"></span>
+            </button>
+          </div>
+          <div id="site-navigation" class="navbar-menu">
+            <div class="navbar-start">
+              <a class="navbar-item" href="./index.html">Home</a>
+              <a class="navbar-item" href="./blog.html">Journal</a>
+              <a class="navbar-item" href="./forum.html">Community</a>
+              <a class="navbar-item" href="./dashboard.html">Dashboard</a>
+              <a class="navbar-item" href="./store.html" aria-current="page">Store</a>
+            </div>
+            <div class="navbar-end">
+              <div class="navbar-item cms-language">
+                <label class="is-sr-only" for="language">Language</label>
+                <div class="select is-small">
+                  <select id="language" name="language">
+                    <option>English</option>
+                    <option>Français</option>
+                    <option>Deutsch</option>
+                  </select>
+                </div>
+              </div>
+              <div class="navbar-item">
+                <details class="cms-user-menu">
+                  <summary>
+                    <span class="cms-avatar" aria-hidden="true">AM</span><span>Alex Morgan</span>
+                  </summary>
+                  <div class="cms-user-links">
+                    <a href="./profile.html">Your profile</a><a href="./login.html">Sign out</a>
+                  </div>
+                </details>
+              </div>
+              <div class="navbar-item">
+                <a class="button is-primary is-small" href="./assets/focus-checklist.txt" download
+                  >Download focus kit</a
+                >
+              </div>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+    <main class="cms-main" data-store>
+      <section class="cms-section">
+        <div class="cms-page-heading">
+          <div>
+            <p class="cms-eyebrow">Northstar goods</p>
+            <h1 class="title is-2">Tools for thoughtful work.</h1>
+            <p class="cms-lead mt-3">
+              A small collection to help make room for focus, creativity, and reflection.
+            </p>
+          </div>
+        </div>
+        <div class="store-layout">
+          <div>
+            <section aria-labelledby="products-title">
+              <div class="cms-page-heading">
+                <h2 id="products-title" class="title is-3">Community favorites</h2>
+                <p class="cms-meta">Free shipping on orders over $40</p>
+              </div>
+              <div class="store-products">
+                <article class="cms-card store-product">
+                  <div class="cms-card-content">
+                    <div
+                      class="store-product-art"
+                      style="--product-color: #6750a4"
+                      aria-hidden="true"
+                    >
+                      <span>✎</span>
+                    </div>
+                    <p class="cms-eyebrow mt-4">Plan with intention</p>
+                    <h3 class="title is-4">Focus Planner</h3>
+                    <p class="store-rating" aria-label="Rated 4.8 out of 5 stars">
+                      ★★★★★ <span class="cms-meta">4.8 (126)</span>
+                    </p>
+                    <div
+                      class="is-flex is-justify-content-space-between is-align-items-center mt-3"
+                    >
+                      <span class="store-price">$18.00</span>
+                      <button
+                        class="button is-light is-small"
+                        type="button"
+                        data-view-product="planner"
+                      >
+                        Details
+                      </button>
+                    </div>
+                    <div class="store-card-actions">
+                      <button
+                        class="button is-primary is-fullwidth"
+                        type="button"
+                        data-add-to-cart="planner"
+                      >
+                        Add to cart
+                      </button>
+                    </div>
+                  </div>
+                </article>
+                <article class="cms-card store-product">
+                  <div class="cms-card-content">
+                    <div
+                      class="store-product-art"
+                      style="--product-color: #006b6b"
+                      aria-hidden="true"
+                    >
+                      <span>◷</span>
+                    </div>
+                    <p class="cms-eyebrow mt-4">Make space for focus</p>
+                    <h3 class="title is-4">Desk Timer</h3>
+                    <p class="store-rating" aria-label="Rated 4.6 out of 5 stars">
+                      ★★★★★ <span class="cms-meta">4.6 (84)</span>
+                    </p>
+                    <div
+                      class="is-flex is-justify-content-space-between is-align-items-center mt-3"
+                    >
+                      <span class="store-price">$32.00</span>
+                      <button
+                        class="button is-light is-small"
+                        type="button"
+                        data-view-product="timer"
+                      >
+                        Details
+                      </button>
+                    </div>
+                    <div class="store-card-actions">
+                      <button
+                        class="button is-primary is-fullwidth"
+                        type="button"
+                        data-add-to-cart="timer"
+                      >
+                        Add to cart
+                      </button>
+                    </div>
+                  </div>
+                </article>
+                <article class="cms-card store-product">
+                  <div class="cms-card-content">
+                    <div
+                      class="store-product-art"
+                      style="--product-color: #975c00"
+                      aria-hidden="true"
+                    >
+                      <span>▤</span>
+                    </div>
+                    <p class="cms-eyebrow mt-4">Capture the in-between</p>
+                    <h3 class="title is-4">Everyday Journal</h3>
+                    <p class="store-rating" aria-label="Rated 4.9 out of 5 stars">
+                      ★★★★★ <span class="cms-meta">4.9 (58)</span>
+                    </p>
+                    <div
+                      class="is-flex is-justify-content-space-between is-align-items-center mt-3"
+                    >
+                      <span class="store-price">$14.00</span>
+                      <button
+                        class="button is-light is-small"
+                        type="button"
+                        data-view-product="journal"
+                      >
+                        Details
+                      </button>
+                    </div>
+                    <div class="store-card-actions">
+                      <button
+                        class="button is-primary is-fullwidth"
+                        type="button"
+                        data-add-to-cart="journal"
+                      >
+                        Add to cart
+                      </button>
+                    </div>
+                  </div>
+                </article>
+              </div>
+            </section>
+            <section
+              id="product-detail"
+              class="store-detail mt-6"
+              aria-labelledby="store-detail-name"
+              tabindex="-1"
+            >
+              <div class="store-detail-grid" id="store-product-detail">
+                <div
+                  id="store-detail-art"
+                  class="store-product-art"
+                  style="--product-color: #6750a4"
+                  aria-hidden="true"
+                >
+                  <span id="store-detail-icon">✎</span>
+                </div>
+                <div>
+                  <p id="store-detail-category" class="cms-eyebrow">Plan with intention</p>
+                  <h2 id="store-detail-name" class="title is-2">Focus Planner</h2>
+                  <p id="store-rating-summary" class="store-rating" aria-live="polite">
+                    4.8 out of 5 · 126 ratings
+                  </p>
+                  <p id="store-detail-description" class="cms-lead mt-4">
+                    A thoughtful undated planner with room for weekly priorities, daily notes, and
+                    the little wins along the way.
+                  </p>
+                  <div class="is-flex is-align-items-center mt-5">
+                    <span id="store-detail-price" class="store-price">$18.00</span>
+                    <button
+                      id="store-add-selected"
+                      class="button is-primary ml-4"
+                      type="button"
+                      data-add-to-cart="planner"
+                    >
+                      Add to cart
+                    </button>
+                  </div>
+                </div>
+              </div>
+              <div class="columns mt-6">
+                <section class="column is-7" aria-labelledby="reviews-title">
+                  <h3 id="reviews-title" class="title is-4">Ratings &amp; comments</h3>
+                  <div id="store-reviews" aria-live="polite">
+                    <article class="store-review">
+                      <h4 class="title is-6 mb-2">Jamie Chen</h4>
+                      <p class="store-rating mb-2" aria-label="5 out of 5 stars">
+                        ★★★★★ 5 out of 5
+                      </p>
+                      <p>
+                        Just enough structure to help me focus without making every hour feel spoken
+                        for.
+                      </p>
+                    </article>
+                    <article class="store-review">
+                      <h4 class="title is-6 mb-2">Taylor Reed</h4>
+                      <p class="store-rating mb-2" aria-label="4 out of 5 stars">
+                        ★★★★☆ 4 out of 5
+                      </p>
+                      <p>The weekly reflection page has become a lovely Friday ritual.</p>
+                    </article>
+                  </div>
+                </section>
+                <section class="column" aria-labelledby="review-form-title">
+                  <h3 id="review-form-title" class="title is-4">Leave a review</h3>
+                  <form id="store-review-form">
+                    <div class="field">
+                      <label class="label" for="reviewer">Your name</label>
+                      <div class="control">
+                        <input
+                          id="reviewer"
+                          name="reviewer"
+                          class="input"
+                          autocomplete="name"
+                          required
+                        />
+                      </div>
+                    </div>
+                    <div class="field">
+                      <label class="label" for="review-rating">Your rating</label>
+                      <div class="control select is-fullwidth">
+                        <select id="review-rating" name="rating" required>
+                          <option value="5">5 stars — Loved it</option>
+                          <option value="4">4 stars — Great</option>
+                          <option value="3">3 stars — Good</option>
+                          <option value="2">2 stars — Could be better</option>
+                          <option value="1">1 star — Not for me</option>
+                        </select>
+                      </div>
+                    </div>
+                    <div class="field">
+                      <label class="label" for="review-comment">Comment</label>
+                      <div class="control">
+                        <textarea
+                          id="review-comment"
+                          name="comment"
+                          class="textarea"
+                          rows="3"
+                          required
+                        ></textarea>
+                      </div>
+                    </div>
+                    <button class="button is-light" type="submit">Post review</button>
+                  </form>
+                </section>
+              </div>
+            </section>
+          </div>
+          <aside class="store-cart" aria-labelledby="cart-title">
+            <h2 id="cart-title" class="title is-4">
+              Your cart
+              <span class="tag" aria-label="Items in cart"
+                ><span id="store-cart-count">0</span></span
+              >
+            </h2>
+            <p id="store-cart-empty" class="cms-meta">
+              Your cart is empty. Add something you love.
+            </p>
+            <div id="store-cart-contents" hidden>
+              <div id="store-cart-items"></div>
+              <p class="store-cart-total">
+                <span>Subtotal</span><span id="store-cart-total">$0.00</span>
+              </p>
+              <p class="cms-meta mt-3">Shipping calculated at checkout.</p>
+              <button class="button is-primary is-fullwidth mt-4" type="button" disabled>
+                Continue to checkout
+              </button>
+            </div>
+          </aside>
+        </div>
+        <p id="store-status" class="is-sr-only" role="status" aria-live="polite"></p>
+      </section>
+    </main>
+    <footer class="cms-footer">
+      <div class="cms-main cms-footer-inner">
+        <span>© 2026 Northstar Community</span>
+        <nav class="cms-footer-links" aria-label="Footer">
+          <a href="./blog.html">Journal</a><a href="./forum.html">Community guidelines</a
+          ><a href="./login.html">Sign in</a>
+        </nav>
+      </div>
+    </footer>
+  </body>
+</html>
