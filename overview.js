@@ -6,6 +6,7 @@ const densityToggle = document.querySelector('#comfortable-density');
 const form = document.querySelector('#sample-form');
 const fileInput = document.querySelector('.file-input');
 const fileName = document.querySelector('.file-name');
+const copyStatus = document.querySelector('[data-copy-status]');
 
 themeButtons.forEach((button) => {
   button.addEventListener('click', () => {
@@ -32,4 +33,18 @@ fileInput.addEventListener('change', () => {
 });
 
 form.addEventListener('submit', (event) => event.preventDefault());
+
+document.querySelectorAll('[data-copy-snippet]').forEach((button) => {
+  button.addEventListener('click', async () => {
+    const snippet = button.previousElementSibling.querySelector('[data-copy-source]').textContent;
+
+    try {
+      await navigator.clipboard.writeText(snippet);
+      copyStatus.textContent = 'Snippet copied.';
+    } catch {
+      copyStatus.textContent = 'Clipboard access is unavailable in this browser.';
+    }
+  });
+});
+
 initFluent2();

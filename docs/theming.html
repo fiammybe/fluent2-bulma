@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Theming — Fluent 2 × Bulma</title>
+    <link rel="stylesheet" href="site.css" />
+  </head>
+  <body>
+    <header>
+      <a href="index.html"><strong>Fluent 2 × Bulma</strong></a>
+      <nav aria-label="Documentation">
+        <ul>
+          <li><a href="getting-started.html">Getting started</a></li>
+          <li><a href="migration.html">Migration</a></li>
+          <li><a href="theming.html" aria-current="page">Theming</a></li>
+          <li><a href="browser-support.html">Browser support</a></li>
+          <li><a href="release-policy.html">Release policy</a></li>
+          <li><a href="changelog.html">Changelog</a></li>
+          <li><a href="gallery.html">Gallery</a></li>
+        </ul>
+      </nav>
+    </header>
+    <main>
+      <h1>Theming</h1>
+      <h2>Set the brand color in Sass</h2>
+      <pre><code>@use '@fiammybe/fluent2-bulma' with (
+  $fluent-brand-color: #0f6cbd
+);</code></pre>
+
+      <h2>Override the runtime brand token</h2>
+      <pre><code>:root {
+  --fluent-brand-color: #6750a4;
+}</code></pre>
+      <p>
+        Color, typography, spacing, radius, shadow, and motion values are available as Fluent custom
+        properties. Import <code>@fiammybe/fluent2-bulma/tokens</code> to access Sass token maps or
+        include <code>@fiammybe/fluent2-bulma/tokens.css</code> for tokens without component styles.
+      </p>
+
+      <h2>Override styles with cascade layers</h2>
+      <p>
+        Declare your layer after <code>fluent2</code> to override theme rules predictably. Keep
+        third-party Bulma rules in the lower-priority layer.
+      </p>
+      <pre><code>@layer bulma, fluent2, app;
+
+@import url('bulma/css/bulma.css') layer(bulma);
+@import url('@fiammybe/fluent2-bulma/css/fluent2-bulma.css');
+
+@layer app {
+  :root {
+    --fluent-brand-color: #6750a4;
+  }
+
+  .button.is-primary {
+    border-radius: 999px;
+  }
+}</code></pre>
+      <p>
+        Unlayered author rules outrank layered author styles; place custom rules in your declared
+        <code>app</code> layer when you want this explicit ordering.
+      </p>
+    </main>
+    <footer>
+      <p>
+        Fluent 2 × Bulma · The unofficial marriage between Bulma and Microsoft’s Fluent 2 design
+        system.
+      </p>
+      <p>
+        Unofficial community project; not affiliated with, endorsed by, or sponsored by Microsoft or
+        the Bulma project. Fluent, Segoe UI, and Microsoft are trademarks of their respective
+        owners.
+      </p>
+    </footer>
+  </body>
+</html>

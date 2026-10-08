@@ -92,6 +92,27 @@ test('reduced motion and forced-colors preferences are respected', async ({ page
   expect(forcedColorsFocus.color).not.toBe('rgba(0, 0, 0, 0)');
 });
 
+test('gallery snippets copy both Bulma and Fluent component class examples', async ({ page }) => {
+  await openOverview(page);
+  await page.evaluate(() => {
+    window.copiedSnippet = null;
+    Object.defineProperty(navigator, 'clipboard', {
+      configurable: true,
+      value: { writeText: async (text) => (window.copiedSnippet = text) },
+    });
+  });
+
+  const copyButtons = page.getByRole('button', { name: 'Copy snippet' });
+  await copyButtons.nth(0).click();
+  await expect(page.locator('[data-copy-status]')).toHaveText('Snippet copied.');
+  expect(await page.evaluate(() => window.copiedSnippet)).toContain('class="button is-primary"');
+
+  await copyButtons.nth(1).click();
+  expect(await page.evaluate(() => window.copiedSnippet)).toBe(
+    '<span class="fluent-badge is-brand">New</span>',
+  );
+});
+
 for (const theme of ['light', 'dark']) {
   for (const density of ['compact', 'comfortable']) {
     test(`overview visual baseline: ${theme} theme, ${density} density`, async ({ page }) => {

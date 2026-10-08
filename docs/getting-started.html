@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Getting started — Fluent 2 × Bulma</title>
+    <link rel="stylesheet" href="site.css" />
+  </head>
+  <body>
+    <header>
+      <a href="index.html"><strong>Fluent 2 × Bulma</strong></a>
+      <nav aria-label="Documentation">
+        <ul>
+          <li><a href="getting-started.html" aria-current="page">Getting started</a></li>
+          <li><a href="migration.html">Migration</a></li>
+          <li><a href="theming.html">Theming</a></li>
+          <li><a href="browser-support.html">Browser support</a></li>
+          <li><a href="release-policy.html">Release policy</a></li>
+          <li><a href="changelog.html">Changelog</a></li>
+          <li><a href="gallery.html">Gallery</a></li>
+        </ul>
+      </nav>
+    </header>
+    <main>
+      <h1>Getting started</h1>
+      <p>Bulma is a peer dependency. Install it alongside the theme:</p>
+      <pre><code>npm install bulma @fiammybe/fluent2-bulma</code></pre>
+      <p>Load Bulma in a lower-priority cascade layer. The Fluent theme creates its own layer:</p>
+      <pre><code>@layer bulma, fluent2;
+@import url('bulma/css/bulma.css') layer(bulma);
+@import url('@fiammybe/fluent2-bulma/css/fluent2-bulma.css');</code></pre>
+
+      <h2>Use a CDN</h2>
+      <p>Pin both packages to explicit versions for reproducible deployments:</p>
+      <pre><code>&lt;link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@1.0.4/css/bulma.min.css"&gt;
+&lt;link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fiammybe/fluent2-bulma@0.1.0/css/fluent2-bulma.css"&gt;</code></pre>
+      <p>
+        For CDN use, load the Bulma link first and the Fluent 2 × Bulma link second. For cascade
+        layer control, use the npm stylesheet import shown above.
+      </p>
+
+      <h2>Compile with Sass</h2>
+      <p>Use the Sass entry point to customize build-time tokens:</p>
+      <pre><code>@use '@fiammybe/fluent2-bulma' with (
+  $fluent-brand-color: #0f6cbd
+);</code></pre>
+      <p>
+        The package also exports <code>@fiammybe/fluent2-bulma/tokens</code> for Sass token maps and
+        <code>@fiammybe/fluent2-bulma/tokens.css</code> for a tokens-only stylesheet.
+      </p>
+      <p>
+        The default compact density uses 2rem controls. Add
+        <code>is-comfortable</code> to opt into 2.5rem controls. See the
+        <a href="theming.html">theming guide</a> for theme and override options.
+      </p>
+    </main>
+    <footer>
+      <p>
+        Fluent 2 × Bulma · The unofficial marriage between Bulma and Microsoft’s Fluent 2 design
+        system.
+      </p>
+      <p>
+        Unofficial community project; not affiliated with, endorsed by, or sponsored by Microsoft or
+        the Bulma project. Fluent, Segoe UI, and Microsoft are trademarks of their respective
+        owners.
+      </p>
+    </footer>
+  </body>
+</html>

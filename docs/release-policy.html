@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Release policy — Fluent 2 × Bulma</title>
+    <link rel="stylesheet" href="site.css" />
+  </head>
+  <body>
+    <header>
+      <a href="index.html"><strong>Fluent 2 × Bulma</strong></a>
+      <nav aria-label="Documentation">
+        <ul>
+          <li><a href="getting-started.html">Getting started</a></li>
+          <li><a href="migration.html">Migration</a></li>
+          <li><a href="theming.html">Theming</a></li>
+          <li><a href="browser-support.html">Browser support</a></li>
+          <li><a href="release-policy.html" aria-current="page">Release policy</a></li>
+          <li><a href="changelog.html">Changelog</a></li>
+          <li><a href="gallery.html">Gallery</a></li>
+        </ul>
+      </nav>
+    </header>
+    <main>
+      <h1>Versioning and releases</h1>
+      <p>
+        Releases follow Semantic Versioning. While the major version is zero, minor versions may
+        include breaking changes; patch releases are reserved for compatible fixes. Starting at
+        1.0.0, breaking changes require a new major version.
+      </p>
+      <p>
+        The first public release is 0.1.0. Every release should update
+        <a href="changelog.html">the changelog</a> and publish corresponding GitHub release notes.
+        Publishing a GitHub Release triggers the npm workflow for its matching <code>v*</code> tag;
+        the package version and tag must match.
+      </p>
+      <p>
+        Release builds generate the distributable CSS, Sass package, JavaScript module, icon sprite,
+        and third-party notices before publishing. Bulma remains a peer dependency and is not
+        bundled into the package.
+      </p>
+      <p>
+        Configure npm trusted publishing for this repository’s GitHub Actions workflow before
+        publishing. The workflow uses OIDC and provenance rather than a long-lived npm token.
+      </p>
+    </main>
+    <footer>
+      <p>
+        Fluent 2 × Bulma · The unofficial marriage between Bulma and Microsoft’s Fluent 2 design
+        system.
+      </p>
+      <p>
+        Unofficial community project; not affiliated with, endorsed by, or sponsored by Microsoft or
+        the Bulma project. Fluent, Segoe UI, and Microsoft are trademarks of their respective
+        owners.
+      </p>
+    </footer>
+  </body>
+</html>

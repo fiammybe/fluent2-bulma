@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Migration from Bulma — Fluent 2 × Bulma</title>
+    <link rel="stylesheet" href="site.css" />
+  </head>
+  <body>
+    <header>
+      <a href="index.html"><strong>Fluent 2 × Bulma</strong></a>
+      <nav aria-label="Documentation">
+        <ul>
+          <li><a href="getting-started.html">Getting started</a></li>
+          <li><a href="migration.html" aria-current="page">Migration</a></li>
+          <li><a href="theming.html">Theming</a></li>
+          <li><a href="browser-support.html">Browser support</a></li>
+          <li><a href="release-policy.html">Release policy</a></li>
+          <li><a href="changelog.html">Changelog</a></li>
+          <li><a href="gallery.html">Gallery</a></li>
+        </ul>
+      </nav>
+    </header>
+    <main>
+      <h1>Migrate from plain Bulma</h1>
+      <p>
+        The theme is designed as a progressive visual change: keep Bulma 1.x and your existing Bulma
+        class names, then load the Fluent stylesheet after Bulma.
+      </p>
+      <ol>
+        <li>Install <code>@fiammybe/fluent2-bulma</code> alongside Bulma.</li>
+        <li>
+          Put Bulma in the <code>bulma</code> cascade layer and let the theme’s
+          <code>fluent2</code> layer follow it.
+        </li>
+        <li>Review any app-specific CSS that overrides Bulma components and update as needed.</li>
+        <li>
+          Add <code>.is-comfortable</code> to a region or form when the 2.5rem comfortable controls
+          suit that interface better than the compact default.
+        </li>
+      </ol>
+      <pre><code>@layer bulma, fluent2;
+@import url('bulma/css/bulma.css') layer(bulma);
+@import url('@fiammybe/fluent2-bulma/css/fluent2-bulma.css');
+
+&lt;button class="button is-primary"&gt;Save changes&lt;/button&gt;</code></pre>
+      <p>
+        Bulma elements, forms, layout, and helper classes remain the primary interface. Dedicated
+        components such as badges and avatars use <code>.fluent-*</code> classes; JavaScript
+        enhancements are opt-in and target <code>data-fluent-*</code> attributes. See the
+        <a href="gallery.html">gallery</a> for examples and copyable snippets.
+      </p>
+    </main>
+    <footer>
+      <p>
+        Fluent 2 × Bulma · The unofficial marriage between Bulma and Microsoft’s Fluent 2 design
+        system.
+      </p>
+      <p>
+        Unofficial community project; not affiliated with, endorsed by, or sponsored by Microsoft or
+        the Bulma project. Fluent, Segoe UI, and Microsoft are trademarks of their respective
+        owners.
+      </p>
+    </footer>
+  </body>
+</html>
