@@ -89,7 +89,7 @@ if (store) {
   const cartEmpty = store.querySelector('#store-cart-empty');
   const cartContents = store.querySelector('#store-cart-contents');
   const status = store.querySelector('#store-status');
-  const detail = store.querySelector('#store-product-detail');
+  const detail = store.querySelector('#product-detail');
   const reviewForm = store.querySelector('#store-review-form');
   let selectedProduct = 'planner';
 

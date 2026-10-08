@@ -82,7 +82,9 @@ test('store product details, reviews, and shopping cart are interactive', async 
 
   await page.getByLabel('Your name').fill('Avery');
   await page.getByLabel('Your rating').selectOption('4');
-  await page.getByLabel('Comment').fill('This timer helps me settle into a task.');
+  await page
+    .getByRole('textbox', { name: 'Comment' })
+    .fill('This timer helps me settle into a task.');
   await page.getByRole('button', { name: 'Post review' }).click();
   await expect(page.getByText('Avery', { exact: true })).toBeVisible();
   await expect(page.getByText('This timer helps me settle into a task.')).toBeVisible();
