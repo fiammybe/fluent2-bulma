@@ -4,11 +4,13 @@ export default defineConfig(({ mode }) => {
   const minify = mode === 'minify';
   const overview = mode === 'overview';
   const library = mode === 'library';
+  const demo = mode === 'demo';
   return {
+    ...(demo ? { root: 'demo' } : {}),
     base: './',
     logLevel: 'warn',
     build: {
-      outDir: overview ? 'dist' : library ? 'js' : 'css',
+      outDir: overview || demo ? (demo ? '../dist/demo' : 'dist') : library ? 'js' : 'css',
       emptyOutDir: overview || library,
       cssMinify: minify,
       minify: library ? 'oxc' : false,
@@ -22,7 +24,21 @@ export default defineConfig(({ mode }) => {
           }
         : {}),
       rollupOptions: {
-        input: overview ? 'overview.html' : library ? 'src/js/index.js' : 'sass/index.scss',
+        input: demo
+          ? {
+              home: 'index.html',
+              login: 'login.html',
+              dashboard: 'dashboard.html',
+              blog: 'blog.html',
+              forum: 'forum.html',
+              thread: 'thread.html',
+              profile: 'profile.html',
+            }
+          : overview
+            ? 'overview.html'
+            : library
+              ? 'src/js/index.js'
+              : 'sass/index.scss',
         output: {
           assetFileNames: (assetInfo) => {
             if (overview) {

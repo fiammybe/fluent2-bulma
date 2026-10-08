@@ -1,0 +1,183 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Find ideas, conversations, and resources to help you do your best work."
+    />
+    <title>Northstar — A community for focused work</title>
+    <link rel="stylesheet" href="./demo.css" />
+    <script type="module" src="./demo.js"></script>
+  </head>
+  <body>
+    <header class="cms-header">
+      <nav class="navbar cms-navbar" aria-label="Main navigation" data-fluent-navbar>
+        <div class="container is-fluid">
+          <div class="navbar-brand">
+            <a class="navbar-item cms-brand" href="./index.html" aria-label="Northstar home">
+              <span class="cms-brand-mark" aria-hidden="true">N</span> Northstar
+            </a>
+            <button
+              class="navbar-burger"
+              type="button"
+              data-fluent-navbar-toggle
+              aria-label="Toggle navigation"
+              aria-expanded="false"
+              aria-controls="site-navigation"
+              data-target="site-navigation"
+            >
+              <span aria-hidden="true"></span><span aria-hidden="true"></span
+              ><span aria-hidden="true"></span>
+            </button>
+          </div>
+          <div id="site-navigation" class="navbar-menu">
+            <div class="navbar-start">
+              <a class="navbar-item" href="./index.html" aria-current="page">Home</a>
+              <a class="navbar-item" href="./blog.html">Journal</a>
+              <a class="navbar-item" href="./forum.html">Community</a>
+              <a class="navbar-item" href="./dashboard.html">Dashboard</a>
+            </div>
+            <div class="navbar-end">
+              <div class="navbar-item cms-language">
+                <label class="is-sr-only" for="language">Language</label>
+                <div class="select is-small">
+                  <select id="language" name="language">
+                    <option>English</option>
+                    <option>Français</option>
+                    <option>Deutsch</option>
+                  </select>
+                </div>
+              </div>
+              <div class="navbar-item">
+                <details class="cms-user-menu">
+                  <summary>
+                    <span class="cms-avatar" aria-hidden="true">AM</span><span>Alex Morgan</span>
+                  </summary>
+                  <div class="cms-user-links">
+                    <a href="./profile.html">Your profile</a><a href="./login.html">Sign out</a>
+                  </div>
+                </details>
+              </div>
+              <div class="navbar-item">
+                <a class="button is-primary is-small" href="./assets/focus-checklist.txt" download
+                  >Download focus kit</a
+                >
+              </div>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+    <main>
+      <section class="cms-main cms-hero">
+        <div class="cms-hero-body">
+          <p class="cms-eyebrow">A community for curious minds</p>
+          <h1 class="title is-1">Make space for your best work.</h1>
+          <p class="cms-lead">
+            A calmer place to learn, share what works, and find your people. Start with a good idea
+            and see where it takes you.
+          </p>
+          <div class="buttons mt-5">
+            <a class="button is-primary" href="./forum.html">Join the conversation</a>
+            <a class="button is-light" href="./blog.html">Explore the journal</a>
+          </div>
+        </div>
+      </section>
+      <div class="cms-main">
+        <section class="cms-section" aria-labelledby="welcome-title">
+          <div class="cms-page-heading">
+            <div>
+              <p class="cms-eyebrow">Your next idea starts here</p>
+              <h2 id="welcome-title" class="title is-3">A little inspiration goes a long way</h2>
+            </div>
+            <a href="./blog.html">See all stories <span aria-hidden="true">→</span></a>
+          </div>
+          <div class="columns is-multiline">
+            <div class="column is-4">
+              <article class="cms-card">
+                <div class="cms-card-content">
+                  <p class="tag is-info is-light">Better habits</p>
+                  <h3 class="title is-4 mt-3">
+                    <a href="./blog.html">Build a rhythm that works for you</a>
+                  </h3>
+                  <p>Small, repeatable rituals can make room for meaningful progress.</p>
+                  <p class="cms-meta mt-4">5 min read · By Taylor Reed</p>
+                </div>
+              </article>
+            </div>
+            <div class="column is-4">
+              <article class="cms-card">
+                <div class="cms-card-content">
+                  <p class="tag is-success is-light">Community</p>
+                  <h3 class="title is-4 mt-3">
+                    <a href="./forum.html">Meet the people behind the ideas</a>
+                  </h3>
+                  <p>Trade notes with a thoughtful community of makers and learners.</p>
+                  <p class="cms-meta mt-4">Open conversation · 18 replies</p>
+                </div>
+              </article>
+            </div>
+            <div class="column is-4">
+              <article class="cms-card">
+                <div class="cms-card-content">
+                  <p class="tag is-warning is-light">Field notes</p>
+                  <h3 class="title is-4 mt-3">
+                    <a href="./blog.html">A more intentional digital day</a>
+                  </h3>
+                  <p>Simple ways to protect your attention without missing what matters.</p>
+                  <p class="cms-meta mt-4">7 min read · By Jordan Lee</p>
+                </div>
+              </article>
+            </div>
+          </div>
+        </section>
+        <section class="cms-section" aria-labelledby="community-title">
+          <div class="columns is-vcentered">
+            <div class="column is-7">
+              <p class="cms-eyebrow">Good things happen together</p>
+              <h2 id="community-title" class="title is-3">
+                Bring a question. Leave with a new perspective.
+              </h2>
+              <p class="cms-lead">
+                Our forums are made for generous answers, practical advice, and the occasional happy
+                tangent.
+              </p>
+              <a class="button is-primary mt-4" href="./forum.html">Visit the community</a>
+            </div>
+            <div class="column">
+              <div class="cms-stat">
+                <span class="cms-stat-value">2,480</span
+                ><span class="cms-stat-label">members learning together</span>
+              </div>
+              <div class="cms-stat mt-3">
+                <span class="cms-stat-value">136</span
+                ><span class="cms-stat-label">helpful conversations this week</span>
+              </div>
+            </div>
+          </div>
+        </section>
+        <section id="focus-kit" class="cms-section" aria-labelledby="focus-title">
+          <div class="notification is-info is-light">
+            <p class="cms-eyebrow">A small reset</p>
+            <h2 id="focus-title" class="title is-4">Take your focus with you.</h2>
+            <p>Download the printable Focus Kit and make your next work session count.</p>
+            <a class="button is-primary mt-3" href="./assets/focus-checklist.txt" download
+              >Download the Focus Kit</a
+            >
+          </div>
+        </section>
+      </div>
+    </main>
+    <footer class="cms-footer">
+      <div class="cms-main cms-footer-inner">
+        <span>© 2026 Northstar Community</span>
+        <nav class="cms-footer-links" aria-label="Footer">
+          <a href="./blog.html">Journal</a><a href="./forum.html">Community guidelines</a
+          ><a href="./login.html">Sign in</a>
+        </nav>
+      </div>
+    </footer>
+  </body>
+</html>
