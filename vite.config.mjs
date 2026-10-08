@@ -33,6 +33,7 @@ export default defineConfig(({ mode }) => {
               forum: 'forum.html',
               thread: 'thread.html',
               profile: 'profile.html',
+              store: 'store.html',
             }
           : overview
             ? 'overview.html'
